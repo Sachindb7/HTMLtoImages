@@ -1,10 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTMLToImages - Free Online Tool</title>
+    <title>HTML to WEBP Converter – Convert HTML Code to WebP Image Online</title>
+    <meta name="description" content="Convert HTML code, snippets, or .html files into high-quality WebP images instantly. Fast, free, secure client-side conversion with compression control." />
+    <link rel="canonical" href="https://htmltoimages.com/html-to-webp/" />
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -208,5 +209,32 @@ Error generating stack: `+i.message+`
 </head>
   <body class="bg-slate-50 text-slate-900 antialiased selection:bg-brand-100 selection:text-brand-700">
     <div id="root"></div>
+<script>
+(function () {
+  function setWebp() {
+    const selects = Array.from(document.querySelectorAll('select'));
+    // Find the format dropdown by checking it has PNG + JPG/JPEG + WEBP options
+    const target = selects.find(sel => {
+      const opts = Array.from(sel.options).map(o => (o.textContent || o.value || '').toLowerCase());
+      const hasPng = opts.some(x => x.includes('png'));
+      const hasWebp = opts.some(x => x.includes('webp'));
+      const hasJpg = opts.some(x => x.includes('jpg') || x.includes('jpeg'));
+      return hasPng && hasWebp && hasJpg;
+    });
+    if (!target) return false;
+    const webpOpt = Array.from(target.options).find(o => (o.value || o.textContent || '').toLowerCase().includes('webp'));
+    if (!webpOpt) return false;
+    target.value = webpOpt.value;
+    target.dispatchEvent(new Event('change', { bubbles: true }));
+    return true;
+  }
+
+  let tries = 0;
+  const timer = setInterval(() => {
+    tries++;
+    if (setWebp() || tries > 80) clearInterval(timer);
+  }, 200);
+})();
+</script>
 </body>
 </html>
