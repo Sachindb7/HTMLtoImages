@@ -1,10 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTMLToImages - Free Online Tool</title>
+        <meta name="description" content="Convert HTML code or .html files to PNG instantly. Export sharp PNG images with optional transparent background. Fast, secure, browser-based tool." />
+    <link rel="canonical" href="https://htmltoimages.com/html-to-png/" />
+<title>HTML to PNG Converter – Convert HTML Code to PNG Image with Transparency</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -179,9 +180,7 @@ Error generating stack: `+i.message+`
     border: 1px solid rgba(255, 255, 255, 0.2);
     max-width: 400px;
   ">
-    <h1 style="font-size: 2.5rem; margin: 0 0 16px 0; font-weight: 800; letter-spacing: -0.025em;">
-      Hello World!
-    </h1>
+    <h1 style="font-size: 2.5rem; margin: 0 0 16px 0; font-weight: 800; letter-spacing: -0.025em;">Convert HTML to PNG Online (Transparent PNG Supported)</h1>
     <p style="font-size: 1.1rem; line-height: 1.5; margin-bottom: 24px; opacity: 0.9;">
       This is a responsive HTML snippet. 
       Try the <strong>"Auto-Fit"</strong> button to crop the canvas to this box!
@@ -208,5 +207,22 @@ Error generating stack: `+i.message+`
 </head>
   <body class="bg-slate-50 text-slate-900 antialiased selection:bg-brand-100 selection:text-brand-700">
     <div id="root"></div>
+
+<script>
+(function(){
+  function update(){
+    const h2 = document.querySelector('main h2');
+    if(!h2) return false;
+    // Replace the hero heading
+    h2.innerHTML = 'Convert <span class="text-brand-600">HTML to PNG</span> Instantly';
+    return true;
+  }
+  let tries=0;
+  const t=setInterval(()=>{
+    tries++;
+    if(update() || tries>50) clearInterval(t);
+  },100);
+})();
+</script>
 </body>
 </html>
