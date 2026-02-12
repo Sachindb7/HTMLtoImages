@@ -52,22 +52,5 @@
 
     <h2>4. Limitations</h2>
     <p>In no event shall HTMLtoImages be liable for any damages (including, without limitation, damages for loss of data or profit) arising out of the use or inability to use the materials on HTMLtoImages.</p>
-
-    <script>
-        document.body.addEventListener('click', (e) => {
-            const link = e.target.closest('a');
-            if (link) {
-                const href = link.getAttribute('href');
-                if (href) {
-                    if (href.startsWith('#')) {
-                        // ignore hash
-                    } else if (!href.startsWith('http') && !href.startsWith('mailto:')) {
-                        e.preventDefault();
-                        window.parent.postMessage({ type: 'NAVIGATE', path: href }, '*');
-                    }
-                }
-            }
-        });
-    </script>
 </body>
 </html>
