@@ -53,22 +53,5 @@
 
     <h2>4. Contact Us</h2>
     <p>If you have any questions about our Privacy Policy, please contact us at <a href="mailto:htmltoimages@gmail.com">htmltoimages@gmail.com</a>.</p>
-    
-    <script>
-        document.body.addEventListener('click', (e) => {
-            const link = e.target.closest('a');
-            if (link) {
-                const href = link.getAttribute('href');
-                if (href) {
-                    if (href.startsWith('#')) {
-                        // ignore hash
-                    } else if (!href.startsWith('http') && !href.startsWith('mailto:')) {
-                        e.preventDefault();
-                        window.parent.postMessage({ type: 'NAVIGATE', path: href }, '*');
-                    }
-                }
-            }
-        });
-    </script>
 </body>
 </html>
