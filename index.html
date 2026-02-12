@@ -215,7 +215,7 @@
                     <li><a href="/about">About Us</a></li>
                     <li><a href="/contact">Contact</a></li>
                     <li><a href="/privacy">Privacy Policy</a></li>
-                    <li><a href="/terms">Terms</a></li>
+                    <li><a href="terms">Terms</a></li>
                 </ul>
             </div>
         </div>
@@ -229,18 +229,16 @@
             const link = e.target.closest('a');
             if (link) {
                 const href = link.getAttribute('href');
-                if (href) {
-                    if (href.startsWith('#')) {
-                        e.preventDefault();
-                        const targetId = href.substring(1);
-                        const target = document.getElementById(targetId);
-                        if (target) {
-                            target.scrollIntoView({ behavior: 'smooth' });
-                        }
-                    } else if (!href.startsWith('http') && !href.startsWith('mailto:')) {
-                        e.preventDefault();
-                        window.parent.postMessage({ type: 'NAVIGATE', path: href }, '*');
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = href.substring(1);
+                    const target = document.getElementById(targetId);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
                     }
+                } else if (href && href.endsWith('.html')) {
+                    e.preventDefault();
+                    window.parent.postMessage({ type: 'NAVIGATE', path: href }, '*');
                 }
             }
         });
