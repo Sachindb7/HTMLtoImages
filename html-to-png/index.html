@@ -336,27 +336,6 @@
                 }
                 downloadBtn.disabled = false;
             });
-
-            // Nav handling for both anchors and pages
-            document.body.addEventListener('click', (e) => {
-                const link = e.target.closest('a');
-                if (link) {
-                    const href = link.getAttribute('href');
-                    if (href) {
-                        if (href.startsWith('#')) {
-                            e.preventDefault();
-                            const targetId = href.substring(1);
-                            const target = document.getElementById(targetId);
-                            if (target) {
-                                target.scrollIntoView({ behavior: 'smooth' });
-                            }
-                        } else if (!href.startsWith('http') && !href.startsWith('mailto:')) {
-                            e.preventDefault();
-                            window.parent.postMessage({ type: 'NAVIGATE', path: href }, '*');
-                        }
-                    }
-                }
-            });
         });
     </script>
 </body>
