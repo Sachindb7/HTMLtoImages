@@ -112,7 +112,7 @@
 <body>
 
     <nav class="navbar">
-        <a href="index.html" class="logo"><i class="fas fa-cube"></i> HTMLtoImages</a>
+        <a href="/" class="logo"><i class="fas fa-cube"></i> HTMLtoImages</a>
         <div class="nav-links">
             <a href="#tools">Tools</a>
             <a href="#how-it-works">How It Works</a>
@@ -229,16 +229,18 @@
             const link = e.target.closest('a');
             if (link) {
                 const href = link.getAttribute('href');
-                if (href && href.startsWith('#')) {
-                    e.preventDefault();
-                    const targetId = href.substring(1);
-                    const target = document.getElementById(targetId);
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
+                if (href) {
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = href.substring(1);
+                        const target = document.getElementById(targetId);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    } else if (!href.startsWith('http') && !href.startsWith('mailto:')) {
+                        e.preventDefault();
+                        window.parent.postMessage({ type: 'NAVIGATE', path: href }, '*');
                     }
-                } else if (href && href.endsWith('.html')) {
-                    e.preventDefault();
-                    window.parent.postMessage({ type: 'NAVIGATE', path: href }, '*');
                 }
             }
         });
