@@ -40,22 +40,5 @@
     <h1>About Us</h1>
     <p>HTMLtoImages is a simple tool built to help developers and designers quickly share their work.</p>
     <p>We believe in free, open-source tools that run client-side for maximum privacy.</p>
-    
-    <script>
-        document.body.addEventListener('click', (e) => {
-            const link = e.target.closest('a');
-            if (link) {
-                const href = link.getAttribute('href');
-                if (href) {
-                    if (href.startsWith('#')) {
-                        // ignore hash links or handle if needed
-                    } else if (!href.startsWith('http') && !href.startsWith('mailto:')) {
-                        e.preventDefault();
-                        window.parent.postMessage({ type: 'NAVIGATE', path: href }, '*');
-                    }
-                }
-            }
-        });
-    </script>
 </body>
 </html>
