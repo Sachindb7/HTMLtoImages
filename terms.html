@@ -37,7 +37,7 @@
     </style>
 </head>
 <body>
-    <a href="index.html" class="back-link">← Back to HTMLtoImages</a>
+    <a href="/" class="back-link">← Back to HTMLtoImages</a>
     <h1>Terms of Service</h1>
     <p>Last updated: January 2026</p>
 
@@ -58,9 +58,13 @@
             const link = e.target.closest('a');
             if (link) {
                 const href = link.getAttribute('href');
-                if (href && href.endsWith('.html')) {
-                    e.preventDefault();
-                    window.parent.postMessage({ type: 'NAVIGATE', path: href }, '*');
+                if (href) {
+                    if (href.startsWith('#')) {
+                        // ignore hash
+                    } else if (!href.startsWith('http') && !href.startsWith('mailto:')) {
+                        e.preventDefault();
+                        window.parent.postMessage({ type: 'NAVIGATE', path: href }, '*');
+                    }
                 }
             }
         });
