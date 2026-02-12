@@ -223,25 +223,5 @@
             &copy; 2026 htmltoimages.com. All rights reserved.
         </div>
     </footer>
-
-    <script>
-        document.body.addEventListener('click', (e) => {
-            const link = e.target.closest('a');
-            if (link) {
-                const href = link.getAttribute('href');
-                if (href && href.startsWith('#')) {
-                    e.preventDefault();
-                    const targetId = href.substring(1);
-                    const target = document.getElementById(targetId);
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                } else if (href && href.endsWith('.html')) {
-                    e.preventDefault();
-                    window.parent.postMessage({ type: 'NAVIGATE', path: href }, '*');
-                }
-            }
-        });
-    </script>
 </body>
 </html>
