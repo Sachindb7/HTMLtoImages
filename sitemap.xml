@@ -11,6 +11,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  
+  <url>
+    <loc>https://htmltoimages.com/code-to-image/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
   <url>
     <loc>https://htmltoimages.com/html-to-webp/</loc>
@@ -22,6 +28,24 @@
     <loc>https://htmltoimages.com/html-to-jpg/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://htmltoimages.com/html-table-to-image/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://htmltoimages.com/html-email-to-image/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://htmltoimages.com/tailwind-to-image/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>

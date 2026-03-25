@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convert HTML to WebP - Modern & Fast</title>
-    <meta name="description" content="Generate next-gen WebP images from HTML. Superior compression and quality at htmltoimages.com.">
+    <title>HTML Email to Image - Preview & Save Newsletters</title>
+    <meta name="description" content="Convert HTML email templates to images. Visualize your newsletters and email signatures as PNG/JPG without sending test emails.">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQBH2S5FQ4"></script>
     <script>
@@ -77,24 +77,25 @@
         
         .custom-select { width: 100%; background: #ffffff; color: var(--text-main); border: 1px solid var(--border-color); padding: 10px 14px; border-radius: var(--radius-sm); font-family: 'Inter', sans-serif; cursor: pointer; }
         
-        /* Remove arrow for locked select */
-        .custom-select.locked { 
-            appearance: none; -webkit-appearance: none; -moz-appearance: none;
-            background-image: none; cursor: default; padding-right: 14px;
-            font-weight: 600; background-color: #f8fafc; border-color: transparent;
-            opacity: 1; color: var(--text-main);
-        }
-
         .btn-primary { width: 100%; background: var(--primary-gradient); border: none; padding: 14px; border-radius: var(--radius-md); color: white; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s; }
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4); }
 
-        .preview-wrapper { background: #f1f5f9; position: relative; background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 24px 24px; flex: 1; display: flex; align-items: center; justify-content: center; overflow: auto; padding: 40px; }
+        .preview-wrapper { background: #f1f5f9; position: relative; background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 24px 24px; flex: 1; display: flex; align-items: center; justify-content: center; overflow-x: auto; overflow-y: hidden; padding: 40px; }
+        .preview-panel-outer { overflow: auto !important; }
+        #captureArea { 
+            transition: background 0.3s ease;
+            width: max-content;
+            min-width: 100%;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
         .section-container { max-width: 900px; margin: 60px auto; padding: 0 20px; scroll-margin-top: 120px; }
         .section-header { text-align: center; margin-bottom: 40px; }
         .section-header h2 { font-size: 2rem; font-weight: 800; margin-bottom: 15px; color: var(--text-main); }
         
-        /* Mini Tools */
         .mini-tools { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 800px; margin: 0 auto; }
         .mini-card { background: white; border: 1px solid var(--border-color); padding: 15px; border-radius: 12px; display: flex; align-items: center; gap: 12px; transition: 0.2s; text-decoration: none; color: var(--text-main); }
         .mini-card:hover { border-color: #3b82f6; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
@@ -172,8 +173,8 @@
     </nav>
 
     <header class="hero">
-        <h1>Convert HTML to <span class="gradient-text">WebP</span></h1>
-        <p>Create modern, high-performance WebP images from your code snippets.</p>
+        <h1>HTML Email to <span class="gradient-text">Image</span></h1>
+        <p>Visualize your newsletters and email signatures as PNG/JPG instantly.</p>
     </header>
     <!-- Header Ad 468x60 -->
     <div style="display: flex; justify-content: center; margin: 20px auto; width: 100%;">
@@ -183,69 +184,33 @@
 
 
     <main class="app-container">
-        <div class="panel">
+        <div class="panel preview-panel-outer">
             <div class="panel-header">
-                <span class="panel-title"><i class="fas fa-code"></i> HTML Input</span>
+                <span class="panel-title"><i class="fas fa-code"></i> HTML Email Input</span>
             </div>
             <textarea id="codeEditor" spellcheck="false">
-<div class="card">
-    <h3>WebP Card</h3>
-    <p>This will be saved as a WebP image.</p>
-</div>
-<style>
-    .card {
-        background: white;
-        padding: 40px;
-        border-radius: 20px;
-        font-family: sans-serif;
-        text-align: center;
-        width: 320px;
-        border: 2px solid #3b82f6;
-    }
-    h3 { color: #1e293b; margin-bottom: 8px; }
-    p { color: #64748b; }
-
-        @media (max-width: 600px) {
-            .navbar {
-                padding: 12px 15px !important;
-                width: 95% !important;
-                flex-direction: column !important;
-                border-radius: 16px !important;
-                gap: 10px !important;
-            }
-            .nav-links {
-                gap: 20px !important;
-                width: 100% !important;
-                justify-content: center !important;
-            }
-            .logo {
-                font-size: 1.2rem !important;
-                gap: 8px !important;
-            }
-            .nav-links a {
-                font-size: 0.95rem !important;
-            }
-            /* Specific fix for preview wrapper and code window overflowing */
-            .preview-wrapper {
-                padding: 15px !important;
-            }
-            #codeWindow {
-                min-width: 100% !important;
-            }
-            /* Adjust hero padding since navbar is taller */
-            .hero {
-                padding-top: 140px !important;
-            }
-        }
-
-    </style>
-</textarea>
+<div style="font-family: Arial, sans-serif; max-width: 500px; margin: 0 auto; background: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+    <div style="background: #1e293b; padding: 24px; text-align: center;">
+        <h1 style="color: white; margin: 0; font-size: 24px;">Weekly Digest</h1>
+    </div>
+    <div style="padding: 30px;">
+        <h2 style="color: #333; margin-top: 0;">Hello Subscriber,</h2>
+        <p style="color: #666; line-height: 1.6;">Here is your weekly update on the latest tech trends. We have some exciting news to share about the future of web development!</p>
+        <a href="#" style="display: inline-block; background: #3b82f6; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; margin-top: 10px; font-weight: bold;">Read Full Story</a>
+    </div>
+    <div style="background: #f8fafc; padding: 20px; text-align: center; font-size: 12px; color: #94a3b8; border-top: 1px solid #e2e8f0;">
+        &copy; 2026 TechNewsletter Inc.<br>
+        123 Innovation Dr, Tech City
+    </div>
+</div></textarea>
             <div class="settings-area">
                 <div style="display: flex; gap: 15px;">
                     <div style="flex:1;">
                         <label style="font-size:0.75rem; font-weight:600; color:var(--text-muted); text-transform:uppercase;">Format</label>
-                        <select id="formatSelect" class="custom-select locked" disabled>
-                            <option value="webp" selected>WebP</option>
+                        <select id="formatSelect" class="custom-select">
+                            <option value="png" selected>PNG</option>
+                            <option value="jpeg">JPG</option>
+                            <option value="webp">WebP</option>
                         </select>
                     </div>
                     <div style="flex:1;">
@@ -264,12 +229,12 @@
         <script src="https://www.highperformanceformat.com/9c83c1da51aa4f08ea9a3de5e48c1fc0/invoke.js"></script>
     </div>
     <button id="downloadBtn" class="btn-primary">
-                    <i class="fas fa-download"></i> Download WebP
+                    <i class="fas fa-download"></i> Download Preview
                 </button>
             </div>
         </div>
 
-        <div class="panel">
+        <div class="panel preview-panel-outer">
             <div class="panel-header">
                 <span class="panel-title"><i class="fas fa-eye"></i> Live Preview</span>
             </div>
@@ -292,6 +257,10 @@
                 <div class="mini-icon"><i class="fas fa-photo-film"></i></div>
                 <span>HTML to JPG</span>
             </a>
+             <a href="/html-to-webp/" class="mini-card">
+                <div class="mini-icon"><i class="fas fa-bolt"></i></div>
+                <span>HTML to WebP</span>
+            </a>
              <a href="/code-to-image/" class="mini-card">
                 <div class="mini-icon"><i class="fas fa-code"></i></div>
                 <span>Code to Image</span>
@@ -299,10 +268,6 @@
              <a href="/html-table-to-image/" class="mini-card">
                 <div class="mini-icon"><i class="fas fa-table"></i></div>
                 <span>Table to Image</span>
-            </a>
-             <a href="/html-email-to-image/" class="mini-card">
-                <div class="mini-icon"><i class="fas fa-envelope"></i></div>
-                <span>Email to Image</span>
             </a>
              <a href="/tailwind-to-image/" class="mini-card">
                 <div class="mini-icon"><i class="fas fa-wind"></i></div>
@@ -313,43 +278,25 @@
 
     <section id="how-it-works" class="section-container">
         <div class="section-header">
-            <h2>How to Convert HTML to WebP?</h2>
+            <h2>How to save Email to Image?</h2>
         </div>
         <div class="steps">
             <div class="step">
-                <div class="step-icon"><i class="fas fa-keyboard"></i></div>
-                <h3>1. Enter HTML</h3>
-                <p>Type your markup directly or paste it from your favorite IDE.</p>
+                <div class="step-icon"><i class="fas fa-envelope-open-text"></i></div>
+                <h3>1. Paste Code</h3>
+                <p>Paste your HTML email template code into the editor area.</p>
             </div>
             <div class="step">
-                <div class="step-icon"><i class="fas fa-magnifying-glass"></i></div>
-                <h3>2. Review</h3>
-                <p>Check the instant preview to ensure everything renders perfectly.</p>
+                <div class="step-icon"><i class="fas fa-eye"></i></div>
+                <h3>2. Render</h3>
+                <p>The tool automatically renders CSS inline styles just like an email client.</p>
             </div>
             <div class="step">
-                <div class="step-icon"><i class="fas fa-cloud-arrow-down"></i></div>
-                <h3>3. Get WebP</h3>
-                <p>Download your optimized WebP file ready for the modern web.</p>
+                <div class="step-icon"><i class="fas fa-download"></i></div>
+                <h3>3. Download</h3>
+                <p>Save the preview as an image to share with your marketing team.</p>
             </div>
         </div>
-    </section>
-
-    <section id="faq" class="section-container">
-        <div class="section-header">
-            <h2>WebP Converter FAQs</h2>
-        </div>
-        <details>
-            <summary>What are the benefits of WebP?</summary>
-            <p>WebP files generated by <strong>htmltoimages.com</strong> offer superior compression compared to PNG and JPG. It supports both transparency and animation, making it a versatile modern format.</p>
-        </details>
-        <details>
-            <summary>Is WebP supported in all browsers?</summary>
-            <p>Yes, the WebP images created on <strong>htmltoimages.com</strong> are fully supported by all modern browsers (Chrome, Firefox, Safari, Edge).</p>
-        </details>
-        <details>
-            <summary>How fast is the conversion?</summary>
-            <p>It's instant. <strong>htmltoimages.com</strong> uses the browser's native rendering engine via html2canvas, so your image is generated in milliseconds.</p>
-        </details>
     </section>
 
     
@@ -399,8 +346,10 @@
             const captureArea = document.getElementById('captureArea');
             const downloadBtn = document.getElementById('downloadBtn');
             const qualitySelect = document.getElementById('qualitySelect');
-
-            const updatePreview = () => { captureArea.innerHTML = codeEditor.value; };
+            const formatSelect = document.getElementById('formatSelect');
+            const updatePreview = () => { 
+                captureArea.innerHTML = codeEditor.value;
+            };
             updatePreview();
             
             let timeout;
@@ -417,15 +366,39 @@
                 
                 try {
                     await new Promise(r => setTimeout(r, 100));
+                    
+                    // Force captureArea to full content size before capture
+                    const inner = captureArea.firstElementChild;
+                    const contentW = inner ? inner.scrollWidth : captureArea.scrollWidth;
+                    const contentH = inner ? inner.scrollHeight : captureArea.scrollHeight;
+                    const prevW = captureArea.style.width;
+                    const prevH = captureArea.style.height;
+                    const prevMinW = captureArea.style.minWidth;
+                    const prevTransform = captureArea.style.transform;
+                    captureArea.style.width = (contentW + 80) + 'px';
+                    captureArea.style.height = (contentH + 80) + 'px';
+                    captureArea.style.minWidth = 'unset';
+                    captureArea.style.transform = 'none';
+                    await new Promise(r => setTimeout(r, 80));
+                    
                     const canvas = await html2canvas(captureArea, {
                         scale: parseInt(qualitySelect.value) || 2,
                         backgroundColor: null,
                         logging: false, useCORS: true, allowTaint: true
                     });
                     
+                    captureArea.style.width = prevW;
+                    captureArea.style.height = prevH;
+                    captureArea.style.minWidth = prevMinW;
+                    captureArea.style.transform = prevTransform;
+                    
+                    const format = formatSelect.value === 'jpeg' ? 'image/jpeg' : 
+                                   formatSelect.value === 'webp' ? 'image/webp' : 'image/png';
+                    const ext = formatSelect.value === 'jpeg' ? 'jpg' : formatSelect.value;
+                    
                     const link = document.createElement('a');
-                    link.download = `html-to-webp-${Date.now()}.webp`;
-                    link.href = canvas.toDataURL('image/webp', 0.9);
+                    link.download = `email-to-image-${Date.now()}.${ext}`;
+                    link.href = canvas.toDataURL(format, 0.9);
                     link.click();
                     
                     downloadBtn.innerHTML = '<i class="fas fa-check"></i> Saved!';
@@ -434,6 +407,7 @@
                     console.error(e);
                     alert('Error generating image');
                     downloadBtn.innerHTML = originalText;
+                    if (typeof originalTransform !== 'undefined') captureArea.style.transform = originalTransform;
                 }
                 downloadBtn.disabled = false;
             });
