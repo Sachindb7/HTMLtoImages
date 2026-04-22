@@ -69,7 +69,7 @@
         .gradient-text { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
 
-        .app-container { max-width: 1300px; margin: 0 auto; padding: 0 20px 60px; display: grid; grid-template-columns: 350px 1fr; gap: 20px; height: 80vh; min-height: 700px; }
+        .app-container { max-width: 1300px; margin: 0 auto; padding: 0 20px 60px; display: grid; grid-template-columns: 350px 1fr; gap: 20px; min-height: 700px; height: calc(100vh - 200px); }
         .panel { background: var(--bg-panel); border: 1px solid var(--border-color); border-radius: var(--radius-lg); display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 10px 40px -10px rgba(0,0,0,0.08); }
         .panel-header { padding: 16px 20px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; background: #f8fafc; }
         .panel-title { font-size: 0.9rem; font-weight: 600; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
@@ -124,8 +124,9 @@
         .footer-col a:hover { color: #3b82f6; }
         .copyright { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid #cbd5e1; color: var(--text-muted); font-size: 0.9rem; }
 
-        @media (max-width: 900px) { 
+                @media (max-width: 900px) { 
             .app-container { grid-template-columns: 1fr; height: auto; } 
+            .panel { min-height: 450px; }
             .steps { grid-template-columns: 1fr; }
             .mini-tools { grid-template-columns: 1fr; }
         }
@@ -178,6 +179,36 @@
         .cookie-banner button { background: #3b82f6; color: white; border: none; padding: 8px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem; white-space: nowrap; }
         .cookie-banner button:hover { background: #2563eb; }
         @media (max-width: 600px) { .cookie-banner { flex-direction: column; text-align: center; gap: 12px; } }
+        @media (max-width: 600px) {
+            .navbar {
+                padding: 12px 15px !important;
+                width: 95% !important;
+                flex-direction: column !important;
+                border-radius: 16px !important;
+                gap: 10px !important;
+            }
+            .nav-links {
+                gap: 20px !important;
+                width: 100% !important;
+                justify-content: center !important;
+            }
+            .logo {
+                font-size: 1.2rem !important;
+                gap: 8px !important;
+            }
+            .nav-links a {
+                font-size: 0.95rem !important;
+            }
+            .preview-wrapper {
+                padding: 15px !important;
+            }
+            textarea#codeEditor {
+                min-width: 100% !important;
+            }
+            .hero {
+                padding-top: 140px !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -343,7 +374,7 @@
 
             <details>
                 <summary>Do media queries work inside the converter tool?</summary>
-                <p>Yes. Providing you include your standard `<style>` block containing `@media` queries above your email body structure, the preview container will apply them exactly as a modern responsive web client would.</p>
+                <p>Yes. Providing you include your standard `&lt;style&gt;` block containing `@media` queries above your email body structure, the preview container will apply them exactly as a modern responsive web client would.</p>
             </details>
         </div>
     </section>

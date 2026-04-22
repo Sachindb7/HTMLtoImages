@@ -69,7 +69,7 @@
         .gradient-text { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
 
-        .app-container { max-width: 1300px; margin: 0 auto; padding: 0 20px 60px; display: grid; grid-template-columns: 350px 1fr; gap: 20px; height: 80vh; min-height: 700px; }
+        .app-container { max-width: 1300px; margin: 0 auto; padding: 0 20px 60px; display: grid; grid-template-columns: 350px 1fr; gap: 20px; min-height: 700px; height: calc(100vh - 200px); }
         .panel { background: var(--bg-panel); border: 1px solid var(--border-color); border-radius: var(--radius-lg); display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 10px 40px -10px rgba(0,0,0,0.08); }
         .panel-header { padding: 16px 20px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; background: #f8fafc; }
         .panel-title { font-size: 0.9rem; font-weight: 600; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
@@ -123,8 +123,9 @@
         .footer-col a:hover { color: #3b82f6; }
         .copyright { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid #cbd5e1; color: var(--text-muted); font-size: 0.9rem; }
 
-        @media (max-width: 900px) { 
+                @media (max-width: 900px) { 
             .app-container { grid-template-columns: 1fr; height: auto; } 
+            .panel { min-height: 450px; }
             .steps { grid-template-columns: 1fr; }
             .mini-tools { grid-template-columns: 1fr; }
         }
@@ -177,6 +178,36 @@
         .cookie-banner button { background: #3b82f6; color: white; border: none; padding: 8px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem; white-space: nowrap; }
         .cookie-banner button:hover { background: #2563eb; }
         @media (max-width: 600px) { .cookie-banner { flex-direction: column; text-align: center; gap: 12px; } }
+        @media (max-width: 600px) {
+            .navbar {
+                padding: 12px 15px !important;
+                width: 95% !important;
+                flex-direction: column !important;
+                border-radius: 16px !important;
+                gap: 10px !important;
+            }
+            .nav-links {
+                gap: 20px !important;
+                width: 100% !important;
+                justify-content: center !important;
+            }
+            .logo {
+                font-size: 1.2rem !important;
+                gap: 8px !important;
+            }
+            .nav-links a {
+                font-size: 0.95rem !important;
+            }
+            .preview-wrapper {
+                padding: 15px !important;
+            }
+            textarea#codeEditor {
+                min-width: 100% !important;
+            }
+            .hero {
+                padding-top: 140px !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -220,45 +251,7 @@
     }
     h3 { color: #111827; margin-bottom: 8px; }
     p { color: #4b5563; }
-
-        @media (max-width: 600px) {
-            .navbar {
-                padding: 12px 15px !important;
-                width: 95% !important;
-                flex-direction: column !important;
-                border-radius: 16px !important;
-                gap: 10px !important;
-            }
-            .nav-links {
-                gap: 20px !important;
-                width: 100% !important;
-                justify-content: center !important;
-            }
-            .logo {
-                font-size: 1.2rem !important;
-                gap: 8px !important;
-            }
-            .nav-links a {
-                font-size: 0.95rem !important;
-            }
-            /* Specific fix for preview wrapper and code window overflowing */
-            .preview-wrapper {
-                padding: 15px !important;
-            }
-            #codeWindow {
-                min-width: 100% !important;
-            }
-            /* Adjust hero padding since navbar is taller */
-            .hero {
-                padding-top: 140px !important;
-            }
-        }
-
-            .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #e2e8f0; padding: 16px 24px; display: flex; align-items: center; justify-content: center; gap: 20px; z-index: 9999; font-size: 0.9rem; box-shadow: 0 -4px 20px rgba(0,0,0,0.15); }
-        .cookie-banner a { color: #60a5fa; text-decoration: underline; }
-        .cookie-banner button { background: #3b82f6; color: white; border: none; padding: 8px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem; white-space: nowrap; }
-        .cookie-banner button:hover { background: #2563eb; }
-        @media (max-width: 600px) { .cookie-banner { flex-direction: column; text-align: center; gap: 12px; } }
+        @media (max-width: 600px) { }
     </style>
 </textarea>
             <div class="settings-area">
@@ -341,7 +334,7 @@
             <h3>2. How to Convert HTML Code to JPG Format</h3>
             <p>Extracting a highly compressed JPG from your markup takes only a few simple clicks on our platform:</p>
             <ul>
-                <li><strong>Step 1: Input Your Assets:</strong> Drop your HTML markup, including inline styles or `<style>` blocks, straight into the editor. If your design includes images, verify they are loaded properly in the live preview.</li>
+                <li><strong>Step 1: Input Your Assets:</strong> Drop your HTML markup, including inline styles or `&lt;style&gt;` blocks, straight into the editor. If your design includes images, verify they are loaded properly in the live preview.</li>
                 <li><strong>Step 2: Check Background Colors:</strong> JPG does not support alpha-channel transparency. If your code relies on transparency, our engine will automatically fill the background with solid white or black depending on your root element. To guarantee visual fidelity, explicitly declare a solid `background-color` in your CSS.</li>
                 <li><strong>Step 3: Execute the Export:</strong> Once the preview reflects your desired output, select your image scaling preference (up to 4x Retina). Click "Download JPG", and htmltoimages.com will generate the optimally compressed asset immediately.</li>
             </ul>
