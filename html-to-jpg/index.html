@@ -172,6 +172,11 @@
             .seo-article { padding: 30px 20px; }
             .seo-article .section-header h2 { font-size: 1.8rem; }
         }
+            .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #e2e8f0; padding: 16px 24px; display: flex; align-items: center; justify-content: center; gap: 20px; z-index: 9999; font-size: 0.9rem; box-shadow: 0 -4px 20px rgba(0,0,0,0.15); }
+        .cookie-banner a { color: #60a5fa; text-decoration: underline; }
+        .cookie-banner button { background: #3b82f6; color: white; border: none; padding: 8px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem; white-space: nowrap; }
+        .cookie-banner button:hover { background: #2563eb; }
+        @media (max-width: 600px) { .cookie-banner { flex-direction: column; text-align: center; gap: 12px; } }
     </style>
 </head>
 <body>
@@ -190,10 +195,7 @@
         <p>Turn your code into lightweight JPEG images suitable for email and web.</p>
     </header>
     <!-- Header Ad 468x60 -->
-    <div style="display: flex; justify-content: center; margin: 20px auto; width: 100%;">
-        <!-- <script>atOptions={'key':'2e659324677f0205925f1f6c7d686523','format':'iframe','height':60,'width':468,'params':{}};</script>
-        <script src="https://www.highperformanceformat.com/2e659324677f0205925f1f6c7d686523/invoke.js"></script> -->
-    </div>
+    
 
 
     <main class="app-container">
@@ -252,6 +254,11 @@
             }
         }
 
+            .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #e2e8f0; padding: 16px 24px; display: flex; align-items: center; justify-content: center; gap: 20px; z-index: 9999; font-size: 0.9rem; box-shadow: 0 -4px 20px rgba(0,0,0,0.15); }
+        .cookie-banner a { color: #60a5fa; text-decoration: underline; }
+        .cookie-banner button { background: #3b82f6; color: white; border: none; padding: 8px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem; white-space: nowrap; }
+        .cookie-banner button:hover { background: #2563eb; }
+        @media (max-width: 600px) { .cookie-banner { flex-direction: column; text-align: center; gap: 12px; } }
     </style>
 </textarea>
             <div class="settings-area">
@@ -287,12 +294,6 @@
             </div>
         </div>
     </main>
-
-    <!-- Banner Ad 160x300 -->
-    <div style="display: flex; justify-content: center; margin: 20px auto; width: 100%;">
-        <!-- <script>atOptions={'key':'9c83c1da51aa4f08ea9a3de5e48c1fc0','format':'iframe','height':300,'width':160,'params':{}};</script>
-        <script src="https://www.highperformanceformat.com/9c83c1da51aa4f08ea9a3de5e48c1fc0/invoke.js"></script> -->
-    </div>
     <section id="more-tools" class="section-container">
         <div class="section-header" style="margin-bottom: 30px;">
             <h2>Explore Other Tools</h2>
@@ -388,11 +389,6 @@
             </details>
         </div>
     </section>
-    <!-- Banner Ad 468x60 -->
-    <div style="display: flex; justify-content: center; margin: 20px auto; width: 100%;">
-        <!-- <script>atOptions={'key':'2e659324677f0205925f1f6c7d686523','format':'iframe','height':60,'width':468,'params':{}};</script>
-        <script src="https://www.highperformanceformat.com/2e659324677f0205925f1f6c7d686523/invoke.js"></script> -->
-    </div>
 <footer class="footer">
         <div class="footer-content">
             <div class="footer-col">
@@ -476,9 +472,14 @@
         });
     </script>
 
-    <!-- Adsterra Popunder -->
-    <!-- <script type='text/javascript' src='https://pl28979494.profitablecpmratenetwork.com/2f/f0/51/2ff05179b397248e1904b9eff7b2f402.js'></script> -->
-    <!-- Adsterra Social Bar -->
-    <!-- <script src="https://pl28978972.profitablecpmratenetwork.com/2b/14/5a/2b145a5d5eb9123ce4a17b25952dbe17.js"></script> -->
+
+    <div class="cookie-banner" id="cookieBanner" style="display:none;">
+        <span>We use cookies to improve your experience and for analytics. By continuing to use this site, you agree to our <a href="/privacy">Privacy Policy</a>.</span>
+        <button onclick="acceptCookies()">Accept</button>
+    </div>
+    <script>
+        if (!localStorage.getItem('cookiesAccepted')) { document.getElementById('cookieBanner').style.display = 'flex'; }
+        function acceptCookies() { localStorage.setItem('cookiesAccepted', 'true'); document.getElementById('cookieBanner').style.display = 'none'; }
+    </script>
 </body>
 </html>

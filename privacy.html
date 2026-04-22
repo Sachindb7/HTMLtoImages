@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - HTMLtoImages</title>
+    <title>Privacy Policy - HTMLtoImages | How We Protect Your Data</title>
     <meta name="description" content="Privacy Policy for HTMLtoImages. Learn how we protect your data during client-side code conversion and our use of AdSense and analytics cookies.">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQBH2S5FQ4"></script>
@@ -11,112 +11,202 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-FQBH2S5FQ4');
     </script>
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5405462456191304" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --bg-body: #f8fafc;
+            --bg-panel: #ffffff;
+            --border-color: #e2e8f0;
             --text-main: #0f172a;
             --text-muted: #64748b;
-            --primary-color: #3b82f6;
+            --primary-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #8b5cf6 100%);
+            --radius-lg: 24px;
+            --radius-md: 12px;
         }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding: 40px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; color: var(--text-main); }
-        h2 { font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; color: #334155; }
-        p, li { color: var(--text-muted); margin-bottom: 15px; }
-        a { color: var(--primary-color); text-decoration: none; cursor: pointer; }
-        a:hover { text-decoration: underline; }
-        .back-link { 
-            display: inline-block; 
-            margin-bottom: 30px; 
-            font-weight: 600; 
-            color: var(--text-muted);
-            text-decoration: none;
-        }
-        .back-link:hover { color: var(--text-main); }
-    
+        html { scroll-behavior: smooth; }
+        * { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-body); color: var(--text-main); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        .navbar { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 1200px; padding: 12px 24px; background: rgba(255,255,255,0.9); backdrop-filter: blur(12px); border: 1px solid var(--border-color); border-radius: 100px; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        .logo { font-size: 1.2rem; font-weight: 800; display: flex; align-items: center; gap: 10px; color: var(--text-main); }
+        .logo i { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { font-weight: 500; color: var(--text-muted); cursor: pointer; }
+        .nav-links a:hover { color: #3b82f6; }
+        .page-hero { text-align: center; padding: 160px 20px 60px; }
+        .page-hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 16px; }
+        .gradient-text { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .page-hero p { font-size: 1.15rem; color: var(--text-muted); max-width: 650px; margin: 0 auto; }
+        .content-section { max-width: 800px; margin: 0 auto 60px; padding: 0 20px; }
+        .content-card { background: var(--bg-panel); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 30px; }
+        .content-card h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 16px; color: var(--text-main); }
+        .content-card p, .content-card li { color: var(--text-muted); font-size: 1rem; line-height: 1.8; margin-bottom: 14px; }
+        .content-card ul { margin-left: 20px; margin-bottom: 14px; }
+        .content-card li { margin-bottom: 10px; }
+        .content-card a { color: #3b82f6; }
+        .content-card a:hover { text-decoration: underline; }
+        .content-card strong { color: var(--text-main); }
+        .last-updated { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 30px; text-align: center; }
+        .footer { border-top: 1px solid var(--border-color); background: #f1f5f9; padding: 60px 20px; margin-top: 80px; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+        .footer-col h4 { font-size: 1.1rem; margin-bottom: 20px; color: var(--text-main); }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 10px; }
+        .footer-col a { color: var(--text-muted); font-size: 0.95rem; }
+        .footer-col a:hover { color: #3b82f6; }
+        .copyright { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid #cbd5e1; color: var(--text-muted); font-size: 0.9rem; }
         @media (max-width: 850px) {
-            .navbar {
-                padding: 12px 20px !important;
-                width: 95% !important;
-                flex-direction: column !important;
-                border-radius: 16px !important;
-                gap: 12px !important;
-            }
-            .nav-links {
-                gap: 20px !important;
-                width: 100% !important;
-                justify-content: center !important;
-                flex-wrap: wrap !important;
-            }
-            .logo {
-                font-size: 1.3rem !important;
-                gap: 8px !important;
-            }
-            .nav-links a {
-                font-size: 1rem !important;
-            }
-            .hero {
-                padding-top: 150px !important;
-            }
-        }\n    </style>
+            .navbar { padding: 12px 20px; width: 95%; flex-direction: column; border-radius: 16px; gap: 12px; }
+            .nav-links { gap: 20px; width: 100%; justify-content: center; flex-wrap: wrap; }
+            .page-hero { padding-top: 160px; }
+            .page-hero h1 { font-size: 2.2rem; }
+            .content-card { padding: 25px; }
+        }
+        .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #e2e8f0; padding: 16px 24px; display: flex; align-items: center; justify-content: center; gap: 20px; z-index: 9999; font-size: 0.9rem; box-shadow: 0 -4px 20px rgba(0,0,0,0.15); }
+        .cookie-banner a { color: #60a5fa; text-decoration: underline; }
+        .cookie-banner button { background: #3b82f6; color: white; border: none; padding: 8px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem; white-space: nowrap; }
+        .cookie-banner button:hover { background: #2563eb; }
+        @media (max-width: 600px) { .cookie-banner { flex-direction: column; text-align: center; gap: 12px; } }
+    </style>
 </head>
 <body>
-    <div style="text-align: center; margin: 20px 0;">
-        <!-- <script>atOptions={'key':'2e659324677f0205925f1f6c7d686523','format':'iframe','height':60,'width':468,'params':{}};</script>
-        <script src="https://www.highperformanceformat.com/2e659324677f0205925f1f6c7d686523/invoke.js"></script> -->
+    <nav class="navbar">
+        <a href="/" class="logo"><i class="fas fa-cube"></i> HTMLtoImages</a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/#tools">Tools</a>
+            <a href="/blog/">Blog</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="page-hero">
+        <h1><span class="gradient-text">Privacy</span> Policy</h1>
+        <p>Your privacy matters to us. Here is how HTMLtoImages handles your data.</p>
+    </header>
+
+    <div class="content-section">
+        <p class="last-updated">Last updated: April 2026</p>
+
+        <div class="content-card">
+            <h2>Introduction</h2>
+            <p>At HTMLtoImages ("we", "us", or "our"), accessible from htmltoimages.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by HTMLtoImages and how we use it. If you have additional questions or require more information about our Privacy Policy, do not hesitate to <a href="/contact">contact us</a>.</p>
+        </div>
+
+        <div class="content-card">
+            <h2>1. Zero Code Data Collection (Client-Side Processing)</h2>
+            <p>We are proud to operate as a client-side only tool. When you use HTMLtoImages to convert your HTML, CSS, or Tailwind code into images, <strong>no code snippets, layouts, or generated images are sent to our servers</strong>. All DOM parsing and image rendering occurs locally within your own web browser's memory using HTML5 Canvas technology. We do not have access to, nor do we store, any of the technical content you input into the editor.</p>
+            <p>This means your proprietary code, enterprise layouts, API keys, and confidential business documents remain entirely on your local device throughout the entire conversion process.</p>
+        </div>
+
+        <div class="content-card">
+            <h2>2. Log Files & Analytics</h2>
+            <p>HTMLtoImages follows a standard procedure of using log files. The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.</p>
+            <p>We use <strong>Google Analytics</strong> to understand how visitors interact with our website. Google Analytics collects information such as how often users visit the site, what pages they visit, and what other sites they used prior to coming to our site. We use the information from Google Analytics only to improve our site and services.</p>
+        </div>
+
+        <div class="content-card">
+            <h2>3. Advertising Partners (Google AdSense)</h2>
+            <p>To keep HTMLtoImages completely free for the developer community, we use third-party advertising companies to serve ads when you visit our website. These companies may use information (not including your name, address, email address, or telephone number) about your visits to this and other websites in order to provide advertisements about goods and services of interest to you.</p>
+            <ul>
+                <li>Third party vendors, including Google, use cookies to serve ads based on a user's prior visits to your website or other websites.</li>
+                <li>Google's use of advertising cookies enables it and its partners to serve ads to our users based on their visit to our sites and/or other sites on the Internet.</li>
+                <li>Users may opt-out of personalized advertising by visiting Google's <a href="https://myadcenter.google.com/" target="_blank" rel="noopener noreferrer">Ads Settings</a>.</li>
+                <li>Alternatively, you can direct opt out of a third-party vendor's use of cookies for personalized advertising by visiting <a href="https://aboutads.info" target="_blank" rel="noopener noreferrer">www.aboutads.info</a>.</li>
+            </ul>
+        </div>
+
+        <div class="content-card">
+            <h2>4. Cookies and Web Beacons</h2>
+            <p>Like any other website, HTMLtoImages uses "cookies". These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
+            <p><strong>Types of cookies we use:</strong></p>
+            <ul>
+                <li><strong>Essential Cookies:</strong> These are necessary for the website to function properly, such as remembering your cookie consent preference.</li>
+                <li><strong>Analytics Cookies:</strong> Google Analytics uses cookies to collect information about how visitors use our site. We use this information to compile reports and help us improve the site.</li>
+                <li><strong>Advertising Cookies:</strong> Google AdSense uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to our site and other sites on the internet. Visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">https://policies.google.com/technologies/ads</a>.</li>
+            </ul>
+            <p>You can choose to disable cookies through your individual browser options. More detailed information about cookie management with specific web browsers can be found at the browsers' respective websites.</p>
+        </div>
+
+        <div class="content-card">
+            <h2>5. GDPR and CCPA Data Protection Rights</h2>
+            <p>We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:</p>
+            <ul>
+                <li><strong>The right to access:</strong> You have the right to request copies of your personal data.</li>
+                <li><strong>The right to rectification:</strong> You have the right to request that we correct any information you believe is inaccurate.</li>
+                <li><strong>The right to erasure:</strong> You have the right to request that we erase your personal data, under certain conditions.</li>
+                <li><strong>The right to restrict processing:</strong> You have the right to request that we restrict the processing of your personal data.</li>
+                <li><strong>The right to object to processing:</strong> You have the right to object to our processing of your personal data.</li>
+                <li><strong>The right to data portability:</strong> You have the right to request that we transfer the data that we have collected to another organization.</li>
+            </ul>
+            <p>Furthermore, under the California Consumer Privacy Act (CCPA), California consumers have the right to request that a business that collects a consumer's personal data disclose the categories and specific pieces of personal data that a business has collected. If you would like to exercise any of these rights, please <a href="/contact">contact us</a>.</p>
+        </div>
+
+        <div class="content-card">
+            <h2>6. Children's Information</h2>
+            <p>Another part of our priority is adding protection for children while using the internet. HTMLtoImages does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
+        </div>
+
+        <div class="content-card">
+            <h2>7. Changes to This Privacy Policy</h2>
+            <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date at the top. You are advised to review this Privacy Policy periodically for any changes.</p>
+        </div>
+
+        <div class="content-card">
+            <h2>8. Contact Us</h2>
+            <p>If you have any questions about our Privacy Policy or wish to exercise your data rights, please contact us at <a href="mailto:htmltoimages@gmail.com">htmltoimages@gmail.com</a> or visit our <a href="/contact">Contact page</a>.</p>
+        </div>
     </div>
-    <a href="/" class="back-link">← Back to HTMLtoImages</a>
-    <h1>Privacy Policy</h1>
-    <p>Last updated: April 2026</p>
-    <p>At HTMLtoImages ("we", "us", or "our"), accessible from htmltoimages.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by HTMLtoImages and how we use it.</p>
-    
-    <h2>1. Zero Code Data Collection (Client-Side Processing)</h2>
-    <p>We are proud to operate as a client-side only tool. When you use HTMLtoImages to convert your HTML, CSS, or Tailwind code into images, <strong>no code snippets, layouts, or generated images are sent to our servers</strong>. All DOM parsing and image rendering occurs locally within your own web browser's memory using HTML5 Canvas technology. We do not have access to, nor do we store, any of the technical content you input into the editor.</p>
 
-    <h2>2. Log Files & Analytics</h2>
-    <p>HTMLtoImages follows a standard procedure of using log files. The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information via Google Analytics.</p>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 15px;"><i class="fas fa-cube"></i> HTMLtoImages</div>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">The #1 tool for developers to turn code into beautiful images. Fast, free, and secure.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Converters</h4>
+                <ul>
+                    <li><a href="/html-to-png/">HTML to PNG</a></li>
+                    <li><a href="/html-to-jpg/">HTML to JPG</a></li>
+                    <li><a href="/html-to-webp/">HTML to WebP</a></li>
+                    <li><a href="/code-to-image/">Code to Image</a></li>
+                    <li><a href="/html-table-to-image/">Table to Image</a></li>
+                    <li><a href="/html-email-to-image/">Email to Image</a></li>
+                    <li><a href="/tailwind-to-image/">Tailwind to Image</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 htmltoimages.com. All rights reserved.<br>
+            <span style="font-size: 0.9rem; margin-top: 10px; display: inline-block; color: var(--text-muted);">Built with ❤️ &amp; ☕ by Sachin Bhanushali</span>
+        </div>
+    </footer>
 
-    <h2>3. Advertising Partners (Google AdSense)</h2>
-    <p>To keep HTMLtoImages completely free for the developer community, we use third-party advertising companies to serve ads when you visit our website. These companies may use information (not including your name, address, email address, or telephone number) about your visits to this and other websites in order to provide advertisements about goods and services of interest to you.</p>
-    <ul>
-        <li>Third party vendors, including Google, use cookies to serve ads based on a user's prior visits to your website or other websites.</li>
-        <li>Google's use of advertising cookies enables it and its partners to serve ads to our users based on their visit to our sites and/or other sites on the Internet.</li>
-        <li>Users may opt-out of personalized advertising by visiting Google's <a href="https://myadcenter.google.com/" target="_blank" rel="noopener noreferrer">Ads Settings</a>. (Alternatively, you can direct users to opt out of a third-party vendor's use of cookies for personalized advertising by visiting <a href="https://aboutads.info" target="_blank" rel="noopener noreferrer">www.aboutads.info</a>).</li>
-    </ul>
-
-    <h2>4. Web Beacons and Cookies</h2>
-    <p>Like any other website, HTMLtoImages uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
-    <p><strong>DoubleClick DART Cookie:</strong> Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to www.website.com and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at the following URL: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">https://policies.google.com/technologies/ads</a></p>
-
-    <h2>5. GDPR and CCPA Data Protection Rights</h2>
-    <p>We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the right to access, rectification, erasure, restrict processing, object to processing, and data portability. Furthermore, under the CCPA, California consumers have the right to request that a business that collects a consumer's personal data disclose the categories and specific pieces of personal data that a business has collected.</p>
-    <p>If you would like to exercise any of these rights, please contact us.</p>
-
-    <h2>6. Children's Information</h2>
-    <p>Another part of our priority is adding protection for children while using the internet. HTMLtoImages does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information.</p>
-
-    <h2>7. Contact Us</h2>
-    <p>If you have any questions about our Privacy Policy or wish to exercise your data rights, please contact us at <a href="mailto:htmltoimages@gmail.com">htmltoimages@gmail.com</a>.</p>
-    <!-- Adsterra Social Bar -->
-    <!-- <script src="https://pl28978972.profitablecpmratenetwork.com/2b/14/5a/2b145a5d5eb9123ce4a17b25952dbe17.js"></script> -->
-
-    <!-- Adsterra Popunder -->
-    <!-- <script type='text/javascript' src='https://pl28979494.profitablecpmratenetwork.com/2f/f0/51/2ff05179b397248e1904b9eff7b2f402.js'></script> -->
-    <div style="text-align: center; margin-top: 50px; font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 20px; margin-bottom: 20px;">
-        Built with ❤️ &amp; ☕ by Sachin Bhanushali
+    <div class="cookie-banner" id="cookieBanner" style="display:none;">
+        <span>We use cookies to improve your experience and for analytics. By continuing to use this site, you agree to our <a href="/privacy">Privacy Policy</a>.</span>
+        <button onclick="acceptCookies()">Accept</button>
     </div>
+    <script>
+        if (!localStorage.getItem('cookiesAccepted')) { document.getElementById('cookieBanner').style.display = 'flex'; }
+        function acceptCookies() { localStorage.setItem('cookiesAccepted', 'true'); document.getElementById('cookieBanner').style.display = 'none'; }
+    </script>
 </body>
 </html>

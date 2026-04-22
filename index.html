@@ -163,6 +163,23 @@
             .seo-article { padding: 30px 20px; }
             .seo-article .section-header h2 { font-size: 1.8rem; }
         }
+
+        /* Blog Section */
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .blog-card { background: #fff; border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; text-decoration: none; }
+        .blog-card:hover { transform: translateY(-5px); border-color: #3b82f6; box-shadow: 0 10px 30px -5px rgba(59,130,246,0.15); }
+        .blog-card-img { height: 140px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
+        .blog-card-body { padding: 20px; flex: 1; }
+        .blog-tag { display: inline-block; background: #eff6ff; color: #3b82f6; padding: 3px 10px; border-radius: 20px; font-size: .7rem; font-weight: 600; margin-bottom: 10px; }
+        .blog-card-body h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
+        .blog-card-body p { font-size: .85rem; color: var(--text-muted); margin: 0; }
+        .view-all-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 30px; padding: 12px 28px; background: var(--primary-gradient); color: #fff; border-radius: var(--radius-md); font-weight: 700; transition: 0.3s; }
+        .view-all-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(59,130,246,0.3); }
+        .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #e2e8f0; padding: 16px 24px; display: flex; align-items: center; justify-content: center; gap: 20px; z-index: 9999; font-size: 0.9rem; box-shadow: 0 -4px 20px rgba(0,0,0,0.15); }
+        .cookie-banner a { color: #60a5fa; text-decoration: underline; }
+        .cookie-banner button { background: #3b82f6; color: white; border: none; padding: 8px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem; white-space: nowrap; }
+        .cookie-banner button:hover { background: #2563eb; }
+        @media (max-width: 600px) { .cookie-banner { flex-direction: column; text-align: center; gap: 12px; } }
     </style>
 </head>
 <body>
@@ -171,7 +188,8 @@
         <div class="nav-links">
             <a href="#tools">Tools</a>
             <a href="#how-it-works">How It Works</a>
-            <a href="#faq">FAQ</a>
+            <a href="/blog/">Blog</a>
+            <a href="/contact">Contact</a>
         </div>
     </nav>
 
@@ -289,11 +307,28 @@
             </details>
         </div>
     </section>
-    <!-- Banner Ad 468x60 -->
-    <div style="display: flex; justify-content: center; margin: 20px auto; width: 100%;">
-        <!-- <script>atOptions={'key':'2e659324677f0205925f1f6c7d686523','format':'iframe','height':60,'width':468,'params':{}};</script>
-        <script src="https://www.highperformanceformat.com/2e659324677f0205925f1f6c7d686523/invoke.js"></script> -->
-    </div>
+    <!-- Latest from Blog Section -->
+    <section class="section-container">
+        <div class="section-header">
+            <h2>Latest from the <span class="gradient-text">Blog</span></h2>
+            <p>Web development guides, CSS tips, and tool reviews to level up your workflow.</p>
+        </div>
+        <div class="blog-grid">
+            <a href="/blog/html-to-image-guide/" class="blog-card">
+                <div class="blog-card-img" style="background:linear-gradient(135deg,#dbeafe,#c7d2fe);"><i class="fas fa-image" style="color:#3b82f6;"></i></div>
+                <div class="blog-card-body"><span class="blog-tag">Guide</span><h3>The Ultimate Guide to Converting HTML to Images</h3><p>Learn every method for turning code into high-quality images.</p></div>
+            </a>
+            <a href="/blog/png-vs-jpg-vs-webp/" class="blog-card">
+                <div class="blog-card-img" style="background:linear-gradient(135deg,#fce7f3,#ddd6fe);"><i class="fas fa-file-image" style="color:#a855f7;"></i></div>
+                <div class="blog-card-body"><span class="blog-tag">Comparison</span><h3>PNG vs JPG vs WebP: Which Format to Use?</h3><p>A technical comparison of image formats for developers.</p></div>
+            </a>
+            <a href="/blog/code-screenshot-tools/" class="blog-card">
+                <div class="blog-card-img" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0);"><i class="fas fa-camera" style="color:#10b981;"></i></div>
+                <div class="blog-card-body"><span class="blog-tag">Tools</span><h3>Top 10 Code Screenshot Tools for 2026</h3><p>Compare the best tools for beautiful code images.</p></div>
+            </a>
+        </div>
+        <div style="text-align:center;"><a href="/blog/" class="view-all-btn">View All Articles <i class="fas fa-arrow-right"></i></a></div>
+    </section>
 <footer class="footer">
         <div class="footer-content">
             <div class="footer-col">
@@ -315,12 +350,13 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Company</h4>
+                <h4>Resources</h4>
                 <ul>
+                    <li><a href="/blog/">Blog</a></li>
                     <li><a href="/about">About Us</a></li>
                     <li><a href="/contact">Contact</a></li>
                     <li><a href="/privacy">Privacy Policy</a></li>
-                    <li><a href="/terms">Terms</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
@@ -330,7 +366,13 @@
         </div>
     </footer>
     
-    <!-- Adsterra Social Bar -->
-    <!-- <script src="https://pl28978972.profitablecpmratenetwork.com/2b/14/5a/2b145a5d5eb9123ce4a17b25952dbe17.js"></script> -->
+    <div class="cookie-banner" id="cookieBanner" style="display:none;">
+        <span>We use cookies to improve your experience and for analytics. By continuing to use this site, you agree to our <a href="/privacy">Privacy Policy</a>.</span>
+        <button onclick="acceptCookies()">Accept</button>
+    </div>
+    <script>
+        if (!localStorage.getItem('cookiesAccepted')) { document.getElementById('cookieBanner').style.display = 'flex'; }
+        function acceptCookies() { localStorage.setItem('cookiesAccepted', 'true'); document.getElementById('cookieBanner').style.display = 'none'; }
+    </script>
 </body>
 </html>

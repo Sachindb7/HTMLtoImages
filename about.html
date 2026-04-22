@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - HTMLtoImages</title>
+    <title>About Us - HTMLtoImages | Free Client-Side Code to Image Converter</title>
     <meta name="description" content="Learn about HTMLtoImages, our mission to provide the best free client-side HTML to image converters for developers while respecting user privacy.">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQBH2S5FQ4"></script>
@@ -11,96 +11,200 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-FQBH2S5FQ4');
     </script>
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5405462456191304" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --bg-body: #f8fafc;
+            --bg-panel: #ffffff;
+            --border-color: #e2e8f0;
             --text-main: #0f172a;
             --text-muted: #64748b;
-            --primary-color: #3b82f6;
+            --primary-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #8b5cf6 100%);
+            --radius-lg: 24px;
+            --radius-md: 12px;
         }
+        html { scroll-behavior: smooth; }
+        * { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-body);
             color: var(--text-main);
             line-height: 1.6;
-            padding: 40px;
-            max-width: 800px;
-            margin: 0 auto;
         }
-        h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; color: var(--text-main); }
-        p { color: var(--text-muted); margin-bottom: 15px; }
-        a { color: var(--primary-color); text-decoration: none; cursor: pointer; }
-        a:hover { text-decoration: underline; }
-        .back-link { 
-            display: inline-block; 
-            margin-bottom: 30px; 
-            font-weight: 600; 
-            color: var(--text-muted);
-            text-decoration: none;
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        .navbar {
+            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+            width: 90%; max-width: 1200px; padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color); border-radius: 100px;
+            z-index: 1000; display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
-        .back-link:hover { color: var(--text-main); text-decoration: none; }
-    
+        .logo { font-size: 1.2rem; font-weight: 800; display: flex; align-items: center; gap: 10px; color: var(--text-main); }
+        .logo i { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { font-weight: 500; color: var(--text-muted); cursor: pointer; }
+        .nav-links a:hover { color: #3b82f6; }
+        .page-hero { text-align: center; padding: 160px 20px 60px; }
+        .page-hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 16px; }
+        .gradient-text { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .page-hero p { font-size: 1.15rem; color: var(--text-muted); max-width: 650px; margin: 0 auto; }
+        .content-section { max-width: 800px; margin: 0 auto 60px; padding: 0 20px; }
+        .content-card {
+            background: var(--bg-panel); border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg); padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 30px;
+        }
+        .content-card h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+        .content-card h2 i { color: #3b82f6; font-size: 1.3rem; }
+        .content-card p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 16px; }
+        .content-card p:last-child { margin-bottom: 0; }
+        .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 20px; }
+        .value-item { text-align: center; padding: 30px 20px; background: #f8fafc; border-radius: var(--radius-md); border: 1px solid var(--border-color); }
+        .value-icon { width: 50px; height: 50px; background: #eff6ff; color: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin: 0 auto 15px; }
+        .value-item h3 { font-size: 1.1rem; margin-bottom: 8px; }
+        .value-item p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0; }
+        .footer { border-top: 1px solid var(--border-color); background: #f1f5f9; padding: 60px 20px; margin-top: 80px; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+        .footer-col h4 { font-size: 1.1rem; margin-bottom: 20px; color: var(--text-main); }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 10px; }
+        .footer-col a { color: var(--text-muted); font-size: 0.95rem; }
+        .footer-col a:hover { color: #3b82f6; }
+        .copyright { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid #cbd5e1; color: var(--text-muted); font-size: 0.9rem; }
         @media (max-width: 850px) {
-            .navbar {
-                padding: 12px 20px !important;
-                width: 95% !important;
-                flex-direction: column !important;
-                border-radius: 16px !important;
-                gap: 12px !important;
-            }
-            .nav-links {
-                gap: 20px !important;
-                width: 100% !important;
-                justify-content: center !important;
-                flex-wrap: wrap !important;
-            }
-            .logo {
-                font-size: 1.3rem !important;
-                gap: 8px !important;
-            }
-            .nav-links a {
-                font-size: 1rem !important;
-            }
-            .hero {
-                padding-top: 150px !important;
-            }
-        }\n    </style>
+            .navbar { padding: 12px 20px; width: 95%; flex-direction: column; border-radius: 16px; gap: 12px; }
+            .nav-links { gap: 20px; width: 100%; justify-content: center; flex-wrap: wrap; }
+            .page-hero { padding-top: 160px; }
+            .page-hero h1 { font-size: 2.2rem; }
+            .content-card { padding: 25px; }
+        }
+        .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #e2e8f0; padding: 16px 24px; display: flex; align-items: center; justify-content: center; gap: 20px; z-index: 9999; font-size: 0.9rem; box-shadow: 0 -4px 20px rgba(0,0,0,0.15); }
+        .cookie-banner a { color: #60a5fa; text-decoration: underline; }
+        .cookie-banner button { background: #3b82f6; color: white; border: none; padding: 8px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem; white-space: nowrap; }
+        .cookie-banner button:hover { background: #2563eb; }
+        @media (max-width: 600px) { .cookie-banner { flex-direction: column; text-align: center; gap: 12px; } }
+    </style>
 </head>
 <body>
-    <div style="text-align: center; margin: 20px 0;">
-        <!-- <script>atOptions={'key':'2e659324677f0205925f1f6c7d686523','format':'iframe','height':60,'width':468,'params':{}};</script>
-        <script src="https://www.highperformanceformat.com/2e659324677f0205925f1f6c7d686523/invoke.js"></script> -->
-    </div>
-    <a href="/" class="back-link">← Back to HTMLtoImages</a>
-    <h1>About Us</h1>
-    
-    <h2>Our Mission</h2>
-    <p>At <strong>HTMLtoImages</strong>, our fundamental mission is to empower developers, designers, and digital marketers by providing the fastest, most reliable, and completely free client-side image rendering tools on the internet. In today's fast-paced digital ecosystem, sharing raw code often creates friction. Whether you are attempting to pitch a Tailwind CSS component to a non-technical client, export a data-heavy HTML table for a presentation, or showcase a beautiful snippet on Twitter and LinkedIn, visual communication is essential. We bridge the gap between raw web development and visual design.</p>
-    
-    <h2>Why We Built This Platform</h2>
-    <p>As frontend engineers ourselves, we consistently ran into the same roadblock: how do we quickly export our coded UI components into a static image without spinning up complex local environments or using messy, uncropped desktop screenshot tools? Most existing solutions required server-side processing, meaning proprietary code was being constantly uploaded to third-party databases, creating massive security and privacy concerns.</p>
-    <p>That is why <strong>HTMLtoImages.com</strong> was born. We explicitly architected our rendering engine to operate entirely within the user's browser document object model (DOM). This means when you use our suite of converters, your code never leaves your computer.</p>
-    
-    <h2>The Privacy-First Technology Stack</h2>
-    <p>We believe that privacy is not just a feature; it is a fundamental architectural requirement. Traditional code-to-image converters take your code, send an API payload to a remote Node.js or Python server, utilize a headless browser (like Puppeteer) to render it, snapshot it, and send the image back. This exposes your potentially confidential enterprise code, API keys, or proprietary layouts to external logging.</p>
-    <p>Through advanced HTML5 Canvas extraction, we compile your HTML, CSS, and Tailwind utility classes right on your local machine processing engine. The result is a highly secure, instantaneous conversion that respects your data integrity at every step. Not a single line of your code is retained, stored, logged, or observed by our systems.</p>
-    
-    <h2>Our Commitment to Accessibility</h2>
-    <p>Premium developer tools are frequently hidden behind prohibitive paywalls or aggressive subscription models. At HTMLtoImages, we maintain a firm commitment to the global developer community: our core suite of conversion tools—including HTML to PNG, HTML to JPG, Code to Image, and Tailwind to Image—will always remain 100% free. We sustain our infrastructure through unobtrusive advertising, allowing students, freelancers, and enterprise professionals alike to access high-quality tooling without financial barriers.</p>
-    <p>Thank you for choosing HTMLtoImages as your preferred workflow asset.</p>
-    <!-- Adsterra Social Bar -->
-    <!-- <script src="https://pl28978972.profitablecpmratenetwork.com/2b/14/5a/2b145a5d5eb9123ce4a17b25952dbe17.js"></script> -->
+    <nav class="navbar">
+        <a href="/" class="logo"><i class="fas fa-cube"></i> HTMLtoImages</a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/#tools">Tools</a>
+            <a href="/blog/">Blog</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </nav>
 
-    <!-- Adsterra Popunder -->
-    <!-- <script type='text/javascript' src='https://pl28979494.profitablecpmratenetwork.com/2f/f0/51/2ff05179b397248e1904b9eff7b2f402.js'></script> -->
-    <div style="text-align: center; margin-top: 50px; font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 20px; margin-bottom: 20px;">
-        Built with ❤️ &amp; ☕ by Sachin Bhanushali
+    <header class="page-hero">
+        <h1>About <span class="gradient-text">HTMLtoImages</span></h1>
+        <p>The internet's premier free platform for converting HTML, CSS, and Tailwind code into high-quality images — entirely client-side.</p>
+    </header>
+
+    <div class="content-section">
+        <div class="content-card">
+            <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+            <p>At <strong>HTMLtoImages</strong>, our fundamental mission is to empower developers, designers, and digital marketers by providing the fastest, most reliable, and completely free client-side image rendering tools on the internet. In today's fast-paced digital ecosystem, sharing raw code often creates friction. Whether you are attempting to pitch a Tailwind CSS component to a non-technical client, export a data-heavy HTML table for a presentation, or showcase a beautiful snippet on Twitter and LinkedIn, visual communication is essential. We bridge the gap between raw web development and visual design.</p>
+        </div>
+
+        <div class="content-card">
+            <h2><i class="fas fa-lightbulb"></i> Why We Built This Platform</h2>
+            <p>As frontend engineers ourselves, we consistently ran into the same roadblock: how do we quickly export our coded UI components into a static image without spinning up complex local environments or using messy, uncropped desktop screenshot tools? Most existing solutions required server-side processing, meaning proprietary code was being constantly uploaded to third-party databases, creating massive security and privacy concerns.</p>
+            <p>That is why <strong>HTMLtoImages.com</strong> was born. We explicitly architected our rendering engine to operate entirely within the user's browser document object model (DOM). This means when you use our suite of converters, your code never leaves your computer. Every conversion happens locally on your device, ensuring complete data privacy and instant results.</p>
+        </div>
+
+        <div class="content-card">
+            <h2><i class="fas fa-shield-halved"></i> The Privacy-First Technology Stack</h2>
+            <p>We believe that privacy is not just a feature; it is a fundamental architectural requirement. Traditional code-to-image converters take your code, send an API payload to a remote Node.js or Python server, utilize a headless browser (like Puppeteer) to render it, snapshot it, and send the image back. This exposes your potentially confidential enterprise code, API keys, or proprietary layouts to external logging.</p>
+            <p>Through advanced HTML5 Canvas extraction, we compile your HTML, CSS, and Tailwind utility classes right on your local machine processing engine. The result is a highly secure, instantaneous conversion that respects your data integrity at every step. Not a single line of your code is retained, stored, logged, or observed by our systems.</p>
+        </div>
+
+        <div class="content-card">
+            <h2><i class="fas fa-heart"></i> Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon"><i class="fas fa-lock"></i></div>
+                    <h3>Privacy First</h3>
+                    <p>100% client-side processing. Your code never leaves your browser.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon"><i class="fas fa-gift"></i></div>
+                    <h3>Always Free</h3>
+                    <p>No paywalls, no subscriptions, no hidden fees. Free for everyone.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Instant Results</h3>
+                    <p>Real-time preview and one-click download. No waiting around.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon"><i class="fas fa-users"></i></div>
+                    <h3>Community Driven</h3>
+                    <p>Built by developers, for developers. Your feedback shapes our roadmap.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h2><i class="fas fa-hand-holding-heart"></i> Our Commitment to Accessibility</h2>
+            <p>Premium developer tools are frequently hidden behind prohibitive paywalls or aggressive subscription models. At HTMLtoImages, we maintain a firm commitment to the global developer community: our core suite of conversion tools — including HTML to PNG, HTML to JPG, Code to Image, and Tailwind to Image — will always remain 100% free. We sustain our infrastructure through unobtrusive advertising, allowing students, freelancers, and enterprise professionals alike to access high-quality tooling without financial barriers.</p>
+            <p>Thank you for choosing HTMLtoImages as your preferred workflow asset. If you have questions, feature requests, or just want to say hello, reach out through our <a href="/contact" style="color: #3b82f6;">contact page</a>.</p>
+        </div>
     </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 15px;"><i class="fas fa-cube"></i> HTMLtoImages</div>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">
+                    The #1 tool for developers to turn code into beautiful images. Fast, free, and secure.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Converters</h4>
+                <ul>
+                    <li><a href="/html-to-png/">HTML to PNG</a></li>
+                    <li><a href="/html-to-jpg/">HTML to JPG</a></li>
+                    <li><a href="/html-to-webp/">HTML to WebP</a></li>
+                    <li><a href="/code-to-image/">Code to Image</a></li>
+                    <li><a href="/html-table-to-image/">Table to Image</a></li>
+                    <li><a href="/html-email-to-image/">Email to Image</a></li>
+                    <li><a href="/tailwind-to-image/">Tailwind to Image</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 htmltoimages.com. All rights reserved.<br>
+            <span style="font-size: 0.9rem; margin-top: 10px; display: inline-block; color: var(--text-muted);">Built with ❤️ &amp; ☕ by Sachin Bhanushali</span>
+        </div>
+    </footer>
+
+    <div class="cookie-banner" id="cookieBanner" style="display:none;">
+        <span>We use cookies to improve your experience and for analytics. By continuing to use this site, you agree to our <a href="/privacy">Privacy Policy</a>.</span>
+        <button onclick="acceptCookies()">Accept</button>
+    </div>
+    <script>
+        if (!localStorage.getItem('cookiesAccepted')) { document.getElementById('cookieBanner').style.display = 'flex'; }
+        function acceptCookies() { localStorage.setItem('cookiesAccepted', 'true'); document.getElementById('cookieBanner').style.display = 'none'; }
+    </script>
 </body>
 </html>
