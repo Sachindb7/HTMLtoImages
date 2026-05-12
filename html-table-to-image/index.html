@@ -477,7 +477,7 @@
                     const canvas = await html2canvas(captureArea, {
                         scale: parseInt(qualitySelect.value) || 2,
                         backgroundColor: null,
-                        logging: false, useCORS: true, allowTaint: true
+                        logging: false, useCORS: true
                     });
                     
                     captureArea.style.width = prevW;
