@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://htmltoimages.com/sitemap.xml
+Sitemap: https://www.htmltoimages.com/sitemap.xml
