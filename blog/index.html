@@ -41,10 +41,15 @@
         .copyright{text-align:center;margin-top:60px;padding-top:30px;border-top:1px solid #cbd5e1;color:var(--text-muted);font-size:.9rem}
         @media(max-width:850px){.navbar{padding:12px 20px;width:95%;flex-direction:column;border-radius:16px;gap:12px}.nav-links{gap:20px;width:100%;justify-content:center;flex-wrap:wrap}.page-hero{padding-top:160px}.page-hero h1{font-size:2.2rem}.blog-grid{grid-template-columns:1fr}}
         .cookie-banner{position:fixed;bottom:0;left:0;right:0;background:#1e293b;color:#e2e8f0;padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:20px;z-index:9999;font-size:.9rem;box-shadow:0 -4px 20px rgba(0,0,0,.15)}.cookie-banner a{color:#60a5fa;text-decoration:underline}.cookie-banner button{background:#3b82f6;color:#fff;border:none;padding:8px 24px;border-radius:8px;cursor:pointer;font-weight:600;font-size:.9rem;white-space:nowrap}.cookie-banner button:hover{background:#2563eb}@media(max-width:600px){.cookie-banner{flex-direction:column;text-align:center;gap:12px}}
+    .breadcrumb-nav{max-width:1200px;margin:0 auto;padding:100px 20px 0;font-size:.85rem;color:#64748b}.breadcrumb-nav a{color:#3b82f6;text-decoration:none}.breadcrumb-nav a:hover{text-decoration:underline}.breadcrumb-nav span{color:#0f172a;font-weight:500}
+.author-box{display:flex;gap:20px;align-items:center;background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:24px;margin:40px 0 0}.author-box img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0}.author-box .author-info h4{font-size:1rem;font-weight:700;margin-bottom:4px;color:#0f172a}.author-box .author-info p{font-size:.9rem;color:#64748b;margin:0;line-height:1.6}.author-box .author-info .author-label{font-size:.75rem;color:#3b82f6;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
     </style>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"CollectionPage","name":"HTMLtoImages Blog","url":"https://htmltoimages.com/blog/","description":"Web development guides, CSS tips, image format comparisons, and developer tool reviews.","publisher":{"@type":"Organization","name":"HTMLtoImages","url":"https://htmltoimages.com"}}
-    </script></head>
+    </script>    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://htmltoimages.com/"},{"@type":"ListItem","position":2,"name":"Blog"}]}
+    </script>
+</head>
 <body>
     <nav class="navbar">
         <a href="/" class="logo"><i class="fas fa-cube"></i> HTMLtoImages</a>
@@ -56,7 +61,11 @@
         </div>
     </nav>
 
-    <header class="page-hero">
+    
+<main>
+
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <span>Blog</span></nav>
+<header class="page-hero">
         <h1>The <span class="gradient-text">HTMLtoImages</span> Blog</h1>
         <p>Web development guides, CSS tips, image format deep-dives, and developer tool reviews to level up your workflow.</p>
     </header>
@@ -193,7 +202,8 @@
         </a>
     </div>
 
-    <footer class="footer">
+    </main>
+<footer class="footer">
         <div class="footer-content">
             <div class="footer-col">
                 <div class="logo" style="margin-bottom:15px"><i class="fas fa-cube"></i> HTMLtoImages</div>
