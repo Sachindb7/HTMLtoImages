@@ -1,0 +1,381 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href="https://www.htmltoimages.com/blog/dark-mode-css/"><title>How to Build Dark Mode with Pure CSS | HTMLtoImages Blog</title><meta name="description" content="Learn how to implement dark mode using CSS custom properties and prefers-color-scheme, add a JavaScript toggle, and avoid common dark mode design mistakes."><script async src="https://www.googletagmanager.com/gtag/js?id=G-FQBH2S5FQ4"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-FQBH2S5FQ4');</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5405462456191304" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><style>:root{--bg-body:#f8fafc;--text-main:#0f172a;--text-muted:#64748b;--primary-gradient:linear-gradient(135deg,#06b6d4,#3b82f6 50%,#8b5cf6);--border-color:#e2e8f0;--radius-lg:24px;--radius-md:12px}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6}a{text-decoration:none;color:inherit;transition:.3s}.navbar{position:fixed;top:20px;left:50%;transform:translateX(-50%);width:90%;max-width:1200px;padding:12px 24px;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border:1px solid var(--border-color);border-radius:100px;z-index:1000;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 20px rgba(0,0,0,.05)}.logo{font-size:1.2rem;font-weight:800;display:flex;align-items:center;gap:10px}.logo i{background:var(--primary-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.nav-links{display:flex;gap:30px}.nav-links a{font-weight:500;color:var(--text-muted)}.nav-links a:hover{color:#3b82f6}.article-hero{text-align:center;padding:160px 20px 40px;max-width:800px;margin:0 auto}.article-hero .tag{display:inline-block;background:#eff6ff;color:#3b82f6;padding:6px 16px;border-radius:20px;font-size:.8rem;font-weight:600;margin-bottom:16px}.article-hero h1{font-size:2.6rem;font-weight:800;line-height:1.2;margin-bottom:16px}.article-meta{color:var(--text-muted);font-size:.9rem;display:flex;align-items:center;justify-content:center;gap:16px}.article-content{max-width:750px;margin:40px auto 80px;padding:0 20px}.article-content h2{font-size:1.7rem;font-weight:700;margin:40px 0 16px}.article-content h3{font-size:1.3rem;font-weight:600;margin:30px 0 12px;color:#334155}.article-content p{color:var(--text-muted);font-size:1.05rem;line-height:1.9;margin-bottom:18px}.article-content ul,.article-content ol{margin:0 0 20px 24px;color:var(--text-muted);font-size:1.05rem}.article-content li{margin-bottom:10px;line-height:1.7}.article-content strong{color:var(--text-main)}.article-content a{color:#3b82f6}.article-content code{background:#f1f5f9;padding:2px 8px;border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:.9rem;color:#e11d48}.article-content pre{background:#1e293b;color:#e2e8f0;padding:20px 24px;border-radius:var(--radius-md);overflow-x:auto;margin:0 0 24px;font-family:'JetBrains Mono',monospace;font-size:.85rem;line-height:1.7}.tip-box{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:var(--radius-md);padding:20px 24px;margin:0 0 24px;display:flex;gap:12px}.tip-box i{color:#22c55e;margin-top:4px;flex-shrink:0}.tip-box p{margin:0;color:#166534;font-size:.95rem}.cta-box{background:var(--primary-gradient);border-radius:var(--radius-lg);padding:40px;text-align:center;margin:40px 0;color:#fff}.cta-box h3{font-size:1.4rem;margin-bottom:12px;font-weight:700}.cta-box p{color:rgba(255,255,255,.85);margin-bottom:20px}.cta-box a{display:inline-block;background:#fff;color:#3b82f6;padding:12px 28px;border-radius:var(--radius-md);font-weight:700}.related{max-width:750px;margin:0 auto 80px;padding:0 20px}.related h2{font-size:1.5rem;font-weight:700;margin-bottom:24px}.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.related-card{background:#fff;border:1px solid var(--border-color);border-radius:var(--radius-md);padding:20px;transition:.3s}.related-card:hover{border-color:#3b82f6;transform:translateY(-3px)}.related-card h3{font-size:1rem;font-weight:600;margin-bottom:8px}.related-card p{font-size:.85rem;color:var(--text-muted);margin:0}.footer{border-top:1px solid var(--border-color);background:#f1f5f9;padding:60px 20px}.footer-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px}.footer-col h4{font-size:1.1rem;margin-bottom:20px}.footer-col ul{list-style:none}.footer-col li{margin-bottom:10px}.footer-col a{color:var(--text-muted);font-size:.95rem}.footer-col a:hover{color:#3b82f6}.copyright{text-align:center;margin-top:60px;padding-top:30px;border-top:1px solid #cbd5e1;color:var(--text-muted);font-size:.9rem}@media(max-width:850px){.navbar{padding:12px 20px;width:95%;flex-direction:column;border-radius:16px;gap:12px}.nav-links{gap:20px;width:100%;justify-content:center;flex-wrap:wrap}.article-hero{padding-top:160px}.article-hero h1{font-size:2rem}}.cookie-banner{position:fixed;bottom:0;left:0;right:0;background:#1e293b;color:#e2e8f0;padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:20px;z-index:9999;font-size:.9rem}.cookie-banner a{color:#60a5fa;text-decoration:underline}.cookie-banner button{background:#3b82f6;color:#fff;border:none;padding:8px 24px;border-radius:8px;cursor:pointer;font-weight:600}@media(max-width:600px){.cookie-banner{flex-direction:column;text-align:center;gap:12px}}.breadcrumb-nav{max-width:1200px;margin:0 auto;padding:100px 20px 0;font-size:.85rem;color:#64748b}.breadcrumb-nav a{color:#3b82f6;text-decoration:none}.breadcrumb-nav a:hover{text-decoration:underline}.breadcrumb-nav span{color:#0f172a;font-weight:500}
+.author-box{display:flex;gap:20px;align-items:center;background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:24px;margin:40px 0 0}.author-box img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0}.author-box .author-info h4{font-size:1rem;font-weight:700;margin-bottom:4px;color:#0f172a}.author-box .author-info p{font-size:.9rem;color:#64748b;margin:0;line-height:1.6}.author-box .author-info .author-label{font-size:.75rem;color:#3b82f6;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+</style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"How to Build Dark Mode with Pure CSS","author":{"@type":"Person","name":"Sachin Bhanushali"},"publisher":{"@type":"Organization","name":"HTMLtoImages","url":"https://www.htmltoimages.com"},"datePublished":"2025-10-05","dateModified":"2025-10-05","mainEntityOfPage":"https://www.htmltoimages.com/blog/dark-mode-css/"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.htmltoimages.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.htmltoimages.com/blog/"},{"@type":"ListItem","position":3,"name":"Dark Mode with Pure CSS"}]}
+    </script>
+</head>
+<body>
+<nav class="navbar"><a href="/" class="logo"><i class="fas fa-cube"></i> HTMLtoImages</a><div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/#tools">Tools</a>
+            <a href="/blog/">Blog</a>
+            <a href="/contact">Contact</a>
+        </div></nav>
+<main>
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <span>Dark Mode with Pure CSS</span></nav>
+<header class="article-hero"><span class="tag">CSS</span><h1>How to Build Dark Mode with Pure CSS</h1><div class="article-meta"><span><i class="fas fa-calendar"></i> October 5, 2025</span><span><i class="fas fa-clock"></i> 10 min read</span><span><i class="fas fa-user"></i> Sachin Bhanushali</span></div></header>
+
+<article class="article-content">
+
+<p>I'm writing this at 11 PM with my monitor set to dark mode. My code editor is dark. My browser is dark. My terminal is dark. And if I stumble onto a website that blasts me with a white background, I instinctively close the tab before my retinas recover.</p>
+
+<p>Dark mode isn't just a trend — it's become a baseline expectation. Users notice when a site doesn't have it. And the best part? You can implement it with pure CSS custom properties and about 30 lines of JavaScript for the toggle. No libraries, no dependencies, no excuses.</p>
+
+<p>Let me show you exactly how I build dark mode for every project.</p>
+
+<h2>Step 1: Detect the User's System Preference</h2>
+
+<p>Before building any toggle, start by respecting what the user has already chosen at the OS level. The <code>prefers-color-scheme</code> media query makes this trivial:</p>
+
+<pre>/* Light mode (default) */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --border: #e2e8f0;
+  --accent: #3b82f6;
+}
+
+/* Dark mode — activated by OS preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --border: #334155;
+    --accent: #60a5fa;
+  }
+}</pre>
+
+<p>That's it. If a user has dark mode enabled on their device, your site automatically switches. Zero JavaScript required.</p>
+
+<p>Now use those custom properties throughout your CSS instead of hard-coded color values:</p>
+
+<pre>body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+}
+
+a {
+  color: var(--accent);
+}
+
+.text-muted {
+  color: var(--text-secondary);
+}</pre>
+
+<p>Every color in your entire site now responds to the user's preference through a single set of variables. Change the variables, everything updates.</p>
+
+<h2>Step 2: Add a Manual Toggle</h2>
+
+<p>System detection is great, but users also want to override it. Maybe they prefer dark mode everywhere except your site, or vice versa. A manual toggle gives them that control.</p>
+
+<p>The approach I prefer: use a <code>data-theme</code> attribute on the <code>&lt;html&gt;</code> element.</p>
+
+<pre>/* Default: light theme */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --border: #e2e8f0;
+  --accent: #3b82f6;
+}
+
+/* Dark theme — triggered by attribute */
+[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --border: #334155;
+  --accent: #60a5fa;
+}
+
+/* Still respect OS preference when no override */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --border: #334155;
+    --accent: #60a5fa;
+  }
+}</pre>
+
+<p>The CSS priority works perfectly here. If the user has set a <code>data-theme</code> attribute via the toggle, that takes precedence. If they haven't, the <code>@media</code> query respects their OS setting. And if their OS is on light mode with no toggle interaction, they get light mode.</p>
+
+<h3>The JavaScript Toggle</h3>
+
+<p>Here's the minimal JavaScript you need. It's about 20 lines:</p>
+
+<pre>const toggle = document.querySelector('#theme-toggle');
+const html = document.documentElement;
+
+// Check for saved preference, fallback to system
+function getTheme() {
+  const saved = localStorage.getItem('theme');
+  if (saved) return saved;
+
+  return window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light';
+}
+
+// Apply theme
+function setTheme(theme) {
+  html.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  toggle.setAttribute('aria-label',
+    `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`
+  );
+}
+
+// Initialize
+setTheme(getTheme());
+
+// Toggle on click
+toggle.addEventListener('click', () => {
+  const current = html.getAttribute('data-theme');
+  setTheme(current === 'dark' ? 'light' : 'dark');
+});</pre>
+
+<p>The key details: we save the preference to <code>localStorage</code> so it persists across page loads, and we update the <code>aria-label</code> on the toggle button for screen reader users.</p>
+
+<div class="tip-box"><i class="fas fa-lightbulb"></i><p><strong>Prevent the flash:</strong> If you apply the theme after the page loads, users will see a flash of the wrong theme. To prevent this, add a tiny inline script in the <code>&lt;head&gt;</code> (before any CSS loads): <code>&lt;script&gt;document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'))&lt;/script&gt;</code></p></div>
+
+<h2>Step 3: Building the Toggle Button</h2>
+
+<p>The toggle itself can be as simple or as fancy as you want. Here's a clean, accessible version with a sun/moon icon swap:</p>
+
+<pre>&lt;button id="theme-toggle" aria-label="Switch to dark mode"&gt;
+  &lt;svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24"
+       fill="none" stroke="currentColor" stroke-width="2"&gt;
+    &lt;circle cx="12" cy="12" r="5"/&gt;
+    &lt;path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/&gt;
+  &lt;/svg&gt;
+  &lt;svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24"
+       fill="none" stroke="currentColor" stroke-width="2"&gt;
+    &lt;path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/&gt;
+  &lt;/svg&gt;
+&lt;/button&gt;</pre>
+
+<p>And the CSS to show/hide the right icon:</p>
+
+<pre>#theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+}
+
+.moon-icon { display: none; }
+[data-theme="dark"] .sun-icon { display: none; }
+[data-theme="dark"] .moon-icon { display: block; }</pre>
+
+<h2>Choosing Your Dark Mode Colors</h2>
+
+<p>This is where most dark mode implementations fall apart. The instinct is to just invert everything — white becomes black, black becomes white. Don't do that. It looks terrible.</p>
+
+<h3>Backgrounds: Don't Use Pure Black</h3>
+
+<p>Pure black (<code>#000000</code>) on screens creates too much contrast with text and makes everything feel harsh. It also causes a "smearing" effect on OLED screens when scrolling. Use a very dark gray instead.</p>
+
+<pre>/* Too harsh */
+--bg-primary: #000000;
+
+/* Much better */
+--bg-primary: #0f172a;  /* Dark slate */
+--bg-primary: #1a1a2e;  /* Deep navy */
+--bg-primary: #171717;  /* Near-black neutral */</pre>
+
+<h3>Text: Lower the Contrast Slightly</h3>
+
+<p>Pure white (<code>#ffffff</code>) on a dark background is like staring at headlights. Drop it down to a warm off-white:</p>
+
+<pre>/* Too bright */
+--text-primary: #ffffff;
+
+/* Easier on the eyes */
+--text-primary: #f1f5f9;  /* Slate 100 */
+--text-primary: #e2e8f0;  /* Slate 200 */</pre>
+
+<h3>Use Multiple Background Levels</h3>
+
+<p>In light mode, you create depth with shadows. In dark mode, you create depth with lighter background shades. This is a critical design principle that many implementations get wrong:</p>
+
+<pre>/* Light mode: depth through shadows */
+:root {
+  --bg-primary: #ffffff;
+  --bg-elevated: #ffffff;
+  --shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Dark mode: depth through lightness */
+[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-elevated: #1e293b;  /* Lighter = higher elevation */
+  --shadow: 0 4px 12px rgba(0,0,0,0.3);
+}</pre>
+
+<p>Cards, modals, and dropdowns should use <code>--bg-elevated</code> so they visually pop off the base background.</p>
+
+<div class="tip-box"><i class="fas fa-lightbulb"></i><p><strong>Don't forget images:</strong> Bright images look jarring against dark backgrounds. Consider adding a subtle brightness reduction in dark mode: <code>[data-theme="dark"] img { filter: brightness(0.9); }</code> — it's subtle but makes a noticeable difference in visual harmony.</p></div>
+
+<h2>Handling Edge Cases</h2>
+
+<h3>Shadows in Dark Mode</h3>
+
+<p>Shadows that work in light mode become invisible in dark mode. You need darker, more opaque shadows:</p>
+
+<pre>:root {
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+[data-theme="dark"] {
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+}</pre>
+
+<h3>Borders and Dividers</h3>
+
+<p>Light gray borders disappear against dark backgrounds. Define border colors as custom properties too:</p>
+
+<pre>:root {
+  --border: #e2e8f0;
+  --divider: #f1f5f9;
+}
+
+[data-theme="dark"] {
+  --border: #334155;
+  --divider: #1e293b;
+}</pre>
+
+<h3>Form Inputs</h3>
+
+<p>Inputs often have their own background color and may ignore your custom properties if you're not explicit:</p>
+
+<pre>input, select, textarea {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+/* Fix autocomplete styling in dark mode */
+[data-theme="dark"] input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--bg-secondary) inset;
+  -webkit-text-fill-color: var(--text-primary);
+}</pre>
+
+<p>That autofill hack is ugly but necessary. Chrome's autofill applies its own yellow/blue background that completely ignores your theme.</p>
+
+<h2>The Complete Dark Mode Setup</h2>
+
+<p>Here's everything combined into a clean, copy-paste-ready setup:</p>
+
+<pre>/* === Theme Variables === */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-elevated: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --border: #e2e8f0;
+  --accent: #3b82f6;
+  --shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-elevated: #334155;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --border: #475569;
+  --accent: #60a5fa;
+  --shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-elevated: #334155;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --border: #475569;
+    --accent: #60a5fa;
+    --shadow: 0 4px 12px rgba(0,0,0,0.4);
+  }
+}
+
+/* === Smooth Transition === */
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
+}</pre>
+
+<p>That <code>transition</code> on the body gives a smooth crossfade when toggling themes instead of an instant snap. It's a small detail that makes the feature feel polished.</p>
+
+<div class="cta-box"><h3>Preview Your Dark Mode Design</h3><p>Built a beautiful dark mode theme? Export your HTML as a crisp image to share or compare light vs. dark versions.</p><a href="/html-to-png/">Try HTML to PNG Free →</a></div>
+
+<h2>Common Dark Mode Mistakes</h2>
+
+<ul>
+<li><strong>Using pure black backgrounds.</strong> Use dark grays like <code>#0f172a</code> or <code>#171717</code> instead.</li>
+<li><strong>Not adjusting image brightness.</strong> Bright photos on dark backgrounds look jarring.</li>
+<li><strong>Forgetting form inputs.</strong> Browsers have default light styles for inputs that override your theme.</li>
+<li><strong>Hardcoding colors everywhere.</strong> If you have <code>color: #333</code> scattered through your CSS instead of using custom properties, you'll miss spots.</li>
+<li><strong>No transition on theme change.</strong> The instant snap from light to dark feels broken. Add a 0.3s transition.</li>
+<li><strong>Ignoring the flash of wrong theme.</strong> Always apply the theme in a <code>&lt;head&gt;</code> script before the page renders.</li>
+</ul>
+
+<h2>Wrapping Up</h2>
+
+<p>Dark mode used to be a nice-to-have feature. Now it's table stakes. Users expect it, and with CSS custom properties, implementing it properly takes less effort than most developers assume.</p>
+
+<p>The approach is simple: define all your colors as CSS custom properties, swap them based on a <code>data-theme</code> attribute, respect <code>prefers-color-scheme</code> as a default, and persist the user's choice in <code>localStorage</code>. That's the entire architecture.</p>
+
+<p>The devil is in the design details — choosing the right dark background, adjusting contrast ratios, handling images and shadows. But once you nail those, you'll have a dark mode that feels intentional, not like an afterthought.</p>
+
+<p>Your users' eyeballs will thank you. Especially the ones reading your site at 11 PM.</p>
+
+<div class="author-box">
+<img src="/assets/images/author.jpg" alt="Sachin Bhanushali" width="64" height="64" style="width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0">
+<div class="author-info">
+<span class="author-label">Written by</span>
+<h4>Sachin Bhanushali</h4>
+<p>Full-stack developer and creator of HTMLtoImages. Building free, privacy-first developer tools that run entirely in your browser.</p>
+</div>
+</div>
+</article>
+<div class="related"><h2>Related Articles</h2><div class="related-grid">
+<a href="/blog/css-variables-guide/" class="related-card"><h3>CSS Variables Guide</h3><p>Master CSS custom properties for theming, responsive design, and more.</p></a>
+<a href="/blog/css-animations-tutorial/" class="related-card"><h3>CSS Animations Tutorial</h3><p>From transitions to keyframes — build smooth, performant CSS animations.</p></a>
+<a href="/blog/tailwind-css-tips/" class="related-card"><h3>Tailwind CSS Tips</h3><p>Advanced Tailwind techniques to speed up your development workflow.</p></a>
+</div></div>
+</main>
+<footer class="footer"><div class="footer-content"><div class="footer-col"><div class="logo" style="margin-bottom:15px"><i class="fas fa-cube"></i> HTMLtoImages</div><p style="color:var(--text-muted);font-size:.9rem">The #1 tool for developers to turn code into beautiful images.</p></div><div class="footer-col"><h4>Converters</h4><ul><li><a href="/html-to-png/">HTML to PNG</a></li><li><a href="/html-to-jpg/">HTML to JPG</a></li><li><a href="/html-to-webp/">HTML to WebP</a></li><li><a href="/code-to-image/">Code to Image</a></li><li><a href="/html-table-to-image/">Table to Image</a></li><li><a href="/html-email-to-image/">Email to Image</a></li><li><a href="/tailwind-to-image/">Tailwind to Image</a></li></ul></div><div class="footer-col"><h4>Resources</h4><ul><li><a href="/blog/">Blog</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms</a></li><li><a href="/disclaimer">Disclaimer</a></li><li><a href="/sitemap-page">Sitemap</a></li></ul></div></div><div class="copyright">&copy; 2026 htmltoimages.com. All rights reserved.<br><span style="font-size:.9rem;margin-top:10px;display:inline-block;color:var(--text-muted)">Built with ❤️ &amp; ☕ by Sachin Bhanushali</span></div></footer>
+<div class="cookie-banner" id="cookieBanner" style="display:none"><span>We use cookies for analytics. See our <a href="/privacy">Privacy Policy</a>.</span><button onclick="acceptCookies()">Accept</button></div>
+<script>if(!localStorage.getItem('cookiesAccepted')){document.getElementById('cookieBanner').style.display='flex'}function acceptCookies(){localStorage.setItem('cookiesAccepted','true');document.getElementById('cookieBanner').style.display='none'}</script>
+</body></html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href="https://www.htmltoimages.com/blog/css-animations-tutorial/"><title>CSS Animations &amp; Transitions: From Basics to Advanced | HTMLtoImages Blog</title><meta name="description" content="Master CSS animations and transitions — learn keyframes, transition timing, GPU-accelerated properties, and build real-world effects without JavaScript."><script async src="https://www.googletagmanager.com/gtag/js?id=G-FQBH2S5FQ4"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-FQBH2S5FQ4');</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5405462456191304" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><style>:root{--bg-body:#f8fafc;--text-main:#0f172a;--text-muted:#64748b;--primary-gradient:linear-gradient(135deg,#06b6d4,#3b82f6 50%,#8b5cf6);--border-color:#e2e8f0;--radius-lg:24px;--radius-md:12px}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6}a{text-decoration:none;color:inherit;transition:.3s}.navbar{position:fixed;top:20px;left:50%;transform:translateX(-50%);width:90%;max-width:1200px;padding:12px 24px;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border:1px solid var(--border-color);border-radius:100px;z-index:1000;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 20px rgba(0,0,0,.05)}.logo{font-size:1.2rem;font-weight:800;display:flex;align-items:center;gap:10px}.logo i{background:var(--primary-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.nav-links{display:flex;gap:30px}.nav-links a{font-weight:500;color:var(--text-muted)}.nav-links a:hover{color:#3b82f6}.article-hero{text-align:center;padding:160px 20px 40px;max-width:800px;margin:0 auto}.article-hero .tag{display:inline-block;background:#eff6ff;color:#3b82f6;padding:6px 16px;border-radius:20px;font-size:.8rem;font-weight:600;margin-bottom:16px}.article-hero h1{font-size:2.6rem;font-weight:800;line-height:1.2;margin-bottom:16px}.article-meta{color:var(--text-muted);font-size:.9rem;display:flex;align-items:center;justify-content:center;gap:16px}.article-content{max-width:750px;margin:40px auto 80px;padding:0 20px}.article-content h2{font-size:1.7rem;font-weight:700;margin:40px 0 16px}.article-content h3{font-size:1.3rem;font-weight:600;margin:30px 0 12px;color:#334155}.article-content p{color:var(--text-muted);font-size:1.05rem;line-height:1.9;margin-bottom:18px}.article-content ul,.article-content ol{margin:0 0 20px 24px;color:var(--text-muted);font-size:1.05rem}.article-content li{margin-bottom:10px;line-height:1.7}.article-content strong{color:var(--text-main)}.article-content a{color:#3b82f6}.article-content code{background:#f1f5f9;padding:2px 8px;border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:.9rem;color:#e11d48}.article-content pre{background:#1e293b;color:#e2e8f0;padding:20px 24px;border-radius:var(--radius-md);overflow-x:auto;margin:0 0 24px;font-family:'JetBrains Mono',monospace;font-size:.85rem;line-height:1.7}.tip-box{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:var(--radius-md);padding:20px 24px;margin:0 0 24px;display:flex;gap:12px}.tip-box i{color:#22c55e;margin-top:4px;flex-shrink:0}.tip-box p{margin:0;color:#166534;font-size:.95rem}.cta-box{background:var(--primary-gradient);border-radius:var(--radius-lg);padding:40px;text-align:center;margin:40px 0;color:#fff}.cta-box h3{font-size:1.4rem;margin-bottom:12px;font-weight:700}.cta-box p{color:rgba(255,255,255,.85);margin-bottom:20px}.cta-box a{display:inline-block;background:#fff;color:#3b82f6;padding:12px 28px;border-radius:var(--radius-md);font-weight:700}.related{max-width:750px;margin:0 auto 80px;padding:0 20px}.related h2{font-size:1.5rem;font-weight:700;margin-bottom:24px}.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.related-card{background:#fff;border:1px solid var(--border-color);border-radius:var(--radius-md);padding:20px;transition:.3s}.related-card:hover{border-color:#3b82f6;transform:translateY(-3px)}.related-card h3{font-size:1rem;font-weight:600;margin-bottom:8px}.related-card p{font-size:.85rem;color:var(--text-muted);margin:0}.footer{border-top:1px solid var(--border-color);background:#f1f5f9;padding:60px 20px}.footer-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px}.footer-col h4{font-size:1.1rem;margin-bottom:20px}.footer-col ul{list-style:none}.footer-col li{margin-bottom:10px}.footer-col a{color:var(--text-muted);font-size:.95rem}.footer-col a:hover{color:#3b82f6}.copyright{text-align:center;margin-top:60px;padding-top:30px;border-top:1px solid #cbd5e1;color:var(--text-muted);font-size:.9rem}@media(max-width:850px){.navbar{padding:12px 20px;width:95%;flex-direction:column;border-radius:16px;gap:12px}.nav-links{gap:20px;width:100%;justify-content:center;flex-wrap:wrap}.article-hero{padding-top:160px}.article-hero h1{font-size:2rem}}.cookie-banner{position:fixed;bottom:0;left:0;right:0;background:#1e293b;color:#e2e8f0;padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:20px;z-index:9999;font-size:.9rem}.cookie-banner a{color:#60a5fa;text-decoration:underline}.cookie-banner button{background:#3b82f6;color:#fff;border:none;padding:8px 24px;border-radius:8px;cursor:pointer;font-weight:600}@media(max-width:600px){.cookie-banner{flex-direction:column;text-align:center;gap:12px}}.breadcrumb-nav{max-width:1200px;margin:0 auto;padding:100px 20px 0;font-size:.85rem;color:#64748b}.breadcrumb-nav a{color:#3b82f6;text-decoration:none}.breadcrumb-nav a:hover{text-decoration:underline}.breadcrumb-nav span{color:#0f172a;font-weight:500}
+.author-box{display:flex;gap:20px;align-items:center;background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:24px;margin:40px 0 0}.author-box img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0}.author-box .author-info h4{font-size:1rem;font-weight:700;margin-bottom:4px;color:#0f172a}.author-box .author-info p{font-size:.9rem;color:#64748b;margin:0;line-height:1.6}.author-box .author-info .author-label{font-size:.75rem;color:#3b82f6;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+</style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"CSS Animations & Transitions: From Basics to Advanced","author":{"@type":"Person","name":"Sachin Bhanushali"},"publisher":{"@type":"Organization","name":"HTMLtoImages","url":"https://www.htmltoimages.com"},"datePublished":"2025-07-08","dateModified":"2025-07-08","mainEntityOfPage":"https://www.htmltoimages.com/blog/css-animations-tutorial/"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.htmltoimages.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.htmltoimages.com/blog/"},{"@type":"ListItem","position":3,"name":"CSS Animations & Transitions"}]}
+    </script>
+</head>
+<body>
+<nav class="navbar"><a href="/" class="logo"><i class="fas fa-cube"></i> HTMLtoImages</a><div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/#tools">Tools</a>
+            <a href="/blog/">Blog</a>
+            <a href="/contact">Contact</a>
+        </div></nav>
+<main>
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <span>CSS Animations &amp; Transitions</span></nav>
+<header class="article-hero"><span class="tag">CSS</span><h1>CSS Animations &amp; Transitions: From Basics to Advanced</h1><div class="article-meta"><span><i class="fas fa-calendar"></i> July 8, 2025</span><span><i class="fas fa-clock"></i> 11 min read</span><span><i class="fas fa-user"></i> Sachin Bhanushali</span></div></header>
+
+<article class="article-content">
+
+<p>A button that just appears? Fine. A button that smoothly fades in with a subtle scale? That's what makes users think "this app feels polished." The crazy part is that you don't need JavaScript for most animations. CSS handles it natively, and it runs on the GPU when you do it right.</p>
+
+<p>I've shipped dozens of production sites where CSS animations replaced entire animation libraries. The performance difference is real, and the code is significantly simpler. Let me show you everything I've learned.</p>
+
+<h2>Transitions vs. Animations: Know the Difference</h2>
+
+<p>Before we dive into code, let's clear up the confusion that trips up most beginners.</p>
+
+<p><strong>Transitions</strong> animate between two states. You define the start state and end state, and the browser figures out the in-between frames. They're triggered by state changes — hover, focus, class toggles.</p>
+
+<p><strong>Animations</strong> (using <code>@keyframes</code>) give you full control over every step. You can define as many intermediate states as you want, loop them, reverse them, and start them automatically.</p>
+
+<p>Here's the rule of thumb I use: if it's a simple A-to-B change (like a hover effect), use a transition. If it's multi-step, looping, or needs to run on page load, use an animation.</p>
+
+<h2>Transitions: The 80/20 of CSS Motion</h2>
+
+<p>Transitions will cover 80% of your animation needs. Here's the basic syntax:</p>
+
+<pre>.button {
+  background: #3b82f6;
+  transform: scale(1);
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+}</pre>
+
+<p>That works, but <code>transition: all</code> is lazy. It tells the browser to watch <em>every</em> property for changes. Be specific about what you're transitioning:</p>
+
+<pre>.button {
+  background: #3b82f6;
+  transform: scale(1);
+  transition: background 0.3s ease, transform 0.2s ease;
+}</pre>
+
+<h3>Timing Functions That Don't Look Robotic</h3>
+
+<p>The default <code>ease</code> timing function is fine for most cases. But <code>linear</code> looks mechanical, and <code>ease-in</code> on its own often feels sluggish. My favorite combinations:</p>
+
+<pre>/* Snappy entrance */
+transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+/* Smooth slide */
+transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+/* Quick fade */
+transition: opacity 0.15s ease-out;</pre>
+
+<p>The <code>cubic-bezier(0.34, 1.56, 0.64, 1)</code> one is gold — it gives a slight overshoot bounce that feels organic without being cartoonish. I use it on buttons, cards, and modal entrances constantly.</p>
+
+<div class="tip-box"><i class="fas fa-lightbulb"></i><p><strong>Pro tip:</strong> Use Chrome DevTools' cubic-bezier editor to visually tweak your timing curves. Open the Styles panel, click the timing function preview next to any transition, and drag the curve handles. Way faster than guessing values.</p></div>
+
+<h3>Transition Delays for Staggered Effects</h3>
+
+<p>Want a list of cards to animate in one after another? You don't need JavaScript. Use <code>transition-delay</code> with CSS custom properties:</p>
+
+<pre>.card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition-delay: calc(var(--index) * 0.1s);
+}
+
+.cards-visible .card {
+  opacity: 1;
+  transform: translateY(0);
+}</pre>
+
+<p>Then in your HTML, set the index on each card:</p>
+
+<pre>&lt;div class="card" style="--index: 0"&gt;First&lt;/div&gt;
+&lt;div class="card" style="--index: 1"&gt;Second&lt;/div&gt;
+&lt;div class="card" style="--index: 2"&gt;Third&lt;/div&gt;</pre>
+
+<p>Add the <code>cards-visible</code> class with a tiny bit of JS (like an Intersection Observer), and you've got a staggered reveal effect that would make a motion designer proud.</p>
+
+<h2>Keyframe Animations: Full Control</h2>
+
+<p>When transitions aren't enough, <code>@keyframes</code> steps in. The syntax is straightforward — define named waypoints, then apply them:</p>
+
+<pre>@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-title {
+  animation: fadeInUp 0.6s ease-out forwards;
+}</pre>
+
+<p>The <code>forwards</code> keyword is crucial here. Without it, the element snaps back to its pre-animation state after the animation ends. Always ask yourself: "what state should this element end in?" and set <code>fill-mode</code> accordingly.</p>
+
+<h3>Multi-Step Animations</h3>
+
+<p>Here's where keyframes shine over transitions. You can define as many intermediate steps as you want using percentages:</p>
+
+<pre>@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(59, 130, 246, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+.notification-badge {
+  animation: pulse 2s ease-in-out infinite;
+}</pre>
+
+<p>This creates a pulsing glow effect that repeats forever. Great for notification badges or call-to-action buttons that need to draw attention.</p>
+
+<h3>A Practical Loading Spinner</h3>
+
+<p>Every app needs a loading spinner. Here's one that's smooth, lightweight, and requires zero JavaScript:</p>
+
+<pre>@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}</pre>
+
+<p>Eight lines of CSS. No SVGs, no libraries, no dependencies. And because we're only animating <code>transform</code>, it runs at 60fps without breaking a sweat.</p>
+
+<h2>Performance: The Properties That Matter</h2>
+
+<p>This is the section most CSS animation tutorials skip, and it's arguably the most important one.</p>
+
+<p>Not all CSS properties are created equal when it comes to animation performance. The browser rendering pipeline has three stages that an animation might trigger: <strong>Layout</strong>, <strong>Paint</strong>, and <strong>Composite</strong>.</p>
+
+<ul>
+<li><strong>Layout properties</strong> (width, height, margin, padding) — trigger all three stages. Expensive.</li>
+<li><strong>Paint properties</strong> (background-color, box-shadow, border-color) — skip layout but still need painting. Moderate.</li>
+<li><strong>Composite properties</strong> (<code>transform</code>, <code>opacity</code>) — skip both layout and paint. Cheap. GPU-accelerated.</li>
+</ul>
+
+<p>The takeaway? <strong>Only animate <code>transform</code> and <code>opacity</code> whenever possible.</strong> Everything else is a compromise.</p>
+
+<pre>/* Bad: animating width causes layout recalculation */
+.sidebar {
+  width: 0;
+  transition: width 0.3s ease;
+}
+.sidebar.open {
+  width: 300px;
+}
+
+/* Good: use transform instead */
+.sidebar {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+.sidebar.open {
+  transform: translateX(0);
+}</pre>
+
+<p>Both achieve the same visual result. But the second one is dramatically smoother, especially on mobile devices where CPU power is limited.</p>
+
+<div class="tip-box"><i class="fas fa-lightbulb"></i><p><strong>Testing animation performance:</strong> Open Chrome DevTools → Performance tab → check "Enable advanced rendering instrumentation." Record while your animation runs, and look for dropped frames (red bars). If you see them, you're probably animating a layout or paint property.</p></div>
+
+<h3>The will-change Property</h3>
+
+<p>You might see <code>will-change</code> recommended as a performance silver bullet. It tells the browser to prepare for an upcoming animation by promoting the element to its own compositor layer:</p>
+
+<pre>.card {
+  will-change: transform;
+}
+.card:hover {
+  transform: translateY(-4px);
+}</pre>
+
+<p>But here's the catch — <strong>don't overuse it</strong>. Every element with <code>will-change</code> gets its own GPU layer, which consumes memory. Slap it on 50 elements and you might actually make performance worse. Use it only on elements that genuinely need it, and consider removing it after animations complete.</p>
+
+<h2>Respecting User Preferences</h2>
+
+<p>Some users experience motion sickness or have vestibular disorders. Always respect the <code>prefers-reduced-motion</code> media query:</p>
+
+<pre>@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}</pre>
+
+<p>This is one of those things I wish I'd known about earlier in my career. It takes 30 seconds to add and makes your site accessible to a significant number of users. There's no excuse to skip it.</p>
+
+<h2>Putting It All Together: A Card Hover Effect</h2>
+
+<p>Here's a complete, production-ready card hover effect that uses everything we've covered:</p>
+
+<pre>.card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
+
+.card .icon {
+  transition: transform 0.3s ease;
+}
+
+.card:hover .icon {
+  transform: rotate(10deg) scale(1.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card .icon {
+    transition: none;
+  }
+}</pre>
+
+<p>The card lifts up on hover with a growing shadow (creating depth), and the icon inside does a subtle rotation. It respects reduced motion preferences. And it only animates <code>transform</code> and <code>box-shadow</code> — the shadow is a minor paint cost, but it's worth it for the visual effect.</p>
+
+<div class="cta-box"><h3>Capture Your CSS Animations as Images</h3><p>Want to showcase your animated components? Convert any HTML/CSS to a crisp PNG image for portfolios and documentation.</p><a href="/html-to-png/">Try HTML to PNG Free →</a></div>
+
+<h2>Common Mistakes I See All the Time</h2>
+
+<ul>
+<li><strong>Animating <code>left</code>/<code>top</code> instead of <code>transform: translate()</code>.</strong> This causes layout recalculations every frame. Always use transform.</li>
+<li><strong>Setting <code>transition: all</code> everywhere.</strong> Be explicit about which properties you're transitioning. It's faster and prevents accidental animations.</li>
+<li><strong>Forgetting <code>forwards</code> fill mode.</strong> Without it, keyframe animations snap back to their initial state when done.</li>
+<li><strong>Too many <code>will-change</code> declarations.</strong> More GPU layers ≠ better performance. Use sparingly.</li>
+<li><strong>Ignoring <code>prefers-reduced-motion</code>.</strong> This is an accessibility requirement, not a nice-to-have.</li>
+</ul>
+
+<h2>Final Thoughts</h2>
+
+<p>CSS animations are deceptively simple on the surface — a transition here, a keyframe there. But the difference between "it moves" and "it feels right" comes down to understanding timing functions, respecting the rendering pipeline, and choosing the right tool (transition vs. animation) for the job.</p>
+
+<p>Start simple. Nail your hover states with transitions first. Then level up to keyframe animations for loading states and page entrances. And always, always test on real devices — what feels smooth on your 144Hz monitor might stutter on a budget Android phone.</p>
+
+<p>The best animation is the one users don't consciously notice but would immediately miss if it were gone.</p>
+
+<div class="author-box">
+<img src="/assets/images/author.jpg" alt="Sachin Bhanushali" width="64" height="64" style="width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0">
+<div class="author-info">
+<span class="author-label">Written by</span>
+<h4>Sachin Bhanushali</h4>
+<p>Full-stack developer and creator of HTMLtoImages. Building free, privacy-first developer tools that run entirely in your browser.</p>
+</div>
+</div>
+</article>
+<div class="related"><h2>Related Articles</h2><div class="related-grid">
+<a href="/blog/css-grid-flexbox-guide/" class="related-card"><h3>CSS Grid & Flexbox Guide</h3><p>Master modern CSS layout with Grid and Flexbox side by side.</p></a>
+<a href="/blog/dark-mode-css/" class="related-card"><h3>Dark Mode with Pure CSS</h3><p>Build a complete dark mode toggle using CSS custom properties.</p></a>
+<a href="/blog/css-variables-guide/" class="related-card"><h3>CSS Variables Guide</h3><p>Unlock the full power of CSS custom properties in your projects.</p></a>
+</div></div>
+</main>
+<footer class="footer"><div class="footer-content"><div class="footer-col"><div class="logo" style="margin-bottom:15px"><i class="fas fa-cube"></i> HTMLtoImages</div><p style="color:var(--text-muted);font-size:.9rem">The #1 tool for developers to turn code into beautiful images.</p></div><div class="footer-col"><h4>Converters</h4><ul><li><a href="/html-to-png/">HTML to PNG</a></li><li><a href="/html-to-jpg/">HTML to JPG</a></li><li><a href="/html-to-webp/">HTML to WebP</a></li><li><a href="/code-to-image/">Code to Image</a></li><li><a href="/html-table-to-image/">Table to Image</a></li><li><a href="/html-email-to-image/">Email to Image</a></li><li><a href="/tailwind-to-image/">Tailwind to Image</a></li></ul></div><div class="footer-col"><h4>Resources</h4><ul><li><a href="/blog/">Blog</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms</a></li><li><a href="/disclaimer">Disclaimer</a></li><li><a href="/sitemap-page">Sitemap</a></li></ul></div></div><div class="copyright">&copy; 2026 htmltoimages.com. All rights reserved.<br><span style="font-size:.9rem;margin-top:10px;display:inline-block;color:var(--text-muted)">Built with ❤️ &amp; ☕ by Sachin Bhanushali</span></div></footer>
+<div class="cookie-banner" id="cookieBanner" style="display:none"><span>We use cookies for analytics. See our <a href="/privacy">Privacy Policy</a>.</span><button onclick="acceptCookies()">Accept</button></div>
+<script>if(!localStorage.getItem('cookiesAccepted')){document.getElementById('cookieBanner').style.display='flex'}function acceptCookies(){localStorage.setItem('cookiesAccepted','true');document.getElementById('cookieBanner').style.display='none'}</script>
+</body></html>

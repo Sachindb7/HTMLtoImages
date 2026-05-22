@@ -1,0 +1,297 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href="https://www.htmltoimages.com/blog/javascript-es6-features/"><title>ES6+ Features You Should Be Using in 2026 | HTMLtoImages Blog</title><meta name="description" content="A practical guide to modern JavaScript features — destructuring, spread/rest, template literals, optional chaining, nullish coalescing, and ES modules — with real-world examples."><script async src="https://www.googletagmanager.com/gtag/js?id=G-FQBH2S5FQ4"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-FQBH2S5FQ4');</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5405462456191304" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><style>:root{--bg-body:#f8fafc;--text-main:#0f172a;--text-muted:#64748b;--primary-gradient:linear-gradient(135deg,#06b6d4,#3b82f6 50%,#8b5cf6);--border-color:#e2e8f0;--radius-lg:24px;--radius-md:12px}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6}a{text-decoration:none;color:inherit;transition:.3s}.navbar{position:fixed;top:20px;left:50%;transform:translateX(-50%);width:90%;max-width:1200px;padding:12px 24px;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border:1px solid var(--border-color);border-radius:100px;z-index:1000;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 20px rgba(0,0,0,.05)}.logo{font-size:1.2rem;font-weight:800;display:flex;align-items:center;gap:10px}.logo i{background:var(--primary-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.nav-links{display:flex;gap:30px}.nav-links a{font-weight:500;color:var(--text-muted)}.nav-links a:hover{color:#3b82f6}.article-hero{text-align:center;padding:160px 20px 40px;max-width:800px;margin:0 auto}.article-hero .tag{display:inline-block;background:#eff6ff;color:#3b82f6;padding:6px 16px;border-radius:20px;font-size:.8rem;font-weight:600;margin-bottom:16px}.article-hero h1{font-size:2.6rem;font-weight:800;line-height:1.2;margin-bottom:16px}.article-meta{color:var(--text-muted);font-size:.9rem;display:flex;align-items:center;justify-content:center;gap:16px}.article-content{max-width:750px;margin:40px auto 80px;padding:0 20px}.article-content h2{font-size:1.7rem;font-weight:700;margin:40px 0 16px}.article-content h3{font-size:1.3rem;font-weight:600;margin:30px 0 12px;color:#334155}.article-content p{color:var(--text-muted);font-size:1.05rem;line-height:1.9;margin-bottom:18px}.article-content ul,.article-content ol{margin:0 0 20px 24px;color:var(--text-muted);font-size:1.05rem}.article-content li{margin-bottom:10px;line-height:1.7}.article-content strong{color:var(--text-main)}.article-content a{color:#3b82f6}.article-content code{background:#f1f5f9;padding:2px 8px;border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:.9rem;color:#e11d48}.article-content pre{background:#1e293b;color:#e2e8f0;padding:20px 24px;border-radius:var(--radius-md);overflow-x:auto;margin:0 0 24px;font-family:'JetBrains Mono',monospace;font-size:.85rem;line-height:1.7}.tip-box{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:var(--radius-md);padding:20px 24px;margin:0 0 24px;display:flex;gap:12px}.tip-box i{color:#22c55e;margin-top:4px;flex-shrink:0}.tip-box p{margin:0;color:#166534;font-size:.95rem}.cta-box{background:var(--primary-gradient);border-radius:var(--radius-lg);padding:40px;text-align:center;margin:40px 0;color:#fff}.cta-box h3{font-size:1.4rem;margin-bottom:12px;font-weight:700}.cta-box p{color:rgba(255,255,255,.85);margin-bottom:20px}.cta-box a{display:inline-block;background:#fff;color:#3b82f6;padding:12px 28px;border-radius:var(--radius-md);font-weight:700}.related{max-width:750px;margin:0 auto 80px;padding:0 20px}.related h2{font-size:1.5rem;font-weight:700;margin-bottom:24px}.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.related-card{background:#fff;border:1px solid var(--border-color);border-radius:var(--radius-md);padding:20px;transition:.3s}.related-card:hover{border-color:#3b82f6;transform:translateY(-3px)}.related-card h3{font-size:1rem;font-weight:600;margin-bottom:8px}.related-card p{font-size:.85rem;color:var(--text-muted);margin:0}.footer{border-top:1px solid var(--border-color);background:#f1f5f9;padding:60px 20px}.footer-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px}.footer-col h4{font-size:1.1rem;margin-bottom:20px}.footer-col ul{list-style:none}.footer-col li{margin-bottom:10px}.footer-col a{color:var(--text-muted);font-size:.95rem}.footer-col a:hover{color:#3b82f6}.copyright{text-align:center;margin-top:60px;padding-top:30px;border-top:1px solid #cbd5e1;color:var(--text-muted);font-size:.9rem}@media(max-width:850px){.navbar{padding:12px 20px;width:95%;flex-direction:column;border-radius:16px;gap:12px}.nav-links{gap:20px;width:100%;justify-content:center;flex-wrap:wrap}.article-hero{padding-top:160px}.article-hero h1{font-size:2rem}}.cookie-banner{position:fixed;bottom:0;left:0;right:0;background:#1e293b;color:#e2e8f0;padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:20px;z-index:9999;font-size:.9rem}.cookie-banner a{color:#60a5fa;text-decoration:underline}.cookie-banner button{background:#3b82f6;color:#fff;border:none;padding:8px 24px;border-radius:8px;cursor:pointer;font-weight:600}@media(max-width:600px){.cookie-banner{flex-direction:column;text-align:center;gap:12px}}.breadcrumb-nav{max-width:1200px;margin:0 auto;padding:100px 20px 0;font-size:.85rem;color:#64748b}.breadcrumb-nav a{color:#3b82f6;text-decoration:none}.breadcrumb-nav a:hover{text-decoration:underline}.breadcrumb-nav span{color:#0f172a;font-weight:500}
+.author-box{display:flex;gap:20px;align-items:center;background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:24px;margin:40px 0 0}.author-box img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0}.author-box .author-info h4{font-size:1rem;font-weight:700;margin-bottom:4px;color:#0f172a}.author-box .author-info p{font-size:.9rem;color:#64748b;margin:0;line-height:1.6}.author-box .author-info .author-label{font-size:.75rem;color:#3b82f6;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+</style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"ES6+ Features You Should Be Using in 2026","author":{"@type":"Person","name":"Sachin Bhanushali"},"publisher":{"@type":"Organization","name":"HTMLtoImages","url":"https://www.htmltoimages.com"},"datePublished":"2026-05-05","dateModified":"2026-05-05","mainEntityOfPage":"https://www.htmltoimages.com/blog/javascript-es6-features/"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.htmltoimages.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.htmltoimages.com/blog/"},{"@type":"ListItem","position":3,"name":"ES6+ Features You Should Be Using in 2026"}]}
+    </script>
+</head>
+<body>
+<nav class="navbar"><a href="/" class="logo"><i class="fas fa-cube"></i> HTMLtoImages</a><div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/#tools">Tools</a>
+            <a href="/blog/">Blog</a>
+            <a href="/contact">Contact</a>
+        </div></nav>
+<main>
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <span>ES6+ Features You Should Be Using in 2026</span></nav>
+<header class="article-hero"><span class="tag">JavaScript</span><h1>ES6+ Features You Should Be Using in 2026</h1><div class="article-meta"><span><i class="fas fa-calendar"></i> May 5, 2026</span><span><i class="fas fa-clock"></i> 13 min read</span><span><i class="fas fa-user"></i> Sachin Bhanushali</span></div></header>
+
+<article class="article-content">
+
+<p>I still review codebases in 2026 that use <code>var</code> everywhere, concatenate strings with <code>+</code>, and write fifteen lines of code to safely access a nested object property. ES6 landed over a decade ago. ES2020 features like optional chaining have been in every major browser for years. There's no excuse anymore.</p>
+
+<p>This isn't a history lesson on ECMAScript versions. It's a practical rundown of the modern JavaScript features that will make your code shorter, safer, and easier to read — features you should be reaching for every single day.</p>
+
+<h2>Destructuring: Stop Writing data.user.name</h2>
+
+<p>Destructuring lets you unpack values from objects and arrays into individual variables. Once you start using it, going back to the old way physically hurts.</p>
+
+<h3>Object Destructuring</h3>
+
+<pre>// Before: tedious and repetitive
+const name = user.name;
+const email = user.email;
+const role = user.role;
+
+// After: one line
+const { name, email, role } = user;</pre>
+
+<p>You can rename variables during destructuring, which is essential when property names would conflict:</p>
+
+<pre>const { name: userName, email: userEmail } = user;
+const { name: companyName } = company;
+// userName, userEmail, companyName — no conflicts</pre>
+
+<p>You can also set defaults for when a property is missing:</p>
+
+<pre>const { theme = 'light', language = 'en' } = userPreferences;
+// If userPreferences.theme is undefined, theme defaults to 'light'</pre>
+
+<h3>Array Destructuring</h3>
+
+<pre>const [first, second, ...rest] = [10, 20, 30, 40, 50];
+// first = 10, second = 20, rest = [30, 40, 50]
+
+// Swap variables without a temp variable
+let a = 1, b = 2;
+[a, b] = [b, a];
+// a = 2, b = 1</pre>
+
+<p>Where this really shines is function parameters. Instead of accepting a single options object and accessing properties with <code>options.width</code>, destructure right in the parameter list:</p>
+
+<pre>// Clean function signature with defaults
+function createThumbnail({ width = 200, height = 200, quality = 80 } = {}) {
+  console.log(`Creating ${width}x${height} thumbnail at ${quality}% quality`);
+}
+
+createThumbnail({ width: 400 });
+// "Creating 400x200 thumbnail at 80% quality"</pre>
+
+<h2>Spread and Rest: Three Dots, Infinite Uses</h2>
+
+<p>The <code>...</code> operator does two things depending on context. When you <em>spread</em>, you're expanding something. When you <em>rest</em>, you're collecting things.</p>
+
+<h3>Spread for Objects</h3>
+
+<pre>const defaults = { theme: 'light', fontSize: 14, lang: 'en' };
+const userSettings = { theme: 'dark', fontSize: 18 };
+
+// Merge objects — later properties override earlier ones
+const config = { ...defaults, ...userSettings };
+// { theme: 'dark', fontSize: 18, lang: 'en' }
+
+// Shallow clone an object
+const copy = { ...original };
+
+// Add/override a single property immutably
+const updated = { ...user, lastLogin: new Date() };</pre>
+
+<p>I use this pattern constantly in React state management and API handlers. It's clean, immutable, and readable.</p>
+
+<h3>Spread for Arrays</h3>
+
+<pre>const frontend = ['React', 'Vue', 'Svelte'];
+const backend = ['Node', 'Deno', 'Bun'];
+
+// Combine arrays
+const fullStack = [...frontend, ...backend];
+
+// Clone an array
+const copy = [...original];
+
+// Convert NodeList to array (still useful in DOM manipulation)
+const elements = [...document.querySelectorAll('.card')];</pre>
+
+<h3>Rest Parameters</h3>
+
+<pre>function log(level, ...messages) {
+  messages.forEach(msg => console[level](msg));
+}
+
+log('warn', 'Disk space low', 'Only 2GB remaining');
+// console.warn('Disk space low')
+// console.warn('Only 2GB remaining')</pre>
+
+<p>Rest replaces the old <code>arguments</code> object, and it's better in every way — it gives you a real array, not an array-like object, and it's explicit about which parameters are collected.</p>
+
+<h2>Template Literals: String Concatenation Is Dead</h2>
+
+<p>If you're still writing <code>"Hello, " + name + "! You have " + count + " notifications."</code>, please stop. Template literals have been available since 2015.</p>
+
+<pre>const message = `Hello, ${name}! You have ${count} notifications.`;
+
+// Multi-line strings — no more \n or array.join
+const html = `
+  &lt;div class="card"&gt;
+    &lt;h2&gt;${title}&lt;/h2&gt;
+    &lt;p&gt;${description}&lt;/p&gt;
+    &lt;span&gt;${formatDate(date)}&lt;/span&gt;
+  &lt;/div&gt;
+`;
+
+// Expressions inside interpolations
+const status = `Status: ${isActive ? 'Active' : 'Inactive'}`;
+const price = `Total: $${(quantity * unitPrice).toFixed(2)}`;</pre>
+
+<div class="tip-box"><i class="fas fa-lightbulb"></i><p><strong>Tagged template literals</strong> are an underused power feature. Libraries like <code>styled-components</code>, <code>lit-html</code>, and <code>graphql-tag</code> all use them. The tag function receives the string parts and interpolated values separately, letting you do custom processing — escaping HTML, building SQL queries safely, or constructing typed queries.</p></div>
+
+<h2>Optional Chaining: No More && Chains</h2>
+
+<p>This is the feature that saved the most lines of code in my career. Before optional chaining, accessing deeply nested properties was a minefield:</p>
+
+<pre>// The old way — defensive && chaining
+const city = user && user.address && user.address.city;
+
+// Slightly better but still ugly
+const city = user ? (user.address ? user.address.city : undefined) : undefined;
+
+// The modern way
+const city = user?.address?.city;</pre>
+
+<p>If any part of the chain is <code>null</code> or <code>undefined</code>, the entire expression short-circuits to <code>undefined</code>. No error. No crash. Just <code>undefined</code>.</p>
+
+<p>It works with methods and bracket notation too:</p>
+
+<pre>// Optional method calls
+const result = api.getData?.();  // calls getData if it exists
+
+// Optional bracket notation
+const value = config?.[dynamicKey];
+
+// Combine with array access
+const firstTag = post?.tags?.[0];</pre>
+
+<p>I use optional chaining on every API response. You never know when a backend team decides to make a field nullable without telling you.</p>
+
+<h2>Nullish Coalescing: Better Defaults</h2>
+
+<p>The <code>||</code> operator for default values has a problem: it triggers on any falsy value, including <code>0</code>, <code>""</code>, and <code>false</code>. That's often not what you want.</p>
+
+<pre>// Problem with ||
+const count = serverResponse.count || 10;
+// If count is 0, this returns 10. That's wrong.
+
+const name = formData.name || 'Anonymous';
+// If someone submits an empty string intentionally, this overwrites it.
+
+// Solution: nullish coalescing (??)
+const count = serverResponse.count ?? 10;
+// Only falls back to 10 if count is null or undefined. 0 stays as 0.
+
+const name = formData.name ?? 'Anonymous';
+// Empty string stays as empty string.</pre>
+
+<p>Pair it with optional chaining for incredibly concise and safe property access:</p>
+
+<pre>const theme = user?.preferences?.theme ?? 'light';
+// Safely navigates the chain, defaults to 'light' only if the result is null/undefined</pre>
+
+<div class="tip-box"><i class="fas fa-lightbulb"></i><p><strong>Use <code>??</code> when 0, empty string, or false are valid values.</strong> Use <code>||</code> when you want to fall back on any falsy value. Mixing them up is one of the most common source of bugs I see in code reviews.</p></div>
+
+<h2>ES Modules: import/export Done Right</h2>
+
+<p>CommonJS (<code>require</code>/<code>module.exports</code>) was Node's module system for over a decade. ES modules (<code>import</code>/<code>export</code>) are the standard now, and they work everywhere — browsers, Node.js, Deno, and Bun.</p>
+
+<pre>// math.js — named exports
+export function add(a, b) { return a + b; }
+export function multiply(a, b) { return a * b; }
+export const PI = 3.14159;
+
+// app.js — named imports
+import { add, multiply, PI } from './math.js';
+
+// Import everything under a namespace
+import * as math from './math.js';
+console.log(math.add(2, 3));
+
+// Default export (one per module)
+// logger.js
+export default class Logger {
+  log(msg) { console.log(`[LOG] ${msg}`); }
+}
+
+// app.js
+import Logger from './logger.js';</pre>
+
+<p>Key differences from CommonJS that catch people:</p>
+<ul>
+<li><strong>ES modules are statically analyzed</strong> — imports are resolved before code runs. No conditional imports at the top level (use dynamic <code>import()</code> for that).</li>
+<li><strong>ES modules are strict mode by default</strong> — no need for <code>"use strict"</code>.</li>
+<li><strong>Imports are live bindings</strong> — if the exporting module changes a value, the importing module sees the change. CommonJS copies the value.</li>
+</ul>
+
+<h3>Dynamic Imports</h3>
+
+<p>When you need to load a module conditionally or lazily:</p>
+
+<pre>// Load a heavy module only when needed
+async function renderChart(data) {
+  const { Chart } = await import('./chart-library.js');
+  const chart = new Chart(data);
+  chart.render('#chart-container');
+}
+
+// Conditional loading
+const locale = navigator.language.startsWith('fr')
+  ? await import('./locales/fr.js')
+  : await import('./locales/en.js');</pre>
+
+<p>Dynamic imports return promises, so they work naturally with <code>async/await</code>. Every bundler (Webpack, Vite, Rollup) uses dynamic imports as code-splitting boundaries — call <code>import()</code> and the bundler automatically creates a separate chunk.</p>
+
+<h2>Honorable Mentions</h2>
+
+<p>A few more features that deserve a spot in your daily toolkit:</p>
+
+<h3>Object.entries() and Object.fromEntries()</h3>
+
+<pre>const prices = { apple: 1.5, banana: 0.75, cherry: 3.0 };
+
+// Transform object values
+const discounted = Object.fromEntries(
+  Object.entries(prices).map(([fruit, price]) => [fruit, price * 0.9])
+);
+// { apple: 1.35, banana: 0.675, cherry: 2.7 }</pre>
+
+<h3>Array.prototype.at()</h3>
+
+<pre>const colors = ['red', 'green', 'blue'];
+colors.at(-1);  // 'blue' — negative indexing, finally!
+colors.at(-2);  // 'green'</pre>
+
+<h3>structuredClone()</h3>
+
+<pre>const original = { name: 'test', nested: { deep: true }, date: new Date() };
+const clone = structuredClone(original);
+// True deep clone — handles dates, maps, sets, typed arrays, and more
+// No more JSON.parse(JSON.stringify(obj)) hacks</pre>
+
+<div class="cta-box"><h3>Share Beautiful Code Snippets</h3><p>Turn your JavaScript code into stunning, shareable images. Perfect for tutorials, documentation, and social media posts.</p><a href="/code-to-image/">Try Code to Image →</a></div>
+
+<p>Modern JavaScript isn't just syntactic sugar. Optional chaining prevents runtime crashes. Nullish coalescing prevents subtle data bugs. Destructuring makes function signatures self-documenting. ES modules enable tree-shaking that shrinks your bundles.</p>
+
+<p>If your codebase is still stuck in ES5 patterns, you're not just writing more code — you're writing buggier, harder-to-maintain code. Pick one feature from this list, start using it in your next commit, and build from there. Your future self (and your code reviewers) will thank you.</p>
+
+<div class="author-box">
+<img src="/assets/images/author.jpg" alt="Sachin Bhanushali" width="64" height="64" style="width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0">
+<div class="author-info">
+<span class="author-label">Written by</span>
+<h4>Sachin Bhanushali</h4>
+<p>Full-stack developer and creator of HTMLtoImages. Building free, privacy-first developer tools that run entirely in your browser.</p>
+</div>
+</div>
+</article>
+<div class="related"><h2>Related Articles</h2><div class="related-grid">
+<a href="/blog/javascript-async-await/" class="related-card"><h3>JavaScript Async/Await</h3><p>Master asynchronous JavaScript with async/await patterns and error handling.</p></a>
+<a href="/blog/javascript-array-methods/" class="related-card"><h3>JavaScript Array Methods</h3><p>map, filter, reduce, and more — the array methods every dev should know.</p></a>
+<a href="/blog/javascript-dom-manipulation/" class="related-card"><h3>JavaScript DOM Manipulation</h3><p>Work with the DOM efficiently using modern JavaScript techniques.</p></a>
+</div></div>
+</main>
+<footer class="footer"><div class="footer-content"><div class="footer-col"><div class="logo" style="margin-bottom:15px"><i class="fas fa-cube"></i> HTMLtoImages</div><p style="color:var(--text-muted);font-size:.9rem">The #1 tool for developers to turn code into beautiful images.</p></div><div class="footer-col"><h4>Converters</h4><ul><li><a href="/html-to-png/">HTML to PNG</a></li><li><a href="/html-to-jpg/">HTML to JPG</a></li><li><a href="/html-to-webp/">HTML to WebP</a></li><li><a href="/code-to-image/">Code to Image</a></li><li><a href="/html-table-to-image/">Table to Image</a></li><li><a href="/html-email-to-image/">Email to Image</a></li><li><a href="/tailwind-to-image/">Tailwind to Image</a></li></ul></div><div class="footer-col"><h4>Resources</h4><ul><li><a href="/blog/">Blog</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms</a></li><li><a href="/disclaimer">Disclaimer</a></li><li><a href="/sitemap-page">Sitemap</a></li></ul></div></div><div class="copyright">&copy; 2026 htmltoimages.com. All rights reserved.<br><span style="font-size:.9rem;margin-top:10px;display:inline-block;color:var(--text-muted)">Built with ❤️ &amp; ☕ by Sachin Bhanushali</span></div></footer>
+<div class="cookie-banner" id="cookieBanner" style="display:none"><span>We use cookies for analytics. See our <a href="/privacy">Privacy Policy</a>.</span><button onclick="acceptCookies()">Accept</button></div>
+<script>if(!localStorage.getItem('cookiesAccepted')){document.getElementById('cookieBanner').style.display='flex'}function acceptCookies(){localStorage.setItem('cookiesAccepted','true');document.getElementById('cookieBanner').style.display='none'}</script>
+</body></html>

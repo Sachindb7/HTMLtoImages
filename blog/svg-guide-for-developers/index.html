@@ -1,0 +1,317 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href="https://www.htmltoimages.com/blog/svg-guide-for-developers/"><title>SVG for Web Developers: A Hands-On Guide | HTMLtoImages Blog</title><meta name="description" content="Learn SVG from scratch — inline vs img, viewBox explained, basic shapes, CSS styling, animations, and accessibility best practices for web developers."><script async src="https://www.googletagmanager.com/gtag/js?id=G-FQBH2S5FQ4"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-FQBH2S5FQ4');</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5405462456191304" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><style>:root{--bg-body:#f8fafc;--text-main:#0f172a;--text-muted:#64748b;--primary-gradient:linear-gradient(135deg,#06b6d4,#3b82f6 50%,#8b5cf6);--border-color:#e2e8f0;--radius-lg:24px;--radius-md:12px}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6}a{text-decoration:none;color:inherit;transition:.3s}.navbar{position:fixed;top:20px;left:50%;transform:translateX(-50%);width:90%;max-width:1200px;padding:12px 24px;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border:1px solid var(--border-color);border-radius:100px;z-index:1000;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 20px rgba(0,0,0,.05)}.logo{font-size:1.2rem;font-weight:800;display:flex;align-items:center;gap:10px}.logo i{background:var(--primary-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.nav-links{display:flex;gap:30px}.nav-links a{font-weight:500;color:var(--text-muted)}.nav-links a:hover{color:#3b82f6}.article-hero{text-align:center;padding:160px 20px 40px;max-width:800px;margin:0 auto}.article-hero .tag{display:inline-block;background:#eff6ff;color:#3b82f6;padding:6px 16px;border-radius:20px;font-size:.8rem;font-weight:600;margin-bottom:16px}.article-hero h1{font-size:2.6rem;font-weight:800;line-height:1.2;margin-bottom:16px}.article-meta{color:var(--text-muted);font-size:.9rem;display:flex;align-items:center;justify-content:center;gap:16px}.article-content{max-width:750px;margin:40px auto 80px;padding:0 20px}.article-content h2{font-size:1.7rem;font-weight:700;margin:40px 0 16px}.article-content h3{font-size:1.3rem;font-weight:600;margin:30px 0 12px;color:#334155}.article-content p{color:var(--text-muted);font-size:1.05rem;line-height:1.9;margin-bottom:18px}.article-content ul,.article-content ol{margin:0 0 20px 24px;color:var(--text-muted);font-size:1.05rem}.article-content li{margin-bottom:10px;line-height:1.7}.article-content strong{color:var(--text-main)}.article-content a{color:#3b82f6}.article-content code{background:#f1f5f9;padding:2px 8px;border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:.9rem;color:#e11d48}.article-content pre{background:#1e293b;color:#e2e8f0;padding:20px 24px;border-radius:var(--radius-md);overflow-x:auto;margin:0 0 24px;font-family:'JetBrains Mono',monospace;font-size:.85rem;line-height:1.7}.tip-box{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:var(--radius-md);padding:20px 24px;margin:0 0 24px;display:flex;gap:12px}.tip-box i{color:#22c55e;margin-top:4px;flex-shrink:0}.tip-box p{margin:0;color:#166534;font-size:.95rem}.cta-box{background:var(--primary-gradient);border-radius:var(--radius-lg);padding:40px;text-align:center;margin:40px 0;color:#fff}.cta-box h3{font-size:1.4rem;margin-bottom:12px;font-weight:700}.cta-box p{color:rgba(255,255,255,.85);margin-bottom:20px}.cta-box a{display:inline-block;background:#fff;color:#3b82f6;padding:12px 28px;border-radius:var(--radius-md);font-weight:700}.related{max-width:750px;margin:0 auto 80px;padding:0 20px}.related h2{font-size:1.5rem;font-weight:700;margin-bottom:24px}.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.related-card{background:#fff;border:1px solid var(--border-color);border-radius:var(--radius-md);padding:20px;transition:.3s}.related-card:hover{border-color:#3b82f6;transform:translateY(-3px)}.related-card h3{font-size:1rem;font-weight:600;margin-bottom:8px}.related-card p{font-size:.85rem;color:var(--text-muted);margin:0}.footer{border-top:1px solid var(--border-color);background:#f1f5f9;padding:60px 20px}.footer-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px}.footer-col h4{font-size:1.1rem;margin-bottom:20px}.footer-col ul{list-style:none}.footer-col li{margin-bottom:10px}.footer-col a{color:var(--text-muted);font-size:.95rem}.footer-col a:hover{color:#3b82f6}.copyright{text-align:center;margin-top:60px;padding-top:30px;border-top:1px solid #cbd5e1;color:var(--text-muted);font-size:.9rem}@media(max-width:850px){.navbar{padding:12px 20px;width:95%;flex-direction:column;border-radius:16px;gap:12px}.nav-links{gap:20px;width:100%;justify-content:center;flex-wrap:wrap}.article-hero{padding-top:160px}.article-hero h1{font-size:2rem}}.cookie-banner{position:fixed;bottom:0;left:0;right:0;background:#1e293b;color:#e2e8f0;padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:20px;z-index:9999;font-size:.9rem}.cookie-banner a{color:#60a5fa;text-decoration:underline}.cookie-banner button{background:#3b82f6;color:#fff;border:none;padding:8px 24px;border-radius:8px;cursor:pointer;font-weight:600}@media(max-width:600px){.cookie-banner{flex-direction:column;text-align:center;gap:12px}}.breadcrumb-nav{max-width:1200px;margin:0 auto;padding:100px 20px 0;font-size:.85rem;color:#64748b}.breadcrumb-nav a{color:#3b82f6;text-decoration:none}.breadcrumb-nav a:hover{text-decoration:underline}.breadcrumb-nav span{color:#0f172a;font-weight:500}
+.author-box{display:flex;gap:20px;align-items:center;background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:24px;margin:40px 0 0}.author-box img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0}.author-box .author-info h4{font-size:1rem;font-weight:700;margin-bottom:4px;color:#0f172a}.author-box .author-info p{font-size:.9rem;color:#64748b;margin:0;line-height:1.6}.author-box .author-info .author-label{font-size:.75rem;color:#3b82f6;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+</style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"SVG for Web Developers: A Hands-On Guide","author":{"@type":"Person","name":"Sachin Bhanushali"},"publisher":{"@type":"Organization","name":"HTMLtoImages","url":"https://www.htmltoimages.com"},"datePublished":"2026-02-14","dateModified":"2026-02-14","mainEntityOfPage":"https://www.htmltoimages.com/blog/svg-guide-for-developers/"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.htmltoimages.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.htmltoimages.com/blog/"},{"@type":"ListItem","position":3,"name":"SVG for Web Developers"}]}
+    </script>
+</head>
+<body>
+<nav class="navbar"><a href="/" class="logo"><i class="fas fa-cube"></i> HTMLtoImages</a><div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/#tools">Tools</a>
+            <a href="/blog/">Blog</a>
+            <a href="/contact">Contact</a>
+        </div></nav>
+<main>
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <span>SVG for Web Developers</span></nav>
+<header class="article-hero"><span class="tag">SVG</span><h1>SVG for Web Developers: A Hands-On Guide</h1><div class="article-meta"><span><i class="fas fa-calendar"></i> February 14, 2026</span><span><i class="fas fa-clock"></i> 12 min read</span><span><i class="fas fa-user"></i> Sachin Bhanushali</span></div></header>
+
+<article class="article-content">
+
+<p>Here's a confession: I avoided SVG for years. The XML syntax looked intimidating, <code>viewBox</code> made zero sense, and I figured PNG icons were "good enough." Then I had to build a dashboard with animated charts that needed to look sharp on 4K screens. PNGs were not good enough. SVG saved the project — and completely changed how I think about graphics on the web.</p>
+
+<p>If you've been avoiding SVG or just copy-pasting it without understanding what's going on, this guide is for you. We're going from zero to confident.</p>
+
+<h2>Inline SVG vs. &lt;img&gt; — Which to Use?</h2>
+
+<p>You can use SVG two main ways on the web, and the choice matters more than most people think.</p>
+
+<h3>Using SVG as an &lt;img&gt;</h3>
+
+<pre>&lt;img src="icon.svg" alt="Settings icon" width="24" height="24"&gt;</pre>
+
+<p>This treats the SVG like any other image. The browser fetches, caches, and renders it. Simple. But you lose the ability to style it with CSS or interact with its internal elements. It's a black box.</p>
+
+<h3>Inline SVG (Directly in HTML)</h3>
+
+<pre>&lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+     xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;path d="M12 2L2 7l10 5 10-5-10-5z" fill="currentColor"/&gt;
+  &lt;path d="M2 17l10 5 10-5" stroke="currentColor"
+        stroke-width="2" fill="none"/&gt;
+&lt;/svg&gt;</pre>
+
+<p>Inline SVG lives in the DOM. You can target any element inside it with CSS, animate it, change colors on hover, and manipulate it with JavaScript. The tradeoff? It adds to your HTML weight and can't be cached separately.</p>
+
+<p><strong>My rule of thumb:</strong> Use <code>&lt;img&gt;</code> for decorative images and illustrations that don't need interaction. Use inline SVG for icons, logos, and anything you want to style or animate. For icon systems, I prefer a sprite sheet with <code>&lt;use&gt;</code> references — best of both worlds.</p>
+
+<h2>Understanding viewBox — The Key to Everything</h2>
+
+<p>This is where most people get confused and give up. Let me demystify it.</p>
+
+<p>The <code>viewBox</code> attribute defines the <strong>coordinate system</strong> inside the SVG. It doesn't set the size of the SVG on the page — that's what <code>width</code> and <code>height</code> do. viewBox defines the "camera window" looking at your drawing.</p>
+
+<pre>&lt;svg width="200" height="200" viewBox="0 0 100 100"&gt;
+  &lt;circle cx="50" cy="50" r="40" fill="#3b82f6"/&gt;
+&lt;/svg&gt;</pre>
+
+<p>Here's what's happening: the SVG displays at 200×200 pixels on screen, but internally it uses a 100×100 coordinate grid. The circle is centered at (50, 50) in that internal grid, with a radius of 40 units. Because the display size is 2× the viewBox size, everything is scaled up by 2×.</p>
+
+<p>The four viewBox numbers are: <code>min-x min-y width height</code>.</p>
+
+<ul>
+<li><strong>min-x, min-y</strong> — where the camera starts (top-left corner)</li>
+<li><strong>width, height</strong> — how much of the internal coordinate space is visible</li>
+</ul>
+
+<div class="tip-box"><i class="fas fa-lightbulb"></i><p><strong>Think of viewBox like a map zoom level.</strong> A smaller viewBox width/height zooms in (shows less, things look bigger). A larger viewBox width/height zooms out (shows more, things look smaller). The min-x and min-y values pan the camera around.</p></div>
+
+<h3>Making SVG Responsive</h3>
+
+<p>Want an SVG that scales to fit its container? Remove the <code>width</code> and <code>height</code> attributes and just keep <code>viewBox</code>:</p>
+
+<pre>&lt;svg viewBox="0 0 100 100" class="responsive-svg"&gt;
+  &lt;!-- shapes here --&gt;
+&lt;/svg&gt;
+
+&lt;style&gt;
+.responsive-svg {
+  width: 100%;
+  height: auto;
+}
+&lt;/style&gt;</pre>
+
+<p>The SVG now stretches to fill its container width while maintaining the aspect ratio defined by viewBox. This is how most icon systems work.</p>
+
+<h2>Basic Shapes — Your Building Blocks</h2>
+
+<p>SVG gives you a handful of primitive shapes. You'd be surprised how much you can build with just these:</p>
+
+<pre>&lt;svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;!-- Rectangle --&gt;
+  &lt;rect x="10" y="10" width="80" height="60"
+        rx="8" fill="#3b82f6"/&gt;
+
+  &lt;!-- Circle --&gt;
+  &lt;circle cx="160" cy="40" r="30" fill="#22c55e"/&gt;
+
+  &lt;!-- Ellipse --&gt;
+  &lt;ellipse cx="280" cy="40" rx="50" ry="30" fill="#f59e0b"/&gt;
+
+  &lt;!-- Line --&gt;
+  &lt;line x1="10" y1="120" x2="390" y2="120"
+        stroke="#e2e8f0" stroke-width="2"/&gt;
+
+  &lt;!-- Polyline (open shape) --&gt;
+  &lt;polyline points="10,200 80,150 150,220 220,160"
+           fill="none" stroke="#8b5cf6" stroke-width="3"/&gt;
+
+  &lt;!-- Path (the ultimate shape) --&gt;
+  &lt;path d="M 300 150 Q 350 100 390 150 T 390 250"
+        fill="none" stroke="#ef4444" stroke-width="2"/&gt;
+&lt;/svg&gt;</pre>
+
+<p>The <code>&lt;path&gt;</code> element is where SVG gets powerful — and complex. The <code>d</code> attribute uses a mini-language of commands: <code>M</code> (move to), <code>L</code> (line to), <code>C</code> (cubic bezier), <code>Q</code> (quadratic bezier), <code>A</code> (arc), and <code>Z</code> (close path). You'll rarely write path data by hand — tools like Figma and Illustrator export it for you.</p>
+
+<h2>Styling SVG with CSS</h2>
+
+<p>This is where inline SVG really shines. You can style SVG elements with CSS just like HTML elements — but the property names are different.</p>
+
+<pre>/* Key SVG CSS properties */
+.icon path {
+  fill: #64748b;           /* like background-color */
+  stroke: #0f172a;         /* border color */
+  stroke-width: 2;         /* border width */
+  stroke-linecap: round;   /* line endings */
+  stroke-linejoin: round;  /* corner style */
+  opacity: 0.8;
+}
+
+/* Change color on hover */
+.icon:hover path {
+  fill: #3b82f6;
+  transition: fill 0.2s ease;
+}
+
+/* Use currentColor to inherit text color */
+.icon path {
+  fill: currentColor;
+}</pre>
+
+<p>The <code>currentColor</code> trick is incredibly useful. Set <code>fill="currentColor"</code> on your SVG paths, and the icon automatically matches whatever text color its parent has. Change the parent's color and the icon follows. I use this for every icon system.</p>
+
+<h3>CSS Classes on SVG Elements</h3>
+
+<pre>&lt;svg viewBox="0 0 24 24"&gt;
+  &lt;circle class="bg" cx="12" cy="12" r="10"/&gt;
+  &lt;path class="check" d="M8 12l2.5 2.5L16 9"/&gt;
+&lt;/svg&gt;
+
+&lt;style&gt;
+.bg { fill: #dcfce7; }
+.check {
+  fill: none;
+  stroke: #16a34a;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+&lt;/style&gt;</pre>
+
+<h2>Animating SVG</h2>
+
+<p>SVG animations can be dead simple or incredibly sophisticated. Let's start simple.</p>
+
+<h3>CSS Transitions and Animations</h3>
+
+<pre>/* Pulse animation on a circle */
+.pulse-dot {
+  transform-origin: center;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { r: 8; opacity: 1; }
+  50% { r: 12; opacity: 0.6; }
+}
+
+/* Line drawing effect */
+.draw-line {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: draw 1.5s ease forwards;
+}
+
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}</pre>
+
+<p>The line-drawing effect is one of my favorites. It works by setting <code>stroke-dasharray</code> to the path's total length (creating one big dash), then animating <code>stroke-dashoffset</code> from that length to 0. The path appears to draw itself.</p>
+
+<div class="tip-box"><i class="fas fa-lightbulb"></i><p><strong>Finding the path length:</strong> Use JavaScript — <code>document.querySelector('path').getTotalLength()</code> — to get the exact length for stroke-dasharray. Or just estimate with a large number; if it's bigger than the actual length, the effect still works.</p></div>
+
+<h3>SVG SMIL Animations (Built-in)</h3>
+
+<p>SVG has its own animation system called SMIL. It works without CSS or JavaScript:</p>
+
+<pre>&lt;circle cx="50" cy="50" r="20" fill="#3b82f6"&gt;
+  &lt;animate attributeName="r"
+           values="20;30;20"
+           dur="2s"
+           repeatCount="indefinite"/&gt;
+  &lt;animate attributeName="fill"
+           values="#3b82f6;#8b5cf6;#3b82f6"
+           dur="2s"
+           repeatCount="indefinite"/&gt;
+&lt;/circle&gt;</pre>
+
+<p>SMIL is powerful and works directly in the SVG markup. However, browser support is solid everywhere except — you guessed it — older versions of IE (which aren't really a concern anymore). For anything complex, I prefer CSS animations or a library like GreenSock (GSAP).</p>
+
+<h2>SVG Accessibility — Don't Skip This</h2>
+
+<p>Accessibility is where many developers fall short with SVG. An SVG without proper attributes is invisible to screen readers.</p>
+
+<h3>For Decorative SVGs</h3>
+
+<pre>&lt;!-- Hide from screen readers entirely --&gt;
+&lt;svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"&gt;
+  &lt;path d="..." fill="currentColor"/&gt;
+&lt;/svg&gt;</pre>
+
+<h3>For Meaningful SVGs</h3>
+
+<pre>&lt;svg role="img" aria-labelledby="icon-title" viewBox="0 0 24 24"&gt;
+  &lt;title id="icon-title"&gt;Shopping cart with 3 items&lt;/title&gt;
+  &lt;path d="..." fill="currentColor"/&gt;
+&lt;/svg&gt;</pre>
+
+<p>The <code>&lt;title&gt;</code> element inside SVG acts like <code>alt</code> text for images. Use <code>role="img"</code> to tell assistive technology that this SVG represents a single image. Connect them with <code>aria-labelledby</code>.</p>
+
+<p>For complex graphics (charts, diagrams), add a <code>&lt;desc&gt;</code> element with a longer description:</p>
+
+<pre>&lt;svg role="img" aria-labelledby="chart-title chart-desc"&gt;
+  &lt;title id="chart-title"&gt;Monthly Revenue&lt;/title&gt;
+  &lt;desc id="chart-desc"&gt;
+    Bar chart showing revenue from January to June 2026,
+    with a peak of $48,000 in March.
+  &lt;/desc&gt;
+  &lt;!-- chart elements --&gt;
+&lt;/svg&gt;</pre>
+
+<h2>Practical Pattern: Icon Sprite Sheet</h2>
+
+<p>Instead of inlining every icon, create a sprite file and reference icons with <code>&lt;use&gt;</code>:</p>
+
+<pre>&lt;!-- icons.svg (loaded once, cached) --&gt;
+&lt;svg xmlns="http://www.w3.org/2000/svg" style="display:none"&gt;
+  &lt;symbol id="icon-home" viewBox="0 0 24 24"&gt;
+    &lt;path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0
+             001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1
+             1h-3m-4 0h4" fill="none" stroke="currentColor"
+             stroke-width="2"/&gt;
+  &lt;/symbol&gt;
+  &lt;symbol id="icon-search" viewBox="0 0 24 24"&gt;
+    &lt;circle cx="11" cy="11" r="8" fill="none"
+            stroke="currentColor" stroke-width="2"/&gt;
+    &lt;line x1="21" y1="21" x2="16.65" y2="16.65"
+          stroke="currentColor" stroke-width="2"/&gt;
+  &lt;/symbol&gt;
+&lt;/svg&gt;
+
+&lt;!-- Usage anywhere in the page --&gt;
+&lt;svg class="icon" aria-hidden="true"&gt;
+  &lt;use href="#icon-home"/&gt;
+&lt;/svg&gt;
+&lt;svg class="icon" aria-hidden="true"&gt;
+  &lt;use href="#icon-search"/&gt;
+&lt;/svg&gt;</pre>
+
+<p>This approach gives you the styling benefits of inline SVG with much cleaner HTML. Define once, use everywhere. The <code>currentColor</code> trick works perfectly with <code>&lt;use&gt;</code> references too.</p>
+
+<div class="cta-box"><h3>Convert SVG Layouts to Images</h3><p>Built a beautiful SVG graphic? Convert your HTML + SVG layouts into crisp PNG, JPG, or WebP images instantly.</p><a href="/html-to-png/">Try HTML to PNG →</a></div>
+
+<h2>SVG Optimization — Keep It Lean</h2>
+
+<p>SVGs exported from design tools are bloated. They contain editor metadata, unnecessary groups, decimal precision you don't need, and redundant attributes. Always optimize before shipping.</p>
+
+<p>Use <a href="https://jakearchibald.github.io/svgomg/" target="_blank" rel="noopener">SVGOMG</a> (a web-based tool) or <code>svgo</code> on the command line:</p>
+
+<pre>npx svgo icon.svg -o icon.min.svg</pre>
+
+<p>A typical Figma export might shrink by 40-60% after optimization. That adds up fast when you have 50+ icons.</p>
+
+<h2>When NOT to Use SVG</h2>
+
+<p>SVG isn't always the answer. Here's when I reach for something else:</p>
+
+<ul>
+<li><strong>Photos or complex raster images</strong> — SVG represents vector shapes; photographs should be JPEG/WebP</li>
+<li><strong>Extremely complex illustrations</strong> with thousands of paths — the DOM overhead can hurt performance, and a well-compressed PNG might be smaller</li>
+<li><strong>Simple solid-color icons at fixed sizes</strong> — an icon font or even well-optimized PNGs might be simpler (though SVG is still my default)</li>
+</ul>
+
+<p>SVG is excellent for icons, logos, simple illustrations, charts, data visualizations, UI elements, and anything that needs to scale without losing quality. Once you start using it properly, you'll find it popping up everywhere in your workflow — and wondering how you ever got by without it.</p>
+
+<div class="author-box">
+<img src="/assets/images/author.jpg" alt="Sachin Bhanushali" width="64" height="64" style="width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0">
+<div class="author-info">
+<span class="author-label">Written by</span>
+<h4>Sachin Bhanushali</h4>
+<p>Full-stack developer and creator of HTMLtoImages. Building free, privacy-first developer tools that run entirely in your browser.</p>
+</div>
+</div>
+</article>
+<div class="related"><h2>Related Articles</h2><div class="related-grid">
+<a href="/blog/css-animations-tutorial/" class="related-card"><h3>CSS Animations Tutorial</h3><p>Learn keyframes, transitions, and performance-friendly animation techniques.</p></a>
+<a href="/blog/responsive-images-guide/" class="related-card"><h3>Responsive Images Guide</h3><p>srcset, sizes, picture element — serve the right image to every device.</p></a>
+<a href="/blog/html5-semantic-elements/" class="related-card"><h3>HTML5 Semantic Elements</h3><p>Build accessible, meaningful page structure with modern HTML elements.</p></a>
+</div></div>
+</main>
+<footer class="footer"><div class="footer-content"><div class="footer-col"><div class="logo" style="margin-bottom:15px"><i class="fas fa-cube"></i> HTMLtoImages</div><p style="color:var(--text-muted);font-size:.9rem">The #1 tool for developers to turn code into beautiful images.</p></div><div class="footer-col"><h4>Converters</h4><ul><li><a href="/html-to-png/">HTML to PNG</a></li><li><a href="/html-to-jpg/">HTML to JPG</a></li><li><a href="/html-to-webp/">HTML to WebP</a></li><li><a href="/code-to-image/">Code to Image</a></li><li><a href="/html-table-to-image/">Table to Image</a></li><li><a href="/html-email-to-image/">Email to Image</a></li><li><a href="/tailwind-to-image/">Tailwind to Image</a></li></ul></div><div class="footer-col"><h4>Resources</h4><ul><li><a href="/blog/">Blog</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms</a></li><li><a href="/disclaimer">Disclaimer</a></li><li><a href="/sitemap-page">Sitemap</a></li></ul></div></div><div class="copyright">&copy; 2026 htmltoimages.com. All rights reserved.<br><span style="font-size:.9rem;margin-top:10px;display:inline-block;color:var(--text-muted)">Built with ❤️ &amp; ☕ by Sachin Bhanushali</span></div></footer>
+<div class="cookie-banner" id="cookieBanner" style="display:none"><span>We use cookies for analytics. See our <a href="/privacy">Privacy Policy</a>.</span><button onclick="acceptCookies()">Accept</button></div>
+<script>if(!localStorage.getItem('cookiesAccepted')){document.getElementById('cookieBanner').style.display='flex'}function acceptCookies(){localStorage.setItem('cookiesAccepted','true');document.getElementById('cookieBanner').style.display='none'}</script>
+</body></html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href="https://www.htmltoimages.com/blog/cross-browser-testing/"><title>Cross-Browser Testing: A Practical Workflow | HTMLtoImages Blog</title><meta name="description" content="Build a realistic cross-browser testing workflow. Covers browser differences, testing tools like BrowserStack, CSS fallbacks, feature detection, and debugging strategies."><script async src="https://www.googletagmanager.com/gtag/js?id=G-FQBH2S5FQ4"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-FQBH2S5FQ4');</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5405462456191304" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><style>:root{--bg-body:#f8fafc;--text-main:#0f172a;--text-muted:#64748b;--primary-gradient:linear-gradient(135deg,#06b6d4,#3b82f6 50%,#8b5cf6);--border-color:#e2e8f0;--radius-lg:24px;--radius-md:12px}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6}a{text-decoration:none;color:inherit;transition:.3s}.navbar{position:fixed;top:20px;left:50%;transform:translateX(-50%);width:90%;max-width:1200px;padding:12px 24px;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border:1px solid var(--border-color);border-radius:100px;z-index:1000;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 20px rgba(0,0,0,.05)}.logo{font-size:1.2rem;font-weight:800;display:flex;align-items:center;gap:10px}.logo i{background:var(--primary-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.nav-links{display:flex;gap:30px}.nav-links a{font-weight:500;color:var(--text-muted)}.nav-links a:hover{color:#3b82f6}.article-hero{text-align:center;padding:160px 20px 40px;max-width:800px;margin:0 auto}.article-hero .tag{display:inline-block;background:#eff6ff;color:#3b82f6;padding:6px 16px;border-radius:20px;font-size:.8rem;font-weight:600;margin-bottom:16px}.article-hero h1{font-size:2.6rem;font-weight:800;line-height:1.2;margin-bottom:16px}.article-meta{color:var(--text-muted);font-size:.9rem;display:flex;align-items:center;justify-content:center;gap:16px}.article-content{max-width:750px;margin:40px auto 80px;padding:0 20px}.article-content h2{font-size:1.7rem;font-weight:700;margin:40px 0 16px}.article-content h3{font-size:1.3rem;font-weight:600;margin:30px 0 12px;color:#334155}.article-content p{color:var(--text-muted);font-size:1.05rem;line-height:1.9;margin-bottom:18px}.article-content ul,.article-content ol{margin:0 0 20px 24px;color:var(--text-muted);font-size:1.05rem}.article-content li{margin-bottom:10px;line-height:1.7}.article-content strong{color:var(--text-main)}.article-content a{color:#3b82f6}.article-content code{background:#f1f5f9;padding:2px 8px;border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:.9rem;color:#e11d48}.article-content pre{background:#1e293b;color:#e2e8f0;padding:20px 24px;border-radius:var(--radius-md);overflow-x:auto;margin:0 0 24px;font-family:'JetBrains Mono',monospace;font-size:.85rem;line-height:1.7}.tip-box{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:var(--radius-md);padding:20px 24px;margin:0 0 24px;display:flex;gap:12px}.tip-box i{color:#22c55e;margin-top:4px;flex-shrink:0}.tip-box p{margin:0;color:#166534;font-size:.95rem}.cta-box{background:var(--primary-gradient);border-radius:var(--radius-lg);padding:40px;text-align:center;margin:40px 0;color:#fff}.cta-box h3{font-size:1.4rem;margin-bottom:12px;font-weight:700}.cta-box p{color:rgba(255,255,255,.85);margin-bottom:20px}.cta-box a{display:inline-block;background:#fff;color:#3b82f6;padding:12px 28px;border-radius:var(--radius-md);font-weight:700}.related{max-width:750px;margin:0 auto 80px;padding:0 20px}.related h2{font-size:1.5rem;font-weight:700;margin-bottom:24px}.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.related-card{background:#fff;border:1px solid var(--border-color);border-radius:var(--radius-md);padding:20px;transition:.3s}.related-card:hover{border-color:#3b82f6;transform:translateY(-3px)}.related-card h3{font-size:1rem;font-weight:600;margin-bottom:8px}.related-card p{font-size:.85rem;color:var(--text-muted);margin:0}.footer{border-top:1px solid var(--border-color);background:#f1f5f9;padding:60px 20px}.footer-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px}.footer-col h4{font-size:1.1rem;margin-bottom:20px}.footer-col ul{list-style:none}.footer-col li{margin-bottom:10px}.footer-col a{color:var(--text-muted);font-size:.95rem}.footer-col a:hover{color:#3b82f6}.copyright{text-align:center;margin-top:60px;padding-top:30px;border-top:1px solid #cbd5e1;color:var(--text-muted);font-size:.9rem}@media(max-width:850px){.navbar{padding:12px 20px;width:95%;flex-direction:column;border-radius:16px;gap:12px}.nav-links{gap:20px;width:100%;justify-content:center;flex-wrap:wrap}.article-hero{padding-top:160px}.article-hero h1{font-size:2rem}}.cookie-banner{position:fixed;bottom:0;left:0;right:0;background:#1e293b;color:#e2e8f0;padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:20px;z-index:9999;font-size:.9rem}.cookie-banner a{color:#60a5fa;text-decoration:underline}.cookie-banner button{background:#3b82f6;color:#fff;border:none;padding:8px 24px;border-radius:8px;cursor:pointer;font-weight:600}@media(max-width:600px){.cookie-banner{flex-direction:column;text-align:center;gap:12px}}.breadcrumb-nav{max-width:1200px;margin:0 auto;padding:100px 20px 0;font-size:.85rem;color:#64748b}.breadcrumb-nav a{color:#3b82f6;text-decoration:none}.breadcrumb-nav a:hover{text-decoration:underline}.breadcrumb-nav span{color:#0f172a;font-weight:500}
+.author-box{display:flex;gap:20px;align-items:center;background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:24px;margin:40px 0 0}.author-box img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0}.author-box .author-info h4{font-size:1rem;font-weight:700;margin-bottom:4px;color:#0f172a}.author-box .author-info p{font-size:.9rem;color:#64748b;margin:0;line-height:1.6}.author-box .author-info .author-label{font-size:.75rem;color:#3b82f6;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+</style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"Cross-Browser Testing: A Practical Workflow","author":{"@type":"Person","name":"Sachin Bhanushali"},"publisher":{"@type":"Organization","name":"HTMLtoImages","url":"https://www.htmltoimages.com"},"datePublished":"2026-05-22","dateModified":"2026-05-22","mainEntityOfPage":"https://www.htmltoimages.com/blog/cross-browser-testing/"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.htmltoimages.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.htmltoimages.com/blog/"},{"@type":"ListItem","position":3,"name":"Cross-Browser Testing: A Practical Workflow"}]}
+    </script>
+</head>
+<body>
+<nav class="navbar"><a href="/" class="logo"><i class="fas fa-cube"></i> HTMLtoImages</a><div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/#tools">Tools</a>
+            <a href="/blog/">Blog</a>
+            <a href="/contact">Contact</a>
+        </div></nav>
+<main>
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <span>Cross-Browser Testing: A Practical Workflow</span></nav>
+<header class="article-hero"><span class="tag">Testing</span><h1>Cross-Browser Testing: A Practical Workflow</h1><div class="article-meta"><span><i class="fas fa-calendar"></i> May 22, 2026</span><span><i class="fas fa-clock"></i> 11 min read</span><span><i class="fas fa-user"></i> Sachin Bhanushali</span></div></header>
+
+<article class="article-content">
+
+<p>Last year I shipped a feature that looked perfect in Chrome, fine in Firefox, and completely broken in Safari. The culprit? A <code>gap</code> property on a flex container — which Safari 14 didn't support. The fix took five minutes. The embarrassment lasted longer. My QA process at the time was: open Chrome, looks good, ship it.</p>
+
+<p>Cross-browser testing doesn't have to be painful. You don't need to test every feature in every browser on every OS. You need a practical workflow that catches the stuff that actually breaks. Here's the one I use after learning the hard way.</p>
+
+<h2>Which Browsers Actually Matter?</h2>
+
+<p>Before you test anything, check your analytics. Not "global browser market share" — <em>your</em> analytics. The browsers your actual users are using.</p>
+
+<p>I've worked on projects where 40% of traffic came from Safari on iOS because the audience skewed towards iPhone users. I've also worked on internal enterprise tools where 95% of users were on the latest Chrome. Testing priorities for these two projects are completely different.</p>
+
+<p>That said, here's the baseline I recommend for most public-facing websites in 2026:</p>
+
+<ul>
+<li><strong>Chrome</strong> (latest, on desktop) — your primary development browser</li>
+<li><strong>Safari</strong> (latest, on macOS and iOS) — the most common source of cross-browser bugs</li>
+<li><strong>Firefox</strong> (latest) — different rendering engine, catches different issues</li>
+<li><strong>Samsung Internet</strong> — if you have significant Android traffic from non-Google phones</li>
+<li><strong>Edge</strong> — uses the same engine as Chrome, but has some unique behaviors</li>
+</ul>
+
+<p>You'll notice IE isn't on this list. It's 2026. Internet Explorer is dead. If someone asks you to support IE11, that's a conversation about project scope and additional budget, not a technical problem to solve for free.</p>
+
+<h2>The Testing Tools</h2>
+
+<h3>BrowserStack</h3>
+
+<p>BrowserStack gives you access to real browsers on real devices through your web browser. You can test on Safari on macOS, Chrome on a Pixel phone, or Firefox on Ubuntu — without owning any of those devices.</p>
+
+<p>The free tier is limited, but the paid plans are worth it for any team shipping production software. The live testing feature lets you interact with your site in real-time on a remote device. The screenshot tool captures your page across multiple browser/OS combinations simultaneously.</p>
+
+<p>I use BrowserStack primarily for Safari testing since I develop on Windows. It's the fastest way to catch WebKit-specific bugs without buying a Mac.</p>
+
+<h3>Playwright for Automated Testing</h3>
+
+<p>For automated cross-browser testing, Playwright is my go-to. It supports Chromium, Firefox, and WebKit (Safari's engine) out of the box.</p>
+
+<pre>// playwright.config.js
+import { defineConfig, devices } from '@playwright/test';
+
+export default defineConfig({
+  projects: [
+    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
+    { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
+    { name: 'webkit', use: { ...devices['Desktop Safari'] } },
+    { name: 'Mobile Chrome', use: { ...devices['Pixel 5'] } },
+    { name: 'Mobile Safari', use: { ...devices['iPhone 13'] } },
+  ],
+});</pre>
+
+<pre>// tests/navigation.spec.js
+import { test, expect } from '@playwright/test';
+
+test('navigation menu opens on mobile', async ({ page }) => {
+  await page.goto('/');
+  await page.click('[data-testid="menu-toggle"]');
+  await expect(page.locator('[data-testid="nav-menu"]')).toBeVisible();
+});
+
+test('form submission works', async ({ page }) => {
+  await page.goto('/contact');
+  await page.fill('#email', 'test@example.com');
+  await page.fill('#message', 'Hello');
+  await page.click('button[type="submit"]');
+  await expect(page.locator('.success-message')).toBeVisible();
+});</pre>
+
+<p>Run these tests across all three engines in your CI pipeline. If a test fails on WebKit but passes on Chromium, you've caught a cross-browser bug before it hits production.</p>
+
+<div class="tip-box"><i class="fas fa-lightbulb"></i><p><strong>Playwright's WebKit is not exactly Safari.</strong> It uses the same rendering engine, but there are subtle differences. For critical Safari-specific testing, you still need real Safari. But Playwright catches 90% of WebKit issues, and that's a massive improvement over not testing at all.</p></div>
+
+<h3>Other Useful Tools</h3>
+
+<ul>
+<li><strong>Can I Use</strong> (<a href="https://caniuse.com">caniuse.com</a>) — check browser support for any CSS or JS feature before using it</li>
+<li><strong>Polyfill.io</strong> — automatically serves polyfills based on the requesting browser's User-Agent</li>
+<li><strong>Lighthouse</strong> — built into Chrome DevTools, flags compatibility and accessibility issues</li>
+<li><strong>LambdaTest</strong> — BrowserStack alternative with a similar feature set and competitive pricing</li>
+</ul>
+
+<h2>CSS Fallbacks: The Practical Approach</h2>
+
+<p>Writing CSS that works everywhere doesn't mean avoiding new features. It means providing fallbacks so that older browsers get a functional (if less polished) experience.</p>
+
+<h3>The @supports Rule</h3>
+
+<pre>/* Fallback layout */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-item {
+  width: 33.333%;
+}
+
+/* Enhanced layout for browsers that support grid */
+@supports (display: grid) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .grid-item {
+    width: auto;
+  }
+}</pre>
+
+<p>This is progressive enhancement in action. Every browser gets a working layout. Browsers that support CSS Grid get the better version. No JavaScript required.</p>
+
+<h3>Property-Level Fallbacks</h3>
+
+<p>CSS ignores properties it doesn't understand. Use this to your advantage:</p>
+
+<pre>.container {
+  /* Fallback for browsers without dvh support */
+  height: 100vh;
+  /* Modern browsers use this instead */
+  height: 100dvh;
+}
+
+.card {
+  /* Fallback solid color */
+  background: #3b82f6;
+  /* Modern gradient, ignored if not supported */
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+}
+
+.blur-bg {
+  /* Fallback: solid background */
+  background: rgba(255, 255, 255, 0.95);
+  /* Enhancement: frosted glass effect */
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.8);
+}</pre>
+
+<p>Order matters. Put the fallback first, then the modern property. Browsers that understand the modern syntax will use it; others will stick with the fallback.</p>
+
+<h2>Feature Detection in JavaScript</h2>
+
+<p>Never use browser detection (<code>navigator.userAgent</code>) to decide what code to run. User-Agent strings are unreliable, spoofable, and constantly changing. Use feature detection instead.</p>
+
+<pre>// Bad: browser detection
+if (navigator.userAgent.includes('Safari')) {
+  // This will also match Chrome on Mac, which includes "Safari" in its UA
+}
+
+// Good: feature detection
+if ('IntersectionObserver' in window) {
+  // Use IntersectionObserver for lazy loading
+  const observer = new IntersectionObserver(handleIntersect);
+  observer.observe(element);
+} else {
+  // Fallback: load everything immediately
+  loadAllImages();
+}
+
+// Check for CSS feature support from JavaScript
+if (CSS.supports('backdrop-filter', 'blur(10px)')) {
+  element.classList.add('has-blur');
+} else {
+  element.classList.add('no-blur');
+}</pre>
+
+<p>For more complex feature detection, <a href="https://modernizr.com">Modernizr</a> is still around, but in 2026 most of its checks can be done with native <code>CSS.supports()</code> and simple property checks.</p>
+
+<h2>Common Cross-Browser Gotchas in 2026</h2>
+
+<p>These are the issues that still catch developers. I keep a mental list:</p>
+
+<h3>Safari's Flexbox Quirks</h3>
+
+<p>Safari handles <code>flex-basis</code>, <code>gap</code> in flexbox, and nested flex containers slightly differently from Chrome. The most common issue: Safari sometimes doesn't respect <code>min-height: 0</code> on flex children, causing overflow instead of scrolling. The fix:</p>
+
+<pre>.flex-child {
+  min-height: 0;
+  /* Safari sometimes needs this too */
+  overflow: hidden;
+}</pre>
+
+<h3>Date Parsing</h3>
+
+<pre>// This works in Chrome but fails in Safari
+new Date('2026-05-22')  // Safari might return Invalid Date
+
+// This works everywhere
+new Date('2026-05-22T00:00:00')
+// Or use explicit arguments
+new Date(2026, 4, 22)  // Month is 0-indexed</pre>
+
+<h3>Smooth Scrolling</h3>
+
+<pre>/* Works in Chrome and Firefox, limited in older Safari */
+html {
+  scroll-behavior: smooth;
+}
+
+/* JavaScript fallback for full control */
+element.scrollIntoView({
+  behavior: 'smooth',
+  block: 'start'
+});</pre>
+
+<h3>Form Input Styling</h3>
+
+<p>Form elements render differently across every browser. Safari adds its own styling to inputs, selects, and buttons. Reset them aggressively:</p>
+
+<pre>input, select, textarea, button {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  font: inherit;
+}</pre>
+
+<div class="tip-box"><i class="fas fa-lightbulb"></i><p><strong>Keep a cross-browser bug journal.</strong> Every time you find a browser-specific issue, write it down with the symptoms, the cause, and the fix. After a year, you'll have a personalized reference that saves hours of debugging. I've been maintaining mine since 2019 and it's one of my most valuable assets.</p></div>
+
+<h2>My Testing Workflow</h2>
+
+<p>Here's the process I follow for every significant feature or release:</p>
+
+<ol>
+<li><strong>Develop in Chrome</strong> with DevTools open. Use responsive mode to test breakpoints as I build.</li>
+<li><strong>Check Firefox</strong> before committing. Open the page, scan for visual differences. Firefox has slightly different font rendering and form styles — I want to catch these early.</li>
+<li><strong>Run Playwright tests</strong> on push. The CI pipeline runs the full suite against Chromium, Firefox, and WebKit. If anything fails, the PR is blocked.</li>
+<li><strong>Manual Safari check on BrowserStack</strong> before merging to main. Especially for layout-heavy changes, form interactions, and any CSS that uses newer properties.</li>
+<li><strong>Test on real mobile devices</strong> before a release. Emulators are good but they don't replicate touch behavior, viewport quirks, and performance characteristics. I keep an old Android phone and borrow an iPhone for final smoke testing.</li>
+</ol>
+
+<p>This takes maybe 30 minutes per feature. Compare that to the hours you'd spend debugging and hotfixing a cross-browser bug in production, and it's a bargain.</p>
+
+<h2>When to Stop Testing</h2>
+
+<p>You can't test every browser-OS-device combination. You'd need thousands of permutations and infinite time. The goal isn't perfection — it's catching the bugs that affect your actual users.</p>
+
+<p>Look at your analytics. If 0.3% of your traffic comes from UC Browser on Android 8, testing on that combination is probably not worth the effort. Fix bugs when users report them, but don't proactively hunt for them in edge-case environments.</p>
+
+<p>Focus your energy where it matters: the top 3-4 browsers your audience actually uses, tested at the viewport sizes that match your real traffic.</p>
+
+<div class="cta-box"><h3>Test Your HTML Rendering Across Browsers</h3><p>Build your HTML and CSS in the browser, then export a pixel-perfect image to compare rendering across environments.</p><a href="/html-to-png/">Try HTML to PNG →</a></div>
+
+<p>Cross-browser testing isn't about achieving pixel-perfect parity everywhere. It's about making sure your site works — meaning it's usable, readable, and functional — in every browser your users actually use. Progressive enhancement, CSS fallbacks, and feature detection are your best friends. Pair them with a consistent testing workflow, and you'll ship with confidence.</p>
+
+<p>And check Safari. Always check Safari.</p>
+
+<div class="author-box">
+<img src="/assets/images/author.jpg" alt="Sachin Bhanushali" width="64" height="64" style="width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0">
+<div class="author-info">
+<span class="author-label">Written by</span>
+<h4>Sachin Bhanushali</h4>
+<p>Full-stack developer and creator of HTMLtoImages. Building free, privacy-first developer tools that run entirely in your browser.</p>
+</div>
+</div>
+</article>
+<div class="related"><h2>Related Articles</h2><div class="related-grid">
+<a href="/blog/responsive-design-best-practices/" class="related-card"><h3>Responsive Design Best Practices</h3><p>Build layouts that work beautifully on every screen size.</p></a>
+<a href="/blog/css-media-queries/" class="related-card"><h3>CSS Media Queries</h3><p>Master media queries for responsive and adaptive designs.</p></a>
+<a href="/blog/web-accessibility-guide/" class="related-card"><h3>Web Accessibility Guide</h3><p>Make your websites accessible to everyone with WCAG best practices.</p></a>
+</div></div>
+</main>
+<footer class="footer"><div class="footer-content"><div class="footer-col"><div class="logo" style="margin-bottom:15px"><i class="fas fa-cube"></i> HTMLtoImages</div><p style="color:var(--text-muted);font-size:.9rem">The #1 tool for developers to turn code into beautiful images.</p></div><div class="footer-col"><h4>Converters</h4><ul><li><a href="/html-to-png/">HTML to PNG</a></li><li><a href="/html-to-jpg/">HTML to JPG</a></li><li><a href="/html-to-webp/">HTML to WebP</a></li><li><a href="/code-to-image/">Code to Image</a></li><li><a href="/html-table-to-image/">Table to Image</a></li><li><a href="/html-email-to-image/">Email to Image</a></li><li><a href="/tailwind-to-image/">Tailwind to Image</a></li></ul></div><div class="footer-col"><h4>Resources</h4><ul><li><a href="/blog/">Blog</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms</a></li><li><a href="/disclaimer">Disclaimer</a></li><li><a href="/sitemap-page">Sitemap</a></li></ul></div></div><div class="copyright">&copy; 2026 htmltoimages.com. All rights reserved.<br><span style="font-size:.9rem;margin-top:10px;display:inline-block;color:var(--text-muted)">Built with ❤️ &amp; ☕ by Sachin Bhanushali</span></div></footer>
+<div class="cookie-banner" id="cookieBanner" style="display:none"><span>We use cookies for analytics. See our <a href="/privacy">Privacy Policy</a>.</span><button onclick="acceptCookies()">Accept</button></div>
+<script>if(!localStorage.getItem('cookiesAccepted')){document.getElementById('cookieBanner').style.display='flex'}function acceptCookies(){localStorage.setItem('cookiesAccepted','true');document.getElementById('cookieBanner').style.display='none'}</script>
+</body></html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href="https://www.htmltoimages.com/blog/javascript-dom-manipulation/"><title>JavaScript DOM Manipulation: A Practical Guide | HTMLtoImages Blog</title><meta name="description" content="Learn JavaScript DOM manipulation the right way — selecting elements, creating and removing nodes, event delegation, and performance tips that actually matter in production."><script async src="https://www.googletagmanager.com/gtag/js?id=G-FQBH2S5FQ4"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-FQBH2S5FQ4');</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5405462456191304" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><style>:root{--bg-body:#f8fafc;--text-main:#0f172a;--text-muted:#64748b;--primary-gradient:linear-gradient(135deg,#06b6d4,#3b82f6 50%,#8b5cf6);--border-color:#e2e8f0;--radius-lg:24px;--radius-md:12px}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6}a{text-decoration:none;color:inherit;transition:.3s}.navbar{position:fixed;top:20px;left:50%;transform:translateX(-50%);width:90%;max-width:1200px;padding:12px 24px;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border:1px solid var(--border-color);border-radius:100px;z-index:1000;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 20px rgba(0,0,0,.05)}.logo{font-size:1.2rem;font-weight:800;display:flex;align-items:center;gap:10px}.logo i{background:var(--primary-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.nav-links{display:flex;gap:30px}.nav-links a{font-weight:500;color:var(--text-muted)}.nav-links a:hover{color:#3b82f6}.article-hero{text-align:center;padding:160px 20px 40px;max-width:800px;margin:0 auto}.article-hero .tag{display:inline-block;background:#eff6ff;color:#3b82f6;padding:6px 16px;border-radius:20px;font-size:.8rem;font-weight:600;margin-bottom:16px}.article-hero h1{font-size:2.6rem;font-weight:800;line-height:1.2;margin-bottom:16px}.article-meta{color:var(--text-muted);font-size:.9rem;display:flex;align-items:center;justify-content:center;gap:16px}.article-content{max-width:750px;margin:40px auto 80px;padding:0 20px}.article-content h2{font-size:1.7rem;font-weight:700;margin:40px 0 16px}.article-content h3{font-size:1.3rem;font-weight:600;margin:30px 0 12px;color:#334155}.article-content p{color:var(--text-muted);font-size:1.05rem;line-height:1.9;margin-bottom:18px}.article-content ul,.article-content ol{margin:0 0 20px 24px;color:var(--text-muted);font-size:1.05rem}.article-content li{margin-bottom:10px;line-height:1.7}.article-content strong{color:var(--text-main)}.article-content a{color:#3b82f6}.article-content code{background:#f1f5f9;padding:2px 8px;border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:.9rem;color:#e11d48}.article-content pre{background:#1e293b;color:#e2e8f0;padding:20px 24px;border-radius:var(--radius-md);overflow-x:auto;margin:0 0 24px;font-family:'JetBrains Mono',monospace;font-size:.85rem;line-height:1.7}.tip-box{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:var(--radius-md);padding:20px 24px;margin:0 0 24px;display:flex;gap:12px}.tip-box i{color:#22c55e;margin-top:4px;flex-shrink:0}.tip-box p{margin:0;color:#166534;font-size:.95rem}.cta-box{background:var(--primary-gradient);border-radius:var(--radius-lg);padding:40px;text-align:center;margin:40px 0;color:#fff}.cta-box h3{font-size:1.4rem;margin-bottom:12px;font-weight:700}.cta-box p{color:rgba(255,255,255,.85);margin-bottom:20px}.cta-box a{display:inline-block;background:#fff;color:#3b82f6;padding:12px 28px;border-radius:var(--radius-md);font-weight:700}.related{max-width:750px;margin:0 auto 80px;padding:0 20px}.related h2{font-size:1.5rem;font-weight:700;margin-bottom:24px}.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.related-card{background:#fff;border:1px solid var(--border-color);border-radius:var(--radius-md);padding:20px;transition:.3s}.related-card:hover{border-color:#3b82f6;transform:translateY(-3px)}.related-card h3{font-size:1rem;font-weight:600;margin-bottom:8px}.related-card p{font-size:.85rem;color:var(--text-muted);margin:0}.footer{border-top:1px solid var(--border-color);background:#f1f5f9;padding:60px 20px}.footer-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px}.footer-col h4{font-size:1.1rem;margin-bottom:20px}.footer-col ul{list-style:none}.footer-col li{margin-bottom:10px}.footer-col a{color:var(--text-muted);font-size:.95rem}.footer-col a:hover{color:#3b82f6}.copyright{text-align:center;margin-top:60px;padding-top:30px;border-top:1px solid #cbd5e1;color:var(--text-muted);font-size:.9rem}@media(max-width:850px){.navbar{padding:12px 20px;width:95%;flex-direction:column;border-radius:16px;gap:12px}.nav-links{gap:20px;width:100%;justify-content:center;flex-wrap:wrap}.article-hero{padding-top:160px}.article-hero h1{font-size:2rem}}.cookie-banner{position:fixed;bottom:0;left:0;right:0;background:#1e293b;color:#e2e8f0;padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:20px;z-index:9999;font-size:.9rem}.cookie-banner a{color:#60a5fa;text-decoration:underline}.cookie-banner button{background:#3b82f6;color:#fff;border:none;padding:8px 24px;border-radius:8px;cursor:pointer;font-weight:600}@media(max-width:600px){.cookie-banner{flex-direction:column;text-align:center;gap:12px}}.breadcrumb-nav{max-width:1200px;margin:0 auto;padding:100px 20px 0;font-size:.85rem;color:#64748b}.breadcrumb-nav a{color:#3b82f6;text-decoration:none}.breadcrumb-nav a:hover{text-decoration:underline}.breadcrumb-nav span{color:#0f172a;font-weight:500}
+.author-box{display:flex;gap:20px;align-items:center;background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:24px;margin:40px 0 0}.author-box img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0}.author-box .author-info h4{font-size:1rem;font-weight:700;margin-bottom:4px;color:#0f172a}.author-box .author-info p{font-size:.9rem;color:#64748b;margin:0;line-height:1.6}.author-box .author-info .author-label{font-size:.75rem;color:#3b82f6;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+</style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"JavaScript DOM Manipulation: A Practical Guide","author":{"@type":"Person","name":"Sachin Bhanushali"},"publisher":{"@type":"Organization","name":"HTMLtoImages","url":"https://www.htmltoimages.com"},"datePublished":"2025-06-15","dateModified":"2025-06-15","mainEntityOfPage":"https://www.htmltoimages.com/blog/javascript-dom-manipulation/"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.htmltoimages.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.htmltoimages.com/blog/"},{"@type":"ListItem","position":3,"name":"JavaScript DOM Manipulation"}]}
+    </script>
+</head>
+<body>
+<nav class="navbar"><a href="/" class="logo"><i class="fas fa-cube"></i> HTMLtoImages</a><div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/#tools">Tools</a>
+            <a href="/blog/">Blog</a>
+            <a href="/contact">Contact</a>
+        </div></nav>
+<main>
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <span>JavaScript DOM Manipulation</span></nav>
+<header class="article-hero"><span class="tag">JavaScript</span><h1>JavaScript DOM Manipulation: A Practical Guide</h1><div class="article-meta"><span><i class="fas fa-calendar"></i> June 15, 2025</span><span><i class="fas fa-clock"></i> 12 min read</span><span><i class="fas fa-user"></i> Sachin Bhanushali</span></div></header>
+
+<article class="article-content">
+
+<p>I've lost count of the number of times I've watched a junior developer reach for jQuery — or even React — just to toggle a class on a button. Don't get me wrong, frameworks are great. But if you don't understand what's happening underneath, you'll spend hours debugging problems that would take seconds if you knew the DOM.</p>
+
+<p>The DOM (Document Object Model) is the browser's live representation of your HTML. Every element, every attribute, every piece of text — it's all a node in a giant tree structure. And JavaScript gives you full power to read, create, modify, and destroy any part of it.</p>
+
+<p>Let's get into the stuff that actually matters.</p>
+
+<h2>Selecting Elements: Stop Using getElementById for Everything</h2>
+
+<p>Back in 2010, <code>document.getElementById()</code> was king. It's still fast, but there are much better options now. The two methods you should use 95% of the time are <code>querySelector</code> and <code>querySelectorAll</code>.</p>
+
+<pre>// Select the first element that matches
+const hero = document.querySelector('.hero-section');
+
+// Select ALL matching elements (returns a NodeList)
+const cards = document.querySelectorAll('.card');
+
+// You can use any CSS selector — get creative
+const activeLink = document.querySelector('nav a.active');
+const thirdItem = document.querySelector('ul li:nth-child(3)');</pre>
+
+<p>Here's the thing most tutorials skip: <code>querySelectorAll</code> returns a <strong>NodeList</strong>, not an array. You can use <code>forEach</code> on it, but you can't use <code>map</code>, <code>filter</code>, or <code>reduce</code> directly. If you need array methods, convert it first:</p>
+
+<pre>const cards = document.querySelectorAll('.card');
+
+// Option 1: Spread operator
+const cardsArray = [...cards];
+
+// Option 2: Array.from()
+const cardsArray2 = Array.from(cards);
+
+// Now you can use array methods
+const visibleCards = cardsArray.filter(card =>
+  !card.classList.contains('hidden')
+);</pre>
+
+<div class="tip-box"><i class="fas fa-lightbulb"></i><p><strong>Performance tip:</strong> If you're selecting by ID, <code>getElementById()</code> is still marginally faster. But unless you're running selections inside a tight loop with thousands of iterations, the difference is negligible. Use <code>querySelector</code> for consistency.</p></div>
+
+<h3>Scoped Selections</h3>
+
+<p>One pattern I use constantly: calling <code>querySelector</code> on a specific element instead of <code>document</code>. This scopes the search to that element's descendants only.</p>
+
+<pre>const sidebar = document.querySelector('.sidebar');
+const sidebarLinks = sidebar.querySelectorAll('a');
+
+// Only finds links INSIDE .sidebar, not the entire page</pre>
+
+<p>This is especially useful when you have repeated components on a page. Don't search the whole document when you don't need to.</p>
+
+<h2>Creating and Removing Elements</h2>
+
+<p>Creating DOM elements by hand feels verbose compared to JSX or template literals, but understanding this process is essential. Here's the standard pattern:</p>
+
+<pre>// Create an element
+const card = document.createElement('div');
+card.className = 'card';
+card.setAttribute('data-id', '42');
+
+// Add content
+const title = document.createElement('h3');
+title.textContent = 'New Card Title';
+card.appendChild(title);
+
+// Add it to the page
+document.querySelector('.card-grid').appendChild(card);</pre>
+
+<p>That's a lot of code for one card. In my experience, <code>innerHTML</code> with template literals is more practical for anything beyond a simple element:</p>
+
+<pre>const cardGrid = document.querySelector('.card-grid');
+
+cardGrid.innerHTML += `
+  &lt;div class="card" data-id="42"&gt;
+    &lt;h3&gt;New Card Title&lt;/h3&gt;
+    &lt;p&gt;Card description goes here&lt;/p&gt;
+    &lt;button class="btn"&gt;View Details&lt;/button&gt;
+  &lt;/div&gt;
+`;</pre>
+
+<p><strong>Warning:</strong> using <code>innerHTML +=</code> on a container will re-parse all existing HTML inside it. That means any event listeners on child elements get destroyed. For adding elements without nuking existing ones, use <code>insertAdjacentHTML</code> instead:</p>
+
+<pre>cardGrid.insertAdjacentHTML('beforeend', `
+  &lt;div class="card" data-id="42"&gt;
+    &lt;h3&gt;New Card Title&lt;/h3&gt;
+    &lt;p&gt;Card description goes here&lt;/p&gt;
+  &lt;/div&gt;
+`);</pre>
+
+<p>The four positions for <code>insertAdjacentHTML</code> are <code>beforebegin</code>, <code>afterbegin</code>, <code>beforeend</code>, and <code>afterend</code>. I prefer <code>beforeend</code> for most appending tasks — it does what <code>appendChild</code> does but with HTML strings.</p>
+
+<h3>Removing Elements</h3>
+
+<p>Removing elements used to be awkward. You had to select the parent, then call <code>removeChild</code>. Modern JavaScript has a much cleaner way:</p>
+
+<pre>// The old way (still works, just ugly)
+const element = document.querySelector('.old-card');
+element.parentNode.removeChild(element);
+
+// The modern way
+document.querySelector('.old-card').remove();</pre>
+
+<p>Clean. Simple. The <code>.remove()</code> method works in all modern browsers. If you need to support IE 11... well, you have bigger problems.</p>
+
+<h2>Event Delegation: The Pattern That Changes Everything</h2>
+
+<p>This is the single most important DOM pattern you'll ever learn. I'm not exaggerating.</p>
+
+<p>Let's say you have a list of 100 items, and each one has a delete button. The naive approach is to attach 100 event listeners:</p>
+
+<pre>// DON'T do this
+document.querySelectorAll('.delete-btn').forEach(btn => {
+  btn.addEventListener('click', handleDelete);
+});
+// 100 listeners = 100 functions in memory</pre>
+
+<p>That's wasteful. And worse — if you dynamically add new items, those new buttons won't have listeners. You'd need to re-attach them every time.</p>
+
+<p>Event delegation fixes both problems. You attach <strong>one</strong> listener to the parent, and use the event's <code>target</code> to figure out what was clicked:</p>
+
+<pre>document.querySelector('.item-list').addEventListener('click', (e) => {
+  // Check if a delete button (or its child) was clicked
+  const deleteBtn = e.target.closest('.delete-btn');
+  if (!deleteBtn) return;
+
+  const item = deleteBtn.closest('.item');
+  const itemId = item.dataset.id;
+
+  console.log(`Deleting item ${itemId}`);
+  item.remove();
+});</pre>
+
+<p>The <code>closest()</code> method is the secret weapon here. It walks up the DOM tree from the clicked element and returns the nearest ancestor matching the selector. If the user clicks on an icon <em>inside</em> the delete button, <code>e.target</code> would be the icon, not the button. <code>closest('.delete-btn')</code> handles that gracefully.</p>
+
+<div class="tip-box"><i class="fas fa-lightbulb"></i><p><strong>Why I love event delegation:</strong> One listener instead of hundreds. Works with dynamically added elements automatically. Easier to debug. There's almost no reason NOT to use this pattern for repeated UI components.</p></div>
+
+<h2>Modifying Styles and Classes</h2>
+
+<p>Please don't set styles directly with <code>element.style.backgroundColor = 'red'</code> unless you absolutely have to. It creates inline styles that are hard to override and impossible to maintain.</p>
+
+<p>Instead, use <code>classList</code>:</p>
+
+<pre>const modal = document.querySelector('.modal');
+
+modal.classList.add('visible');
+modal.classList.remove('hidden');
+modal.classList.toggle('active');
+modal.classList.replace('old-class', 'new-class');
+
+// Check if a class exists
+if (modal.classList.contains('visible')) {
+  console.log('Modal is showing');
+}</pre>
+
+<p>Define your styles in CSS where they belong. Toggle classes with JavaScript. This separation of concerns will save you hours of debugging.</p>
+
+<h3>When Inline Styles Make Sense</h3>
+
+<p>There are exceptions. Dynamic values that can't be expressed in CSS classes — like positioning an element based on mouse coordinates or setting a progress bar width — absolutely belong as inline styles:</p>
+
+<pre>// This is fine — the value is dynamic
+progressBar.style.width = `${percentComplete}%`;
+
+// Even better: use CSS custom properties
+element.style.setProperty('--mouse-x', `${e.clientX}px`);
+element.style.setProperty('--mouse-y', `${e.clientY}px`);</pre>
+
+<h2>Performance Tips That Actually Matter</h2>
+
+<h3>Batch Your DOM Operations</h3>
+
+<p>Every time you modify the DOM, the browser might need to recalculate layouts. This is called a "reflow," and it's expensive. The biggest mistake I see is modifying the DOM in a loop:</p>
+
+<pre>// Slow: causes a reflow on every iteration
+items.forEach(item => {
+  const div = document.createElement('div');
+  div.textContent = item.name;
+  container.appendChild(div); // reflow!
+});
+
+// Fast: build everything, then insert once
+const fragment = document.createDocumentFragment();
+items.forEach(item => {
+  const div = document.createElement('div');
+  div.textContent = item.name;
+  fragment.appendChild(div); // no reflow
+});
+container.appendChild(fragment); // single reflow</pre>
+
+<p><code>DocumentFragment</code> is an invisible container that doesn't exist in the DOM. You can build your entire subtree inside it, then insert it all at once. One reflow instead of a hundred.</p>
+
+<h3>Avoid Layout Thrashing</h3>
+
+<p>Layout thrashing happens when you read a layout property (like <code>offsetHeight</code>) and then immediately write to the DOM, forcing the browser to recalculate in between:</p>
+
+<pre>// Layout thrashing — don't do this
+elements.forEach(el => {
+  const height = el.offsetHeight; // read (forces layout)
+  el.style.height = height * 2 + 'px'; // write (invalidates layout)
+});
+
+// Better: read all first, then write all
+const heights = elements.map(el => el.offsetHeight);
+elements.forEach((el, i) => {
+  el.style.height = heights[i] * 2 + 'px';
+});</pre>
+
+<h3>Use textContent Over innerHTML When Possible</h3>
+
+<p>If you're just setting text (no HTML), always prefer <code>textContent</code>. It's faster because the browser doesn't need to parse HTML, and it's safer because it doesn't create XSS vulnerabilities. <code>innerHTML</code> will execute any <code>&lt;script&gt;</code> tags or event handlers embedded in the string.</p>
+
+<h2>Real-World Pattern: Building a Dynamic List</h2>
+
+<p>Let me pull everything together with a practical example — a todo list that uses all the patterns we've covered:</p>
+
+<pre>const form = document.querySelector('#todo-form');
+const input = document.querySelector('#todo-input');
+const list = document.querySelector('#todo-list');
+
+// Event delegation on the list
+list.addEventListener('click', (e) => {
+  const deleteBtn = e.target.closest('[data-action="delete"]');
+  if (deleteBtn) {
+    deleteBtn.closest('.todo-item').remove();
+    return;
+  }
+
+  const toggleBtn = e.target.closest('[data-action="toggle"]');
+  if (toggleBtn) {
+    toggleBtn.closest('.todo-item').classList.toggle('completed');
+  }
+});
+
+// Add new items
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const text = input.value.trim();
+  if (!text) return;
+
+  list.insertAdjacentHTML('beforeend', `
+    &lt;li class="todo-item"&gt;
+      &lt;span data-action="toggle"&gt;${text}&lt;/span&gt;
+      &lt;button data-action="delete"&gt;&amp;times;&lt;/button&gt;
+    &lt;/li&gt;
+  `);
+
+  input.value = '';
+  input.focus();
+});</pre>
+
+<p>No framework. No library. Just clean, efficient JavaScript. The list handles an unlimited number of items with exactly two event listeners. New items work immediately because of event delegation. And we're using <code>insertAdjacentHTML</code> so existing items keep their state.</p>
+
+<div class="cta-box"><h3>Turn Your HTML Components Into Images</h3><p>Building UI components with vanilla JS? Export them as sharp PNG or WebP images for documentation or sharing.</p><a href="/html-to-png/">Try HTML to PNG Free →</a></div>
+
+<h2>Common Mistakes to Avoid</h2>
+
+<ul>
+<li><strong>Running scripts before DOM is ready.</strong> Put your <code>&lt;script&gt;</code> tag before <code>&lt;/body&gt;</code>, or use <code>defer</code> attribute, or wrap code in <code>DOMContentLoaded</code>.</li>
+<li><strong>Using innerHTML when textContent will do.</strong> It's slower and opens you up to XSS attacks.</li>
+<li><strong>Forgetting that NodeList isn't an Array.</strong> Convert with <code>[...nodeList]</code> before using <code>map</code>, <code>filter</code>, etc.</li>
+<li><strong>Attaching listeners inside loops without delegation.</strong> One parent listener beats a hundred child listeners every time.</li>
+<li><strong>Storing DOM references that go stale.</strong> If you remove and re-add elements, cached references to old elements won't work. Query again, or use event delegation.</li>
+</ul>
+
+<h2>Wrapping Up</h2>
+
+<p>The DOM API isn't glamorous. It doesn't have the marketing buzz of the latest framework. But it's what every framework is built on top of, and understanding it deeply makes you a significantly better developer.</p>
+
+<p>My advice? Build your next small project — a modal, a dropdown, a tab component — without any framework. You'll be surprised how little code it takes, and you'll never feel lost in framework abstractions again.</p>
+
+<p>Master the fundamentals, and the tools on top become trivial.</p>
+
+<div class="author-box">
+<img src="/assets/images/author.jpg" alt="Sachin Bhanushali" width="64" height="64" style="width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0">
+<div class="author-info">
+<span class="author-label">Written by</span>
+<h4>Sachin Bhanushali</h4>
+<p>Full-stack developer and creator of HTMLtoImages. Building free, privacy-first developer tools that run entirely in your browser.</p>
+</div>
+</div>
+</article>
+<div class="related"><h2>Related Articles</h2><div class="related-grid">
+<a href="/blog/javascript-async-await/" class="related-card"><h3>JavaScript Async/Await</h3><p>Master asynchronous JavaScript with practical async/await examples.</p></a>
+<a href="/blog/javascript-array-methods/" class="related-card"><h3>JavaScript Array Methods</h3><p>The essential array methods every JS developer should know by heart.</p></a>
+<a href="/blog/html5-semantic-elements/" class="related-card"><h3>HTML5 Semantic Elements</h3><p>Why semantic HTML matters for accessibility, SEO, and cleaner code.</p></a>
+</div></div>
+</main>
+<footer class="footer"><div class="footer-content"><div class="footer-col"><div class="logo" style="margin-bottom:15px"><i class="fas fa-cube"></i> HTMLtoImages</div><p style="color:var(--text-muted);font-size:.9rem">The #1 tool for developers to turn code into beautiful images.</p></div><div class="footer-col"><h4>Converters</h4><ul><li><a href="/html-to-png/">HTML to PNG</a></li><li><a href="/html-to-jpg/">HTML to JPG</a></li><li><a href="/html-to-webp/">HTML to WebP</a></li><li><a href="/code-to-image/">Code to Image</a></li><li><a href="/html-table-to-image/">Table to Image</a></li><li><a href="/html-email-to-image/">Email to Image</a></li><li><a href="/tailwind-to-image/">Tailwind to Image</a></li></ul></div><div class="footer-col"><h4>Resources</h4><ul><li><a href="/blog/">Blog</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms</a></li><li><a href="/disclaimer">Disclaimer</a></li><li><a href="/sitemap-page">Sitemap</a></li></ul></div></div><div class="copyright">&copy; 2026 htmltoimages.com. All rights reserved.<br><span style="font-size:.9rem;margin-top:10px;display:inline-block;color:var(--text-muted)">Built with ❤️ &amp; ☕ by Sachin Bhanushali</span></div></footer>
+<div class="cookie-banner" id="cookieBanner" style="display:none"><span>We use cookies for analytics. See our <a href="/privacy">Privacy Policy</a>.</span><button onclick="acceptCookies()">Accept</button></div>
+<script>if(!localStorage.getItem('cookiesAccepted')){document.getElementById('cookieBanner').style.display='flex'}function acceptCookies(){localStorage.setItem('cookiesAccepted','true');document.getElementById('cookieBanner').style.display='none'}</script>
+</body></html>

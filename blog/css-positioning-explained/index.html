@@ -1,0 +1,316 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href="https://www.htmltoimages.com/blog/css-positioning-explained/"><title>CSS Positioning Explained: The Visual Guide | HTMLtoImages Blog</title><meta name="description" content="Master CSS positioning with visual examples. Learn static, relative, absolute, fixed, and sticky positioning plus stacking context and z-index."><script async src="https://www.googletagmanager.com/gtag/js?id=G-FQBH2S5FQ4"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-FQBH2S5FQ4');</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5405462456191304" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><style>:root{--bg-body:#f8fafc;--text-main:#0f172a;--text-muted:#64748b;--primary-gradient:linear-gradient(135deg,#06b6d4,#3b82f6 50%,#8b5cf6);--border-color:#e2e8f0;--radius-lg:24px;--radius-md:12px}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6}a{text-decoration:none;color:inherit;transition:.3s}.navbar{position:fixed;top:20px;left:50%;transform:translateX(-50%);width:90%;max-width:1200px;padding:12px 24px;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border:1px solid var(--border-color);border-radius:100px;z-index:1000;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 20px rgba(0,0,0,.05)}.logo{font-size:1.2rem;font-weight:800;display:flex;align-items:center;gap:10px}.logo i{background:var(--primary-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.nav-links{display:flex;gap:30px}.nav-links a{font-weight:500;color:var(--text-muted)}.nav-links a:hover{color:#3b82f6}.article-hero{text-align:center;padding:160px 20px 40px;max-width:800px;margin:0 auto}.article-hero .tag{display:inline-block;background:#eff6ff;color:#3b82f6;padding:6px 16px;border-radius:20px;font-size:.8rem;font-weight:600;margin-bottom:16px}.article-hero h1{font-size:2.6rem;font-weight:800;line-height:1.2;margin-bottom:16px}.article-meta{color:var(--text-muted);font-size:.9rem;display:flex;align-items:center;justify-content:center;gap:16px}.article-content{max-width:750px;margin:40px auto 80px;padding:0 20px}.article-content h2{font-size:1.7rem;font-weight:700;margin:40px 0 16px}.article-content h3{font-size:1.3rem;font-weight:600;margin:30px 0 12px;color:#334155}.article-content p{color:var(--text-muted);font-size:1.05rem;line-height:1.9;margin-bottom:18px}.article-content ul,.article-content ol{margin:0 0 20px 24px;color:var(--text-muted);font-size:1.05rem}.article-content li{margin-bottom:10px;line-height:1.7}.article-content strong{color:var(--text-main)}.article-content a{color:#3b82f6}.article-content code{background:#f1f5f9;padding:2px 8px;border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:.9rem;color:#e11d48}.article-content pre{background:#1e293b;color:#e2e8f0;padding:20px 24px;border-radius:var(--radius-md);overflow-x:auto;margin:0 0 24px;font-family:'JetBrains Mono',monospace;font-size:.85rem;line-height:1.7}.tip-box{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:var(--radius-md);padding:20px 24px;margin:0 0 24px;display:flex;gap:12px}.tip-box i{color:#22c55e;margin-top:4px;flex-shrink:0}.tip-box p{margin:0;color:#166534;font-size:.95rem}.cta-box{background:var(--primary-gradient);border-radius:var(--radius-lg);padding:40px;text-align:center;margin:40px 0;color:#fff}.cta-box h3{font-size:1.4rem;margin-bottom:12px;font-weight:700}.cta-box p{color:rgba(255,255,255,.85);margin-bottom:20px}.cta-box a{display:inline-block;background:#fff;color:#3b82f6;padding:12px 28px;border-radius:var(--radius-md);font-weight:700}.related{max-width:750px;margin:0 auto 80px;padding:0 20px}.related h2{font-size:1.5rem;font-weight:700;margin-bottom:24px}.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.related-card{background:#fff;border:1px solid var(--border-color);border-radius:var(--radius-md);padding:20px;transition:.3s}.related-card:hover{border-color:#3b82f6;transform:translateY(-3px)}.related-card h3{font-size:1rem;font-weight:600;margin-bottom:8px}.related-card p{font-size:.85rem;color:var(--text-muted);margin:0}.footer{border-top:1px solid var(--border-color);background:#f1f5f9;padding:60px 20px}.footer-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px}.footer-col h4{font-size:1.1rem;margin-bottom:20px}.footer-col ul{list-style:none}.footer-col li{margin-bottom:10px}.footer-col a{color:var(--text-muted);font-size:.95rem}.footer-col a:hover{color:#3b82f6}.copyright{text-align:center;margin-top:60px;padding-top:30px;border-top:1px solid #cbd5e1;color:var(--text-muted);font-size:.9rem}@media(max-width:850px){.navbar{padding:12px 20px;width:95%;flex-direction:column;border-radius:16px;gap:12px}.nav-links{gap:20px;width:100%;justify-content:center;flex-wrap:wrap}.article-hero{padding-top:160px}.article-hero h1{font-size:2rem}}.cookie-banner{position:fixed;bottom:0;left:0;right:0;background:#1e293b;color:#e2e8f0;padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:20px;z-index:9999;font-size:.9rem}.cookie-banner a{color:#60a5fa;text-decoration:underline}.cookie-banner button{background:#3b82f6;color:#fff;border:none;padding:8px 24px;border-radius:8px;cursor:pointer;font-weight:600}@media(max-width:600px){.cookie-banner{flex-direction:column;text-align:center;gap:12px}}.breadcrumb-nav{max-width:1200px;margin:0 auto;padding:100px 20px 0;font-size:.85rem;color:#64748b}.breadcrumb-nav a{color:#3b82f6;text-decoration:none}.breadcrumb-nav a:hover{text-decoration:underline}.breadcrumb-nav span{color:#0f172a;font-weight:500}
+.author-box{display:flex;gap:20px;align-items:center;background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:24px;margin:40px 0 0}.author-box img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0}.author-box .author-info h4{font-size:1rem;font-weight:700;margin-bottom:4px;color:#0f172a}.author-box .author-info p{font-size:.9rem;color:#64748b;margin:0;line-height:1.6}.author-box .author-info .author-label{font-size:.75rem;color:#3b82f6;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+</style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"CSS Positioning Explained: The Visual Guide","author":{"@type":"Person","name":"Sachin Bhanushali"},"publisher":{"@type":"Organization","name":"HTMLtoImages","url":"https://www.htmltoimages.com"},"datePublished":"2026-01-12","dateModified":"2026-01-12","mainEntityOfPage":"https://www.htmltoimages.com/blog/css-positioning-explained/"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.htmltoimages.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.htmltoimages.com/blog/"},{"@type":"ListItem","position":3,"name":"CSS Positioning Explained"}]}
+    </script>
+</head>
+<body>
+<nav class="navbar"><a href="/" class="logo"><i class="fas fa-cube"></i> HTMLtoImages</a><div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/#tools">Tools</a>
+            <a href="/blog/">Blog</a>
+            <a href="/contact">Contact</a>
+        </div></nav>
+<main>
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <span>CSS Positioning Explained</span></nav>
+<header class="article-hero"><span class="tag">CSS</span><h1>CSS Positioning Explained: The Visual Guide</h1><div class="article-meta"><span><i class="fas fa-calendar"></i> January 12, 2026</span><span><i class="fas fa-clock"></i> 11 min read</span><span><i class="fas fa-user"></i> Sachin Bhanushali</span></div></header>
+
+<article class="article-content">
+
+<p>I've lost count of how many times I've watched someone slap <code>position: absolute</code> on an element, refresh the page, and then stare at the screen in confusion as the element teleports to some random corner. CSS positioning is one of those things that seems simple until it isn't — and by then you've wasted 45 minutes fighting with <code>z-index: 99999</code>.</p>
+
+<p>Let's fix that. I'm going to walk through every CSS position value with actual examples, explain when to use each one, and — most importantly — demystify the stacking context so you never have to guess about z-index again.</p>
+
+<h2>Position: Static — The Default You Forget About</h2>
+
+<p>Every element starts with <code>position: static</code>. It just means "put this where it normally goes in the document flow." You almost never write it explicitly, but it's worth understanding because every other position value is defined <em>relative to this default behavior</em>.</p>
+
+<pre>/* This does literally nothing different */
+.element {
+  position: static;
+  top: 20px; /* ← ignored completely */
+  left: 30px; /* ← also ignored */
+}</pre>
+
+<p>Here's the thing people miss: <strong>top, right, bottom, left, and z-index have zero effect on static elements.</strong> If you're setting those properties and nothing's happening, check if you forgot to set position to something other than static.</p>
+
+<h2>Position: Relative — The Gentle Nudge</h2>
+
+<p>Relative positioning keeps the element in the normal flow but lets you nudge it from its original position. The key insight? <strong>The space the element originally occupied is preserved.</strong> Other elements don't collapse into that space.</p>
+
+<pre>.card {
+  position: relative;
+  top: 10px;
+  left: 20px;
+}
+
+/* The card moves 10px down and 20px right
+   from where it WOULD have been.
+   But its original space remains "reserved." */</pre>
+
+<p>I use relative positioning for two main scenarios. First, small visual tweaks — maybe an icon needs to be 2px higher to look visually centered. Second (and more commonly), as a <strong>positioning anchor</strong> for absolutely-positioned children. More on that in a sec.</p>
+
+<h3>Quick Example: Badge on a Card</h3>
+
+<pre>.card {
+  position: relative; /* This is the anchor */
+  width: 300px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.badge {
+  position: absolute; /* Positioned relative to .card */
+  top: -8px;
+  right: -8px;
+  background: #ef4444;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+}</pre>
+
+<p>That's the classic pattern — parent gets <code>position: relative</code>, child gets <code>position: absolute</code>. You'll use this combo hundreds of times in your career.</p>
+
+<h2>Position: Absolute — Breaking Free</h2>
+
+<p>Absolute positioning yanks an element completely out of the normal document flow. Other elements act as if it doesn't exist. The element then positions itself relative to its <strong>nearest positioned ancestor</strong> — meaning the closest parent that has position set to anything other than static.</p>
+
+<p>If no ancestor is positioned? It positions itself relative to the <code>&lt;html&gt;</code> element. That's usually why your absolutely-positioned element ends up in a weird spot.</p>
+
+<pre>.tooltip {
+  position: absolute;
+  bottom: 100%; /* sits right above its positioned parent */
+  left: 50%;
+  transform: translateX(-50%); /* centers it horizontally */
+  background: #1e293b;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 0.85rem;
+}</pre>
+
+<div class="tip-box"><i class="fas fa-lightbulb"></i><p><strong>Pro tip:</strong> The <code>bottom: 100%</code> trick positions the element right above its parent. Similarly, <code>top: 100%</code> puts it directly below. Combine with <code>left: 50%</code> and <code>transform: translateX(-50%)</code> for perfect centering. This pattern is incredibly useful for dropdowns, tooltips, and popovers.</p></div>
+
+<h3>The Centering Trick</h3>
+
+<p>One of the most reliable centering techniques uses absolute positioning:</p>
+
+<pre>.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Or the modern stretch approach: */
+.centered-alt {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: fit-content;
+  height: fit-content;
+}</pre>
+
+<p>I prefer the <code>inset: 0</code> + <code>margin: auto</code> approach these days. It's cleaner and works well for modals and overlays.</p>
+
+<h2>Position: Fixed — Glued to the Viewport</h2>
+
+<p>Fixed positioning is like absolute positioning, but the element positions itself relative to the <strong>viewport</strong> instead of a parent. It stays put when you scroll. Think headers, floating action buttons, cookie banners — anything that needs to stay visible.</p>
+
+<pre>.floating-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(59,130,246,0.4);
+  font-size: 1.4rem;
+  z-index: 100;
+}</pre>
+
+<p>One gotcha that trips people up: <strong>if any ancestor has a <code>transform</code>, <code>perspective</code>, or <code>filter</code> property set, fixed positioning breaks.</strong> The element will position relative to that ancestor instead of the viewport. I've spent embarrassing amounts of time debugging this one.</p>
+
+<h2>Position: Sticky — The Best of Both Worlds</h2>
+
+<p>Sticky is the newest addition and honestly my favorite. The element behaves like <code>relative</code> until you scroll past a specified threshold, then it behaves like <code>fixed</code>. It's perfect for section headers, table headers, and navigation bars.</p>
+
+<pre>.section-header {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 16px 0;
+  border-bottom: 1px solid #e2e8f0;
+  z-index: 10;
+}</pre>
+
+<p>The <code>top: 0</code> means "stick when the top edge reaches 0px from the viewport's top." You must specify at least one of top, right, bottom, or left — otherwise sticky does nothing.</p>
+
+<h3>Why Your Sticky Element Isn't Sticking</h3>
+
+<p>This comes up so often it deserves its own section. Here are the usual suspects:</p>
+
+<ul>
+<li><strong>Missing threshold</strong> — you forgot to set <code>top</code>, <code>bottom</code>, etc.</li>
+<li><strong>Parent has <code>overflow: hidden</code> or <code>overflow: auto</code></strong> — this kills sticky positioning. The element sticks to the overflow container, not the viewport.</li>
+<li><strong>Parent has no scrollable height</strong> — if the parent element is exactly the same height as the sticky child, there's nowhere to stick.</li>
+<li><strong>Flex or grid issues</strong> — sometimes a flex parent with <code>align-items: stretch</code> gives the sticky element full container height, making it unable to stick.</li>
+</ul>
+
+<div class="tip-box"><i class="fas fa-lightbulb"></i><p><strong>Debugging tip:</strong> In Chrome DevTools, find the sticky element and check its parent's computed height. If the parent's height equals the element's height, that's your problem. The element needs room within its parent to actually scroll and stick.</p></div>
+
+<h2>Stacking Context and Z-Index: The Real Boss Fight</h2>
+
+<p>Here's where most developers hit a wall. You set <code>z-index: 9999</code> and your modal is <em>still</em> behind the header. What gives?</p>
+
+<p>The answer is <strong>stacking context</strong>. Z-index doesn't work globally — it works within stacking contexts. Think of a stacking context like a folder. Elements inside that folder compete with each other for stacking order, but the folder itself is a single unit in its parent's stacking order.</p>
+
+<h3>What Creates a Stacking Context?</h3>
+
+<ul>
+<li>The root <code>&lt;html&gt;</code> element</li>
+<li>Any element with <code>position</code> set to absolute/relative/fixed/sticky AND a z-index other than <code>auto</code></li>
+<li>Any element with <code>opacity</code> less than 1</li>
+<li>Any element with <code>transform</code>, <code>filter</code>, <code>perspective</code>, or <code>backdrop-filter</code></li>
+<li>Flex/grid children with a z-index other than <code>auto</code></li>
+<li>Elements with <code>isolation: isolate</code></li>
+</ul>
+
+<h3>A Practical Example</h3>
+
+<pre>/* This modal will NEVER appear above .sidebar,
+   no matter how high you set its z-index */
+
+.sidebar {
+  position: relative;
+  z-index: 2; /* Creates a stacking context */
+}
+
+.main-content {
+  position: relative;
+  z-index: 1; /* Creates another stacking context */
+}
+
+/* This modal is INSIDE .main-content's stacking context */
+.modal {
+  position: fixed;
+  z-index: 999999; /* Doesn't matter! */
+  /* It's competing within z-index: 1's context */
+}</pre>
+
+<p>The fix? Either move the modal outside of <code>.main-content</code> in the DOM, or remove the z-index from the parent containers so they don't create stacking contexts.</p>
+
+<h3>My Z-Index Strategy</h3>
+
+<p>I use a simple token system to keep z-index manageable across projects:</p>
+
+<pre>:root {
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+  --z-tooltip: 600;
+}
+
+.dropdown { z-index: var(--z-dropdown); }
+.header   { z-index: var(--z-sticky); }
+.overlay  { z-index: var(--z-overlay); }
+.modal    { z-index: var(--z-modal); }</pre>
+
+<p>Gaps of 100 give you room to slot things in between later. And using CSS custom properties means you have a single source of truth. No more scattered <code>z-index: 47</code> values that nobody remembers the reason for.</p>
+
+<h2>Common Patterns You'll Actually Use</h2>
+
+<h3>Full-Width Overlay</h3>
+
+<pre>.overlay {
+  position: fixed;
+  inset: 0; /* shorthand for top/right/bottom/left: 0 */
+  background: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+  z-index: var(--z-overlay, 300);
+}</pre>
+
+<h3>Sticky Table Header</h3>
+
+<pre>thead th {
+  position: sticky;
+  top: 0;
+  background: #f8fafc;
+  box-shadow: 0 1px 0 #e2e8f0;
+  z-index: 1;
+}</pre>
+
+<h3>Aspect-Ratio Image Container (Old-School)</h3>
+
+<pre>.image-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  overflow: hidden;
+}
+
+.image-container img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}</pre>
+
+<p>(These days you can use <code>aspect-ratio: 16/9</code> instead, but the padding-bottom trick is still useful to understand.)</p>
+
+<div class="cta-box"><h3>Build Beautiful Visual Content</h3><p>Need to turn your HTML layouts into shareable images? Convert any HTML — positioned elements and all — into crisp PNGs.</p><a href="/html-to-png/">Try HTML to PNG Converter →</a></div>
+
+<h2>Quick Reference: When to Use What</h2>
+
+<ul>
+<li><strong>Static</strong> — the default; you rarely write it explicitly</li>
+<li><strong>Relative</strong> — small visual nudges, or as an anchor for absolute children</li>
+<li><strong>Absolute</strong> — tooltips, badges, dropdowns, modals (elements that overlay others)</li>
+<li><strong>Fixed</strong> — sticky headers, floating buttons, cookie banners (viewport-locked)</li>
+<li><strong>Sticky</strong> — section headers, table headers, sidebar nav (scroll-aware sticking)</li>
+</ul>
+
+<p>CSS positioning doesn't have to be a guessing game. Once you internalize that absolute positions relative to its nearest positioned ancestor, that sticky needs a threshold and scrollable parent, and that z-index only competes within stacking contexts — most layout mysteries solve themselves.</p>
+
+<p>Next time something's in the wrong spot, check these three things: What's the nearest positioned ancestor? Is there an unexpected stacking context? Is overflow cutting off a sticky element? Nine times out of ten, one of those is the answer.</p>
+
+<div class="author-box">
+<img src="/assets/images/author.jpg" alt="Sachin Bhanushali" width="64" height="64" style="width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0">
+<div class="author-info">
+<span class="author-label">Written by</span>
+<h4>Sachin Bhanushali</h4>
+<p>Full-stack developer and creator of HTMLtoImages. Building free, privacy-first developer tools that run entirely in your browser.</p>
+</div>
+</div>
+</article>
+<div class="related"><h2>Related Articles</h2><div class="related-grid">
+<a href="/blog/css-grid-flexbox-guide/" class="related-card"><h3>CSS Grid vs Flexbox Guide</h3><p>When to use Grid and when to use Flexbox — with practical layout examples.</p></a>
+<a href="/blog/css-box-model-explained/" class="related-card"><h3>The CSS Box Model Explained</h3><p>Understand margin, padding, border, and content — the foundation of every layout.</p></a>
+<a href="/blog/css-specificity-guide/" class="related-card"><h3>CSS Specificity Explained</h3><p>Why your styles aren't applying and how the specificity cascade really works.</p></a>
+</div></div>
+</main>
+<footer class="footer"><div class="footer-content"><div class="footer-col"><div class="logo" style="margin-bottom:15px"><i class="fas fa-cube"></i> HTMLtoImages</div><p style="color:var(--text-muted);font-size:.9rem">The #1 tool for developers to turn code into beautiful images.</p></div><div class="footer-col"><h4>Converters</h4><ul><li><a href="/html-to-png/">HTML to PNG</a></li><li><a href="/html-to-jpg/">HTML to JPG</a></li><li><a href="/html-to-webp/">HTML to WebP</a></li><li><a href="/code-to-image/">Code to Image</a></li><li><a href="/html-table-to-image/">Table to Image</a></li><li><a href="/html-email-to-image/">Email to Image</a></li><li><a href="/tailwind-to-image/">Tailwind to Image</a></li></ul></div><div class="footer-col"><h4>Resources</h4><ul><li><a href="/blog/">Blog</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms</a></li><li><a href="/disclaimer">Disclaimer</a></li><li><a href="/sitemap-page">Sitemap</a></li></ul></div></div><div class="copyright">&copy; 2026 htmltoimages.com. All rights reserved.<br><span style="font-size:.9rem;margin-top:10px;display:inline-block;color:var(--text-muted)">Built with ❤️ &amp; ☕ by Sachin Bhanushali</span></div></footer>
+<div class="cookie-banner" id="cookieBanner" style="display:none"><span>We use cookies for analytics. See our <a href="/privacy">Privacy Policy</a>.</span><button onclick="acceptCookies()">Accept</button></div>
+<script>if(!localStorage.getItem('cookiesAccepted')){document.getElementById('cookieBanner').style.display='flex'}function acceptCookies(){localStorage.setItem('cookiesAccepted','true');document.getElementById('cookieBanner').style.display='none'}</script>
+</body></html>

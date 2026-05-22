@@ -1,0 +1,310 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href="https://www.htmltoimages.com/blog/lazy-loading-images/"><title>Lazy Loading Images: The Right Way in 2026 | HTMLtoImages Blog</title><meta name="description" content="Learn how to lazy load images properly — native loading=lazy, Intersection Observer API, placeholder strategies, and how to prevent CLS layout shifts."><script async src="https://www.googletagmanager.com/gtag/js?id=G-FQBH2S5FQ4"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-FQBH2S5FQ4');</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5405462456191304" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><style>:root{--bg-body:#f8fafc;--text-main:#0f172a;--text-muted:#64748b;--primary-gradient:linear-gradient(135deg,#06b6d4,#3b82f6 50%,#8b5cf6);--border-color:#e2e8f0;--radius-lg:24px;--radius-md:12px}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6}a{text-decoration:none;color:inherit;transition:.3s}.navbar{position:fixed;top:20px;left:50%;transform:translateX(-50%);width:90%;max-width:1200px;padding:12px 24px;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border:1px solid var(--border-color);border-radius:100px;z-index:1000;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 20px rgba(0,0,0,.05)}.logo{font-size:1.2rem;font-weight:800;display:flex;align-items:center;gap:10px}.logo i{background:var(--primary-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.nav-links{display:flex;gap:30px}.nav-links a{font-weight:500;color:var(--text-muted)}.nav-links a:hover{color:#3b82f6}.article-hero{text-align:center;padding:160px 20px 40px;max-width:800px;margin:0 auto}.article-hero .tag{display:inline-block;background:#eff6ff;color:#3b82f6;padding:6px 16px;border-radius:20px;font-size:.8rem;font-weight:600;margin-bottom:16px}.article-hero h1{font-size:2.6rem;font-weight:800;line-height:1.2;margin-bottom:16px}.article-meta{color:var(--text-muted);font-size:.9rem;display:flex;align-items:center;justify-content:center;gap:16px}.article-content{max-width:750px;margin:40px auto 80px;padding:0 20px}.article-content h2{font-size:1.7rem;font-weight:700;margin:40px 0 16px}.article-content h3{font-size:1.3rem;font-weight:600;margin:30px 0 12px;color:#334155}.article-content p{color:var(--text-muted);font-size:1.05rem;line-height:1.9;margin-bottom:18px}.article-content ul,.article-content ol{margin:0 0 20px 24px;color:var(--text-muted);font-size:1.05rem}.article-content li{margin-bottom:10px;line-height:1.7}.article-content strong{color:var(--text-main)}.article-content a{color:#3b82f6}.article-content code{background:#f1f5f9;padding:2px 8px;border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:.9rem;color:#e11d48}.article-content pre{background:#1e293b;color:#e2e8f0;padding:20px 24px;border-radius:var(--radius-md);overflow-x:auto;margin:0 0 24px;font-family:'JetBrains Mono',monospace;font-size:.85rem;line-height:1.7}.tip-box{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:var(--radius-md);padding:20px 24px;margin:0 0 24px;display:flex;gap:12px}.tip-box i{color:#22c55e;margin-top:4px;flex-shrink:0}.tip-box p{margin:0;color:#166534;font-size:.95rem}.cta-box{background:var(--primary-gradient);border-radius:var(--radius-lg);padding:40px;text-align:center;margin:40px 0;color:#fff}.cta-box h3{font-size:1.4rem;margin-bottom:12px;font-weight:700}.cta-box p{color:rgba(255,255,255,.85);margin-bottom:20px}.cta-box a{display:inline-block;background:#fff;color:#3b82f6;padding:12px 28px;border-radius:var(--radius-md);font-weight:700}.related{max-width:750px;margin:0 auto 80px;padding:0 20px}.related h2{font-size:1.5rem;font-weight:700;margin-bottom:24px}.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.related-card{background:#fff;border:1px solid var(--border-color);border-radius:var(--radius-md);padding:20px;transition:.3s}.related-card:hover{border-color:#3b82f6;transform:translateY(-3px)}.related-card h3{font-size:1rem;font-weight:600;margin-bottom:8px}.related-card p{font-size:.85rem;color:var(--text-muted);margin:0}.footer{border-top:1px solid var(--border-color);background:#f1f5f9;padding:60px 20px}.footer-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px}.footer-col h4{font-size:1.1rem;margin-bottom:20px}.footer-col ul{list-style:none}.footer-col li{margin-bottom:10px}.footer-col a{color:var(--text-muted);font-size:.95rem}.footer-col a:hover{color:#3b82f6}.copyright{text-align:center;margin-top:60px;padding-top:30px;border-top:1px solid #cbd5e1;color:var(--text-muted);font-size:.9rem}@media(max-width:850px){.navbar{padding:12px 20px;width:95%;flex-direction:column;border-radius:16px;gap:12px}.nav-links{gap:20px;width:100%;justify-content:center;flex-wrap:wrap}.article-hero{padding-top:160px}.article-hero h1{font-size:2rem}}.cookie-banner{position:fixed;bottom:0;left:0;right:0;background:#1e293b;color:#e2e8f0;padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:20px;z-index:9999;font-size:.9rem}.cookie-banner a{color:#60a5fa;text-decoration:underline}.cookie-banner button{background:#3b82f6;color:#fff;border:none;padding:8px 24px;border-radius:8px;cursor:pointer;font-weight:600}@media(max-width:600px){.cookie-banner{flex-direction:column;text-align:center;gap:12px}}.breadcrumb-nav{max-width:1200px;margin:0 auto;padding:100px 20px 0;font-size:.85rem;color:#64748b}.breadcrumb-nav a{color:#3b82f6;text-decoration:none}.breadcrumb-nav a:hover{text-decoration:underline}.breadcrumb-nav span{color:#0f172a;font-weight:500}
+.author-box{display:flex;gap:20px;align-items:center;background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:24px;margin:40px 0 0}.author-box img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0}.author-box .author-info h4{font-size:1rem;font-weight:700;margin-bottom:4px;color:#0f172a}.author-box .author-info p{font-size:.9rem;color:#64748b;margin:0;line-height:1.6}.author-box .author-info .author-label{font-size:.75rem;color:#3b82f6;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+</style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"Lazy Loading Images: The Right Way in 2026","author":{"@type":"Person","name":"Sachin Bhanushali"},"publisher":{"@type":"Organization","name":"HTMLtoImages","url":"https://www.htmltoimages.com"},"datePublished":"2026-03-18","dateModified":"2026-03-18","mainEntityOfPage":"https://www.htmltoimages.com/blog/lazy-loading-images/"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.htmltoimages.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.htmltoimages.com/blog/"},{"@type":"ListItem","position":3,"name":"Lazy Loading Images"}]}
+    </script>
+</head>
+<body>
+<nav class="navbar"><a href="/" class="logo"><i class="fas fa-cube"></i> HTMLtoImages</a><div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/#tools">Tools</a>
+            <a href="/blog/">Blog</a>
+            <a href="/contact">Contact</a>
+        </div></nav>
+<main>
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <span>Lazy Loading Images</span></nav>
+<header class="article-hero"><span class="tag">Performance</span><h1>Lazy Loading Images: The Right Way in 2026</h1><div class="article-meta"><span><i class="fas fa-calendar"></i> March 18, 2026</span><span><i class="fas fa-clock"></i> 9 min read</span><span><i class="fas fa-user"></i> Sachin Bhanushali</span></div></header>
+
+<article class="article-content">
+
+<p>I ran a Lighthouse audit on a client's e-commerce site last month. It loaded 47 product images on page load — including the ones at the bottom nobody would see unless they scrolled for days. The initial page weight was 8.3 MB. After adding lazy loading properly, it dropped to 1.2 MB. LCP improved by 2.4 seconds. That's the difference between a sale and a bounce.</p>
+
+<p>Lazy loading images isn't complicated, but doing it <em>correctly</em> — without causing layout shifts, broken SEO, or janky user experience — takes some care. Let's get it right.</p>
+
+<h2>The Native Way: loading="lazy"</h2>
+
+<p>The simplest approach. One attribute, zero JavaScript, works in every modern browser:</p>
+
+<pre>&lt;img src="product.jpg"
+     alt="Blue running shoes"
+     width="400"
+     height="300"
+     loading="lazy"&gt;</pre>
+
+<p>The browser will defer loading this image until it's about to enter the viewport. The exact threshold varies by browser — Chrome starts loading when the image is roughly 1250px away on fast connections, and 2500px away on slow ones. You don't control this, and honestly, you don't need to.</p>
+
+<h3>When NOT to Use loading="lazy"</h3>
+
+<p>Here's the mistake I see constantly: people slap <code>loading="lazy"</code> on every single image, including the hero image at the top of the page. That's backwards.</p>
+
+<p><strong>Never lazy load above-the-fold images.</strong> Your LCP (Largest Contentful Paint) image needs to load as fast as possible. Making the browser wait to detect it's in the viewport adds unnecessary delay.</p>
+
+<pre>&lt;!-- ABOVE THE FOLD — load eagerly (default) --&gt;
+&lt;img src="hero-banner.jpg"
+     alt="Summer sale - 50% off"
+     width="1200"
+     height="600"
+     fetchpriority="high"&gt;
+
+&lt;!-- BELOW THE FOLD — lazy load --&gt;
+&lt;img src="product-1.jpg"
+     alt="Product name"
+     width="400"
+     height="300"
+     loading="lazy"&gt;</pre>
+
+<p>Notice the <code>fetchpriority="high"</code> on the hero image. That tells the browser to prioritize fetching it. Combined with <em>not</em> lazy loading it, your LCP image loads as fast as the browser can manage.</p>
+
+<div class="tip-box"><i class="fas fa-lightbulb"></i><p><strong>Rule of thumb:</strong> The first 1-2 images visible on initial page load should NOT have <code>loading="lazy"</code>. Everything else should. If you're unsure whether an image is above the fold, check on mobile — the fold is much higher there.</p></div>
+
+<h2>Intersection Observer — Full Control</h2>
+
+<p>Sometimes native lazy loading isn't enough. Maybe you want a custom loading threshold, a fade-in animation, or you're loading background images that <code>loading="lazy"</code> doesn't support. That's where the Intersection Observer API comes in.</p>
+
+<pre>&lt;img class="lazy"
+     src="placeholder.svg"
+     data-src="actual-image.jpg"
+     alt="Product photo"
+     width="400"
+     height="300"&gt;
+
+&lt;script&gt;
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const img = entry.target;
+      img.src = img.dataset.src;
+      img.classList.remove('lazy');
+      img.classList.add('loaded');
+      observer.unobserve(img);
+    }
+  });
+}, {
+  rootMargin: '200px 0px' // Start loading 200px before visible
+});
+
+document.querySelectorAll('img.lazy').forEach(img => {
+  observer.observe(img);
+});
+&lt;/script&gt;</pre>
+
+<p>The <code>rootMargin: '200px 0px'</code> tells the observer to trigger when the image is within 200px of the viewport — giving images a head start so they're loaded by the time the user scrolls to them. Adjust this value based on how fast your users typically scroll.</p>
+
+<h3>Adding a Fade-In Effect</h3>
+
+<pre>.lazy {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.loaded {
+  opacity: 1;
+}</pre>
+
+<p>This creates a smooth appearance when images load. It's a small touch, but it makes the experience feel polished rather than images popping in abruptly.</p>
+
+<h2>Placeholder Strategies</h2>
+
+<p>What does the user see before the image loads? A blank space looks broken. A spinner feels slow. The right placeholder creates a smooth visual experience. Here are the approaches I've used, ranked from simplest to most sophisticated.</p>
+
+<h3>1. Solid Color Background</h3>
+
+<p>The easiest option. Pick a color that matches the image's dominant tone, or use a neutral gray:</p>
+
+<pre>.image-wrapper {
+  background: #e2e8f0;
+  aspect-ratio: 4/3;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}</pre>
+
+<h3>2. Dominant Color Placeholder</h3>
+
+<p>Extract the dominant color from each image at build time and use it as the background. Libraries like <code>sharp</code> (Node.js) or <code>Pillow</code> (Python) can extract dominant colors automatically:</p>
+
+<pre>&lt;div class="image-wrapper" style="background: #2d5a3f;"&gt;
+  &lt;img src="forest.jpg" loading="lazy"
+       alt="Forest landscape" width="800" height="600"&gt;
+&lt;/div&gt;</pre>
+
+<h3>3. Blur-Up (LQIP)</h3>
+
+<p>Load a tiny version of the image (20-40px wide), display it blurred, then swap in the full image. This is what Medium and platforms like Unsplash use:</p>
+
+<pre>&lt;div class="image-wrapper"&gt;
+  &lt;!-- Tiny placeholder, inlined as base64 --&gt;
+  &lt;img class="placeholder"
+       src="data:image/jpeg;base64,/9j/4AAQ..."
+       alt="" aria-hidden="true"&gt;
+  &lt;!-- Actual image --&gt;
+  &lt;img class="lazy full-image"
+       data-src="photo-full.jpg"
+       alt="Mountain landscape"
+       width="800" height="600"&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.image-wrapper {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+.placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(20px);
+  transform: scale(1.1); /* hide blur edges */
+}
+.full-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.full-image.loaded {
+  opacity: 1;
+}
+&lt;/style&gt;</pre>
+
+<p>The base64-encoded thumbnail adds maybe 200-300 bytes per image to your HTML, but the perceptual improvement is dramatic. Users see a blurry preview instantly, then the sharp image fades in smoothly.</p>
+
+<div class="tip-box"><i class="fas fa-lightbulb"></i><p><strong>Modern alternative:</strong> CSS <code>image-set()</code> and the <code>&lt;picture&gt;</code> element let you define multiple resolutions natively. For the blur-up technique specifically, check out <code>blurhash</code> — it encodes image placeholders into tiny 20-30 character strings that decode into beautiful blurred previews on the client.</p></div>
+
+<h2>Preventing CLS (Cumulative Layout Shift)</h2>
+
+<p>This is where most lazy loading implementations go wrong. When an image without dimensions loads, it goes from 0 height to its natural height, shoving all content below it downward. Google measures this as CLS, and it directly affects your Core Web Vitals score.</p>
+
+<p>The fix is simple: <strong>always set width and height on your images.</strong></p>
+
+<pre>&lt;!-- ✅ Good: explicit dimensions --&gt;
+&lt;img src="photo.jpg"
+     width="800"
+     height="600"
+     loading="lazy"
+     alt="Description"&gt;
+
+&lt;!-- ✅ Also good: CSS aspect-ratio --&gt;
+&lt;img src="photo.jpg"
+     loading="lazy"
+     alt="Description"
+     style="aspect-ratio: 4/3; width: 100%; height: auto;"&gt;</pre>
+
+<p>When you set <code>width</code> and <code>height</code>, modern browsers automatically calculate the aspect ratio and reserve the right amount of space before the image loads. Zero layout shift.</p>
+
+<h3>For Responsive Images</h3>
+
+<pre>img {
+  max-width: 100%;
+  height: auto; /* Maintains aspect ratio */
+}
+
+/* The browser uses width/height attributes to
+   calculate the aspect ratio BEFORE loading */</pre>
+
+<p>The <code>width</code> and <code>height</code> attributes don't set a fixed pixel size when you have <code>max-width: 100%</code> and <code>height: auto</code> in CSS. They just tell the browser the <em>ratio</em> to reserve space for. This is one of the best features modern browsers have added — and many developers don't realize it exists.</p>
+
+<h2>Lazy Loading Background Images</h2>
+
+<p>Native <code>loading="lazy"</code> only works on <code>&lt;img&gt;</code> and <code>&lt;iframe&gt;</code> elements. For CSS background images, you need the Intersection Observer approach:</p>
+
+<pre>&lt;div class="hero-section" data-bg="hero-bg.jpg"&gt;
+  &lt;h1&gt;Welcome&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+const bgObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      el.style.backgroundImage = `url(${el.dataset.bg})`;
+      bgObserver.unobserve(el);
+    }
+  });
+}, { rootMargin: '300px 0px' });
+
+document.querySelectorAll('[data-bg]').forEach(el => {
+  bgObserver.observe(el);
+});
+&lt;/script&gt;</pre>
+
+<p>Set a background color on the element as a fallback so it doesn't flash white while loading.</p>
+
+<div class="cta-box"><h3>Convert HTML Layouts to Images</h3><p>Built a page with optimized images and lazy loading? Capture your layouts as crisp PNG or WebP images for portfolios and case studies.</p><a href="/html-to-webp/">Try HTML to WebP Converter →</a></div>
+
+<h2>The Complete Setup I Use in Production</h2>
+
+<p>Here's my go-to setup that handles everything — native lazy loading, CLS prevention, responsive images, and a decent placeholder experience:</p>
+
+<pre>&lt;picture&gt;
+  &lt;source srcset="photo-800.webp 800w,
+                  photo-1200.webp 1200w,
+                  photo-1600.webp 1600w"
+          sizes="(max-width: 600px) 100vw,
+                 (max-width: 1200px) 50vw,
+                 33vw"
+          type="image/webp"&gt;
+  &lt;img src="photo-800.jpg"
+       srcset="photo-800.jpg 800w,
+               photo-1200.jpg 1200w,
+               photo-1600.jpg 1600w"
+       sizes="(max-width: 600px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+       width="1600"
+       height="1200"
+       loading="lazy"
+       decoding="async"
+       alt="Descriptive alt text"&gt;
+&lt;/picture&gt;</pre>
+
+<p>The <code>decoding="async"</code> attribute tells the browser it's okay to decode the image off the main thread. It won't block rendering while decoding a large JPEG. Small performance win, zero cost to add.</p>
+
+<h2>Quick Checklist</h2>
+
+<ul>
+<li><strong>Above-the-fold images:</strong> No lazy loading, add <code>fetchpriority="high"</code> to LCP image</li>
+<li><strong>Below-the-fold images:</strong> Add <code>loading="lazy"</code></li>
+<li><strong>All images:</strong> Set <code>width</code> and <code>height</code> attributes for CLS prevention</li>
+<li><strong>All images:</strong> Add <code>decoding="async"</code></li>
+<li><strong>Responsive images:</strong> Use <code>srcset</code> and <code>sizes</code> with WebP format</li>
+<li><strong>Background images:</strong> Use Intersection Observer</li>
+<li><strong>Placeholders:</strong> At minimum use solid color backgrounds; ideally use blur-up</li>
+</ul>
+
+<p>Lazy loading isn't just a "nice to have" anymore — it's table stakes for performance. The good news is that the native <code>loading="lazy"</code> attribute makes the basic case trivially easy. Just remember: don't lazy load what's already visible, always specify dimensions, and choose a placeholder strategy that doesn't make your page feel broken while loading.</p>
+
+<p>Your users on 3G connections will thank you. Your Lighthouse score will thank you. And you'll spend less time debugging "why is the page so slow" tickets.</p>
+
+<div class="author-box">
+<img src="/assets/images/author.jpg" alt="Sachin Bhanushali" width="64" height="64" style="width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0">
+<div class="author-info">
+<span class="author-label">Written by</span>
+<h4>Sachin Bhanushali</h4>
+<p>Full-stack developer and creator of HTMLtoImages. Building free, privacy-first developer tools that run entirely in your browser.</p>
+</div>
+</div>
+</article>
+<div class="related"><h2>Related Articles</h2><div class="related-grid">
+<a href="/blog/frontend-performance-tips/" class="related-card"><h3>Frontend Performance Tips</h3><p>Practical techniques to make your website faster — from loading to rendering.</p></a>
+<a href="/blog/responsive-images-guide/" class="related-card"><h3>Responsive Images Guide</h3><p>srcset, sizes, picture element — serve the right image to every device.</p></a>
+<a href="/blog/web-performance-optimization/" class="related-card"><h3>Web Performance Optimization</h3><p>Core Web Vitals, caching strategies, and performance budgets explained.</p></a>
+</div></div>
+</main>
+<footer class="footer"><div class="footer-content"><div class="footer-col"><div class="logo" style="margin-bottom:15px"><i class="fas fa-cube"></i> HTMLtoImages</div><p style="color:var(--text-muted);font-size:.9rem">The #1 tool for developers to turn code into beautiful images.</p></div><div class="footer-col"><h4>Converters</h4><ul><li><a href="/html-to-png/">HTML to PNG</a></li><li><a href="/html-to-jpg/">HTML to JPG</a></li><li><a href="/html-to-webp/">HTML to WebP</a></li><li><a href="/code-to-image/">Code to Image</a></li><li><a href="/html-table-to-image/">Table to Image</a></li><li><a href="/html-email-to-image/">Email to Image</a></li><li><a href="/tailwind-to-image/">Tailwind to Image</a></li></ul></div><div class="footer-col"><h4>Resources</h4><ul><li><a href="/blog/">Blog</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms</a></li><li><a href="/disclaimer">Disclaimer</a></li><li><a href="/sitemap-page">Sitemap</a></li></ul></div></div><div class="copyright">&copy; 2026 htmltoimages.com. All rights reserved.<br><span style="font-size:.9rem;margin-top:10px;display:inline-block;color:var(--text-muted)">Built with ❤️ &amp; ☕ by Sachin Bhanushali</span></div></footer>
+<div class="cookie-banner" id="cookieBanner" style="display:none"><span>We use cookies for analytics. See our <a href="/privacy">Privacy Policy</a>.</span><button onclick="acceptCookies()">Accept</button></div>
+<script>if(!localStorage.getItem('cookiesAccepted')){document.getElementById('cookieBanner').style.display='flex'}function acceptCookies(){localStorage.setItem('cookiesAccepted','true');document.getElementById('cookieBanner').style.display='none'}</script>
+</body></html>
