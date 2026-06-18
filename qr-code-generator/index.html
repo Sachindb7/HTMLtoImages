@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href="https://www.htmltoimages.com/qr-code-generator/">
+    <title>Free Online QR Code Generator - No Signup | HTMLtoImages</title>
+    <meta name="description" content="Generate high-quality custom QR codes for free instantly. Best online QR code maker for URLs, text, and WiFi. Download as PNG. No signup required.">
+    <meta name="keywords" content="free online qr code generator, create qr code for free, no signup qr code maker, custom qr code generator, qr code creator, free qr code maker">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Free Online QR Code Generator - No Signup">
+    <meta property="og:description" content="Generate high-quality custom QR codes for free instantly. Best online QR code maker for URLs, text, and WiFi. Download as PNG.">
+    <meta property="og:url" content="https://www.htmltoimages.com/qr-code-generator/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="HTMLtoImages">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Free Online QR Code Generator">
+    <meta name="twitter:description" content="Generate high-quality custom QR codes for free instantly. Best online QR code maker.">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQBH2S5FQ4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FQBH2S5FQ4');
+    </script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5405462456191304" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <style>
+        :root {
+            --bg-body: #f8fafc;
+            --bg-panel: #ffffff;
+            --border-color: #e2e8f0;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --primary-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #8b5cf6 100%);
+            --radius-lg: 24px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+        }
+
+        html { scroll-behavior: smooth; }
+        * { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        
+        .navbar {
+            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+            width: 90%; max-width: 1200px; padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color); border-radius: 100px;
+            z-index: 1000; display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .logo { font-size: 1.2rem; font-weight: 800; display: flex; align-items: center; gap: 10px; color: var(--text-main); }
+        .logo i { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { font-weight: 500; color: var(--text-muted); cursor: pointer; }
+        .nav-links a:hover { color: #3b82f6; }
+
+        .hero { text-align: center; padding: 140px 20px 40px; }
+        .hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 20px; color: var(--text-main); }
+        .gradient-text { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
+
+        .app-container { max-width: 1300px; margin: 0 auto; padding: 0 20px 60px; display: grid; grid-template-columns: 350px 1fr; gap: 20px; min-height: 600px; }
+        .panel { background: var(--bg-panel); border: 1px solid var(--border-color); border-radius: var(--radius-lg); display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 10px 40px -10px rgba(0,0,0,0.08); }
+        .panel-header { padding: 16px 20px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; background: #f8fafc; }
+        .panel-title { font-size: 0.9rem; font-weight: 600; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
+        
+        .settings-area { padding: 24px; display: flex; flex-direction: column; gap: 20px; flex: 1; }
+        
+        .input-group { display: flex; flex-direction: column; gap: 8px; }
+        .input-group label { font-size: 0.9rem; font-weight: 600; color: var(--text-main); }
+        .input-group textarea, .input-group input[type="text"] { width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-family: 'Inter', sans-serif; resize: vertical; min-height: 100px; font-size: 1rem; }
+        .input-group input[type="color"] { width: 100%; height: 40px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); cursor: pointer; padding: 2px; }
+        
+        .color-pickers { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+
+        .btn-primary { width: 100%; background: var(--primary-gradient); border: none; padding: 16px; border-radius: var(--radius-md); color: white; font-weight: 700; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s; margin-top: auto; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4); }
+
+        .preview-wrapper { 
+            background: #f1f5f9; 
+            position: relative; 
+            flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px;
+            border-radius: var(--radius-lg);
+            border: 1px dashed #cbd5e1;
+        }
+
+        #qr-container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        #qr-container canvas, #qr-container img {
+            display: block;
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .section-container { max-width: 900px; margin: 60px auto; padding: 0 20px; }
+        .section-header { text-align: center; margin-bottom: 40px; }
+        .section-header h2 { font-size: 2rem; font-weight: 800; margin-bottom: 15px; color: var(--text-main); }
+        
+        details { background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); margin-bottom: 16px; overflow: hidden; }
+        summary { padding: 20px 24px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        summary::after { content: '\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--text-muted); }
+        details p { padding: 0 24px 24px; color: var(--text-muted); }
+
+        /* Footer */
+        .footer { border-top: 1px solid var(--border-color); background: #f1f5f9; padding: 60px 20px; margin-top: 60px; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+        .footer-col h4 { font-size: 1.1rem; margin-bottom: 20px; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 10px; }
+        .footer-col a { color: var(--text-muted); font-size: 0.95rem; }
+        .footer-col a:hover { color: #3b82f6; }
+        .copyright { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid #cbd5e1; color: var(--text-muted); font-size: 0.9rem; }
+
+        @media (max-width: 900px) {
+            .app-container { grid-template-columns: 1fr; }
+            .hero { padding: 120px 20px 30px; }
+            .hero h1 { font-size: 2.2rem; }
+        }
+    </style>
+    
+    <!-- Schema.org for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Free QR Code Generator",
+      "url": "https://www.htmltoimages.com/qr-code-generator/",
+      "description": "Generate high-quality custom QR codes for free instantly. Best online QR code maker.",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="/" class="logo"><i class="fas fa-cube"></i> HTMLtoImages</a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/#tools">Tools</a>
+            <a href="/blog/">Blog</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Free <span class="gradient-text">QR Code</span> Generator</h1>
+        <p>Create beautiful, scannable QR codes instantly. No signup required. Runs 100% locally in your browser for total privacy.</p>
+    </header>
+
+    <div class="app-container">
+        <!-- Settings Panel -->
+        <div class="panel">
+            <div class="panel-header">
+                <span class="panel-title"><i class="fas fa-qrcode"></i> QR Content & Design</span>
+            </div>
+            
+            <div class="settings-area">
+                <div class="input-group">
+                    <label for="qr-data">Enter URL or Text</label>
+                    <textarea id="qr-data" placeholder="https://example.com" spellcheck="false">https://www.htmltoimages.com</textarea>
+                </div>
+                
+                <div class="color-pickers">
+                    <div class="input-group">
+                        <label for="fg-color">QR Color</label>
+                        <input type="color" id="fg-color" value="#000000">
+                    </div>
+                    <div class="input-group">
+                        <label for="bg-color">Background</label>
+                        <input type="color" id="bg-color" value="#ffffff">
+                    </div>
+                </div>
+
+                <div class="input-group" style="margin-bottom: auto;">
+                    <label for="qr-size">Size Quality</label>
+                    <select id="qr-size" style="padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-family: 'Inter', sans-serif;">
+                        <option value="256">Standard (256px)</option>
+                        <option value="512" selected>High (512px)</option>
+                        <option value="1024">Ultra HD (1024px)</option>
+                    </select>
+                </div>
+
+                <button class="btn-primary" id="downloadBtn">
+                    <i class="fas fa-download"></i> Download QR Code
+                </button>
+            </div>
+        </div>
+
+        <!-- Preview Panel -->
+        <div class="panel">
+            <div class="panel-header">
+                <span class="panel-title"><i class="fas fa-eye"></i> Live Preview</span>
+            </div>
+            <div class="preview-wrapper">
+                <div id="qr-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="section-container">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        
+        <details>
+            <summary>Is this QR code generator completely free?</summary>
+            <p>Yes, absolutely. Unlike many other tools that charge you to download high-resolution QR codes or make them expire, our generator is 100% free with no hidden limits. You can generate as many QR codes as you want, and they will never expire.</p>
+        </details>
+        
+        <details>
+            <summary>Do these QR codes expire?</summary>
+            <p>No, the QR codes generated here are static QR codes. This means the actual URL or text is embedded directly into the pattern of the code. Because we don't route the link through our servers (no redirects), the QR code will work forever as long as your target URL remains active.</p>
+        </details>
+        
+        <details>
+            <summary>Is my data secure?</summary>
+            <p>Yes. This tool runs entirely client-side in your browser. The data you enter to generate the QR code is never sent to our servers or stored anywhere. It is completely private and secure.</p>
+        </details>
+        
+        <details>
+            <summary>Can I use these QR codes for commercial purposes?</summary>
+            <p>Yes! You can use the generated QR codes on business cards, flyers, restaurant menus, product packaging, and anywhere else. They are yours to use commercially without any attribution required.</p>
+        </details>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 15px;"><i class="fas fa-cube"></i> HTMLtoImages</div>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">The #1 tool for developers and creators to convert code and generate utility assets.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Tools</h4>
+                <ul>
+                    <li><a href="/html-to-png/">HTML to PNG</a></li>
+                    <li><a href="/code-to-image/">Code to Image</a></li>
+                    <li><a href="/qr-code-generator/">QR Code Generator</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/terms.html">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 htmltoimages.com. All rights reserved.<br>
+            <span style="font-size: 0.9rem; margin-top: 10px; display: inline-block; color: var(--text-muted);">Built with &#10084;&#65039; &amp; &#9749; by Sachin Bhanushali</span>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const qrDataInput = document.getElementById('qr-data');
+            const fgColorInput = document.getElementById('fg-color');
+            const bgColorInput = document.getElementById('bg-color');
+            const sizeSelect = document.getElementById('qr-size');
+            const qrContainer = document.getElementById('qr-container');
+            const downloadBtn = document.getElementById('downloadBtn');
+            
+            let qrcode = null;
+
+            function generateQR() {
+                // Clear previous
+                qrContainer.innerHTML = '';
+                
+                const data = qrDataInput.value.trim() || 'https://www.htmltoimages.com';
+                const size = parseInt(sizeSelect.value);
+                const fgColor = fgColorInput.value;
+                const bgColor = bgColorInput.value;
+
+                // Set container padding based on size to keep it looking nice
+                qrContainer.style.padding = size > 500 ? '40px' : '30px';
+
+                qrcode = new QRCode(qrContainer, {
+                    text: data,
+                    width: size,
+                    height: size,
+                    colorDark : fgColor,
+                    colorLight : bgColor,
+                    correctLevel : QRCode.CorrectLevel.H
+                });
+            }
+
+            // Generate initial QR code
+            generateQR();
+
+            // Event listeners
+            qrDataInput.addEventListener('input', generateQR);
+            fgColorInput.addEventListener('input', generateQR);
+            bgColorInput.addEventListener('input', generateQR);
+            sizeSelect.addEventListener('change', generateQR);
+
+            // Download functionality
+            downloadBtn.addEventListener('click', () => {
+                const img = qrContainer.querySelector('img');
+                const canvas = qrContainer.querySelector('canvas');
+                
+                let source = null;
+                if (img && img.src && img.src.startsWith('data:image')) {
+                    source = img.src;
+                } else if (canvas) {
+                    source = canvas.toDataURL('image/png');
+                }
+                
+                if (source) {
+                    const link = document.createElement('a');
+                    link.download = 'custom-qr-code.png';
+                    link.href = source;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    alert("Could not generate image for download. Please try again.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
