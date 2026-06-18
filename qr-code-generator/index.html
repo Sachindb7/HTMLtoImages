@@ -206,10 +206,6 @@
                         <label for="fg-color">QR Color</label>
                         <input type="color" id="fg-color" value="#000000">
                     </div>
-                    <div class="input-group">
-                        <label for="bg-color">Background</label>
-                        <input type="color" id="bg-color" value="#ffffff">
-                    </div>
                 </div>
 
                 <div class="input-group" style="margin-bottom: auto;">
@@ -299,7 +295,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             const qrDataInput = document.getElementById('qr-data');
             const fgColorInput = document.getElementById('fg-color');
-            const bgColorInput = document.getElementById('bg-color');
             const sizeSelect = document.getElementById('qr-size');
             const qrContainer = document.getElementById('qr-container');
             const downloadBtn = document.getElementById('downloadBtn');
@@ -313,7 +308,6 @@
                 const data = qrDataInput.value.trim() || 'https://www.htmltoimages.com';
                 const size = parseInt(sizeSelect.value);
                 const fgColor = fgColorInput.value;
-                const bgColor = bgColorInput.value;
 
                 // Set container padding based on size to keep it looking nice
                 qrContainer.style.padding = size > 500 ? '40px' : '30px';
@@ -323,7 +317,7 @@
                     width: size,
                     height: size,
                     colorDark : fgColor,
-                    colorLight : bgColor,
+                    colorLight : "#ffffff",
                     correctLevel : QRCode.CorrectLevel.H
                 });
             }
@@ -334,7 +328,6 @@
             // Event listeners
             qrDataInput.addEventListener('input', generateQR);
             fgColorInput.addEventListener('input', generateQR);
-            bgColorInput.addEventListener('input', generateQR);
             sizeSelect.addEventListener('change', generateQR);
 
             // Download functionality
