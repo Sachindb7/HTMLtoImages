@@ -16,6 +16,11 @@ HTMLtoImages (htmltoimages.com) is a free browser-based utility suite built by S
 - [Email to Image](https://www.htmltoimages.com/html-email-to-image/): Preview and capture HTML email templates as images.
 - [Tailwind to Image](https://www.htmltoimages.com/tailwind-to-image/): Render Tailwind CSS utility classes to PNG/JPG with live JIT compilation.
 - [QR Code Generator](https://www.htmltoimages.com/qr-code-generator/): Generate custom QR codes for URLs, text, and more. Downloadable as PNG.
+- [Image to PDF](https://www.htmltoimages.com/image-to-pdf/): Convert multiple images (JPG, PNG, WebP) into a single PDF document with custom page sizes.
+- [PDF to Image](https://www.htmltoimages.com/pdf-to-image/): Extract PDF pages as high-quality PNG, JPG or WebP images using Mozilla pdf.js.
+- [Merge PDF](https://www.htmltoimages.com/merge-pdf/): Combine multiple PDF files into one document with drag-and-drop reordering.
+- [Compress PDF](https://www.htmltoimages.com/compress-pdf/): Reduce PDF file size while maintaining readability. Choose compression level.
+- [JPG to PDF](https://www.htmltoimages.com/jpg-to-pdf/): Convert JPEG photos to PDF. Combine multiple JPG files into one PDF.
 
 ## Blog Topics
 
