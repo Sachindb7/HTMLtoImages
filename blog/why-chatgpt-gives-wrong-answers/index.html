@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg">
     <link rel="canonical" href="https://www.htmltoimages.com/blog/why-chatgpt-gives-wrong-answers/">
     <title>Why ChatGPT Gives Wrong Answers So Confidently (And How to Spot Them) | HTMLtoImages Blog</title>
     <meta name="description" content="Ever wonder why AI sometimes just makes things up? Here is a realistic, non-boring breakdown of AI hallucinations, why they happen, and how developers can spot them.">
@@ -17,7 +18,7 @@
     <meta property="og:description" content="A realistic, non-boring breakdown of AI hallucinations, why they happen, and how to spot them.">
     <meta property="og:url" content="https://www.htmltoimages.com/blog/why-chatgpt-gives-wrong-answers/">
     <meta property="og:site_name" content="HTMLtoImages">
-    <meta property="og:image" content="https://www.htmltoimages.com/blog/images/chatgpt-hallucination.png">
+    <meta property="og:image" content="https://www.htmltoimages.com/blog/images/chatgpt-hallucination.webp">
     <meta property="article:published_time" content="2026-06-18T10:00:00+00:00">
     <meta property="article:modified_time" content="2026-06-18T10:00:00+00:00">
     
@@ -25,7 +26,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Why ChatGPT Gives Wrong Answers So Confidently">
     <meta name="twitter:description" content="A realistic, non-boring breakdown of AI hallucinations, why they happen, and how to spot them.">
-    <meta name="twitter:image" content="https://www.htmltoimages.com/blog/images/chatgpt-hallucination.png">
+    <meta name="twitter:image" content="https://www.htmltoimages.com/blog/images/chatgpt-hallucination.webp">
 
     <!-- Schema.org Article -->
     <script type="application/ld+json">
@@ -38,7 +39,7 @@
       },
       "headline": "Why ChatGPT Gives Wrong Answers So Confidently (And How to Spot Them)",
       "description": "Ever wonder why AI sometimes just makes things up? Here is a realistic breakdown of AI hallucinations.",
-      "image": "https://www.htmltoimages.com/blog/images/chatgpt-hallucination.png",
+      "image": "https://www.htmltoimages.com/blog/images/chatgpt-hallucination.webp",
       "author": {
         "@type": "Person",
         "name": "Sachin Bhanushali",
@@ -70,8 +71,10 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <style>
         :root {
@@ -185,7 +188,7 @@
     </header>
 
     <div class="featured-image-container">
-        <img src="/blog/images/chatgpt-hallucination.png" alt="AI confidently giving a developer broken code" class="featured-image">
+        <img src="/blog/images/chatgpt-hallucination.webp" alt="AI confidently giving a developer broken code" class="featured-image" loading="lazy">
         <div class="image-credit">Illustration / HTMLtoImages</div>
     </div>
 
@@ -204,7 +207,7 @@
 
         <p>Instead, it's essentially the world's most advanced version of your phone's <strong>autocomplete keyboard</strong>.</p>
 
-        <img src="/blog/images/chatgpt-hallucination-1.png" alt="Glowing AI brain guessing the next word" class="inline-image">
+        <img src="/blog/images/chatgpt-hallucination-1.webp" alt="Glowing AI brain guessing the next word" class="inline-image" loading="lazy">
         <div class="image-credit" style="margin-top: -20px; margin-bottom: 30px;">Conceptual rendering of an LLM predicting text fragments.</div>
 
         <p>When you ask a question, the AI doesn't "think" about the concept. It mathematically predicts which word should logically come next based on the trillions of words it read during training. </p>
@@ -234,7 +237,7 @@
         <h3>2. The "Time Traveler" Bug</h3>
         <p>Most models have a knowledge cutoff date. If you're using Next.js App Router (which drastically changed how routing works recently) and you ask ChatGPT for help, it might confidently give you code for the older Pages Router, insisting it's the right way. It's not lying; it's just stuck in the past.</p>
 
-        <img src="/blog/images/chatgpt-hallucination-2.png" alt="Developer looking closely at buggy code" class="inline-image">
+        <img src="/blog/images/chatgpt-hallucination-2.webp" alt="Developer looking closely at buggy code" class="inline-image" loading="lazy">
 
         <h3>3. The "Silent Context Drop"</h3>
         <p>You paste a 500-line file and ask it to add a button. It gives you the code back with the button added, but it quietly deleted your error handling logic from line 200 because it "forgot" about it while generating the massive response. It confidently says, <em>"Here is the updated file!"</em></p>
