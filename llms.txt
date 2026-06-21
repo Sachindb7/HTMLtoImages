@@ -1,0 +1,45 @@
+# HTMLtoImages
+
+> Free online tools to convert HTML, CSS, code snippets and web content into high-quality images. 100% client-side processing — your code never leaves your browser.
+
+## About
+
+HTMLtoImages (htmltoimages.com) is a free browser-based utility suite built by Sachin Bhanushali. It provides developers, designers and content creators with instant tools to convert web content into images. All processing happens client-side using the HTML5 Canvas API, ensuring complete privacy — no server uploads, no accounts, no API keys required.
+
+## Tools
+
+- [HTML to PNG Converter](https://www.htmltoimages.com/html-to-png/): Convert HTML and CSS to transparent PNG images with up to 4x Retina resolution.
+- [HTML to JPG Converter](https://www.htmltoimages.com/html-to-jpg/): Convert HTML to compressed JPEG images optimized for smaller file sizes.
+- [HTML to WebP Converter](https://www.htmltoimages.com/html-to-webp/): Convert HTML to next-gen WebP format with superior compression.
+- [Code to Image](https://www.htmltoimages.com/code-to-image/): Transform code snippets into beautifully syntax-highlighted images with custom themes. A Carbon alternative.
+- [Table to Image](https://www.htmltoimages.com/html-table-to-image/): Convert HTML data tables and spreadsheets into image files.
+- [Email to Image](https://www.htmltoimages.com/html-email-to-image/): Preview and capture HTML email templates as images.
+- [Tailwind to Image](https://www.htmltoimages.com/tailwind-to-image/): Render Tailwind CSS utility classes to PNG/JPG with live JIT compilation.
+- [QR Code Generator](https://www.htmltoimages.com/qr-code-generator/): Generate custom QR codes for URLs, text, and more. Downloadable as PNG.
+
+## Blog Topics
+
+The HTMLtoImages blog covers web development, frontend engineering, CSS techniques, JavaScript guides, AI coding tools, and image format comparisons. Key articles include:
+
+- Vibe Coding Guide: What it is and should you try it
+- Claude vs ChatGPT vs Gemini: Honest developer comparison
+- AI Agents in Web Development: How they are changing the game
+- Why ChatGPT Gives Wrong Answers: Spotting AI hallucinations
+- HTML to Image conversion guides and best practices
+- CSS Grid, Flexbox, animations, and positioning tutorials
+- JavaScript ES6, async/await, DOM manipulation, and array methods
+- Web performance optimization and responsive design
+
+## Technical Details
+
+- Architecture: 100% static site hosted on GitHub Pages
+- Rendering: Client-side using html2canvas and HTML5 Canvas API
+- Privacy: Zero server-side processing, no data collection beyond Google Analytics
+- Formats: PNG (transparent), JPG (compressed), WebP (next-gen)
+- Resolution: Supports up to 4x Retina/HiDPI output
+
+## Contact
+
+- Website: https://www.htmltoimages.com
+- Contact: https://www.htmltoimages.com/contact
+- Creator: Sachin Bhanushali

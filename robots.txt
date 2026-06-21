@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.htmltoimages.com/sitemap.xml
+
+# LLMs.txt - AI Crawler Information
+# See https://www.htmltoimages.com/llms.txt
