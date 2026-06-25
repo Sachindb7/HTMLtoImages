@@ -135,6 +135,7 @@
             .navbar { padding: 12px 20px !important; width: 95% !important; flex-direction: column !important; border-radius: 16px !important; gap: 12px !important; }
             .nav-links { gap: 20px !important; width: 100% !important; justify-content: center !important; flex-wrap: wrap !important; }
         }
+        .breadcrumb-nav{max-width:1200px;margin:0 auto;padding:100px 20px 0;font-size:.85rem;color:#64748b}.breadcrumb-nav a{color:#3b82f6;text-decoration:none}.breadcrumb-nav a:hover{text-decoration:underline}.breadcrumb-nav span{color:#0f172a;font-weight:500}
     </style>
 
     <script type="application/ld+json">
@@ -150,6 +151,12 @@
       "author": { "@type": "Person", "name": "Sachin Bhanushali" }
     }
     </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.htmltoimages.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://www.htmltoimages.com/#tools"},{"@type":"ListItem","position":3,"name":"Image to PDF Converter"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this Image to PDF converter really free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no hidden charges, watermarks, or file limits. You can convert as many images as you need, as many times as you want."}},{"@type":"Question","name":"Are my images uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. Our tool runs 100% in your browser using JavaScript. Your images never leave your computer, making this the most private image-to-PDF tool available online."}},{"@type":"Question","name":"Can I combine multiple images into one PDF?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. You can add as many images as you need, reorder them by using the move buttons, and the tool will create a multi-page PDF with one image per page."}},{"@type":"Question","name":"What is the maximum file size I can convert?","acceptedAnswer":{"@type":"Answer","text":"Since processing happens in your browser, the limit depends on your device's available memory. Most modern devices can handle hundreds of images without issues."}},{"@type":"Question","name":"Will the image quality be reduced?","acceptedAnswer":{"@type":"Answer","text":"No. Images are embedded at their original quality into the PDF. We use JPEG encoding at 95% quality for optimal balance between file size and visual fidelity."}}]}
+    </script>
 </head>
 <body>
 
@@ -163,6 +170,7 @@
     </nav>
 
     <main>
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/#tools">Tools</a> &rsaquo; <span>Image to PDF</span></nav>
     <header class="hero">
         <h1><span class="gradient-text">Image to PDF</span> Converter</h1>
         <p>Convert your images to a PDF document instantly. Drag & drop multiple JPG, PNG or WebP files, arrange them in order, and download a single PDF. 100% free, no signup, no server uploads.</p>
@@ -235,7 +243,17 @@
 
         <div class="seo-block">
             <h3>The Fastest Way to Create PDFs from Images</h3>
-            <p>Whether you need to combine scanned documents, compile photo albums, or package presentation slides, our <strong>Image to PDF converter</strong> handles it effortlessly. Unlike other tools that require you to upload files to remote servers, htmltoimages.com processes everything directly in your browser using the <a href="https://github.com/parallax/jsPDF" target="_blank" rel="noopener noreferrer">jsPDF</a> library — your images never leave your device.</p>
+            <p>Whether you need to combine scanned documents, compile photo albums, or package presentation slides, our <strong>Image to PDF converter</strong> handles it effortlessly. Unlike other tools that require you to upload files to remote servers, htmltoimages.com processes everything directly in your browser using the <a href="https://github.com/parallax/jsPDF" target="_blank" rel="noopener noreferrer">jsPDF</a> library. Your images never leave your device.</p>
+        </div>
+
+        <div class="seo-block">
+            <h3>Step-by-Step: How to Convert Image to PDF</h3>
+            <ol>
+                <li><strong>Upload your images</strong> by dragging and dropping them into the tool above, or click the upload area to browse your files.</li>
+                <li><strong>Arrange your pages</strong> using the up and down arrows. Each image becomes one page in your final PDF.</li>
+                <li><strong>Choose your settings</strong> like page size (A4, Letter, Legal), orientation (portrait or landscape), and margin size.</li>
+                <li><strong>Click "Convert & Download PDF"</strong> and your file is ready in seconds. No email required, no waiting.</li>
+            </ol>
         </div>
 
         <div class="seo-block">
@@ -253,6 +271,23 @@
         <div class="seo-block">
             <h3>Supported Image Formats</h3>
             <p>Our converter accepts all major image formats including <strong>JPEG (.jpg)</strong>, <strong>PNG (.png)</strong>, and <strong>WebP (.webp)</strong>. Each image is embedded at full quality into the PDF document, ensuring your final output looks crisp and professional whether viewed on screen or printed.</p>
+        </div>
+
+        <div class="seo-block">
+            <h3>Why Use Our Image to PDF Tool Over Competitors?</h3>
+            <p>Most online <strong>image to PDF converters</strong> like iLovePDF or SmallPDF upload your files to their servers. That means your personal photos, scanned documents, and sensitive files are stored on a third-party server. Our tool is different because <strong>everything runs locally inside your browser</strong>. Your files never travel over the internet, making this the safest option for converting images to PDF online.</p>
+            <p>Looking for more PDF tools? Try our <a href="/compress-pdf/">PDF Compressor</a> to reduce file size, <a href="/merge-pdf/">Merge PDF</a> to combine documents, or <a href="/pdf-to-image/">PDF to Image</a> to extract pages as PNG files.</p>
+        </div>
+
+        <div class="seo-block">
+            <h3>Common Use Cases</h3>
+            <p>People use our <strong>photo to PDF converter</strong> for a wide range of tasks:</p>
+            <ul>
+                <li><strong>Students:</strong> Combine assignment screenshots or handwritten notes into a single PDF for submission.</li>
+                <li><strong>Professionals:</strong> Convert receipts, invoices, or business cards into organized PDF files for record keeping.</li>
+                <li><strong>Photographers:</strong> Create PDF portfolios from a collection of images with custom page layouts.</li>
+                <li><strong>Everyday use:</strong> Turn scanned documents, WhatsApp images, or downloaded photos into shareable PDF files.</li>
+            </ul>
         </div>
 
         <div class="seo-block">
@@ -276,6 +311,10 @@
             <details>
                 <summary>Will the image quality be reduced?</summary>
                 <p>No. Images are embedded at their original quality into the PDF. We use JPEG encoding at 95% quality for optimal balance between file size and visual fidelity.</p>
+            </details>
+            <details>
+                <summary>Does this work on mobile phones?</summary>
+                <p>Yes. Our image to PDF converter works on all modern browsers including Chrome, Safari, Firefox, and Edge on both Android and iOS devices.</p>
             </details>
         </div>
     </section>
