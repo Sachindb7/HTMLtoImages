@@ -40,7 +40,29 @@
         .footer-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px}
         .footer-col h4{font-size:1.1rem;margin-bottom:20px;color:var(--text-main)}.footer-col ul{list-style:none}.footer-col li{margin-bottom:10px}.footer-col a{color:var(--text-muted);font-size:.95rem}.footer-col a:hover{color:#3b82f6}
         .copyright{text-align:center;margin-top:60px;padding-top:30px;border-top:1px solid #cbd5e1;color:var(--text-muted);font-size:.9rem}
-        @media(max-width:850px){.navbar{padding:12px 20px;width:95%;flex-direction:column;border-radius:16px;gap:12px}.nav-links{gap:20px;width:100%;justify-content:center;flex-wrap:wrap}.page-hero{padding-top:160px}.page-hero h1{font-size:2.2rem}.blog-grid{grid-template-columns:1fr}}
+        
+        .featured-blog { grid-column: 1 / -1; display: grid; grid-template-columns: 1.3fr 1fr; gap: 0; align-items: stretch; }
+        .featured-blog .blog-card-img { height: 100%; min-height: 380px; background: #f1f5f9; padding: 0; overflow: hidden; display: block; }
+        .featured-blog .blog-card-img img { width: 100%; height: 100%; object-fit: cover; }
+        .featured-blog .blog-card-body { padding: 50px; display: flex; flex-direction: column; justify-content: center; }
+        .featured-blog .blog-tag { align-self: flex-start; padding: 8px 20px; font-size: 0.9rem; margin-bottom: 20px; }
+        .featured-blog h2 { font-size: 2.5rem; margin-bottom: 20px; letter-spacing: -1px; line-height: 1.2; }
+        .featured-blog p { font-size: 1.1rem; margin-bottom: 30px; flex: 0 1 auto; }
+        
+        .blog-card-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
+        .blog-card-meta span:not(:last-child)::after { content: "•"; margin-left: 12px; color: #cbd5e1; }
+
+        @media(max-width:850px){
+            .navbar{padding:12px 20px;width:95%;flex-direction:column;border-radius:16px;gap:12px}
+            .nav-links{gap:20px;width:100%;justify-content:center;flex-wrap:wrap}
+            .page-hero{padding-top:160px}
+            .page-hero h1{font-size:2.2rem}
+            .blog-grid{grid-template-columns:1fr}
+            .featured-blog { grid-template-columns: 1fr; }
+            .featured-blog .blog-card-img { min-height: 250px; height: 250px; }
+            .featured-blog .blog-card-body { padding: 30px; }
+            .featured-blog h2 { font-size: 1.8rem; }
+        }
         .cookie-banner{position:fixed;bottom:0;left:0;right:0;background:#1e293b;color:#e2e8f0;padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:20px;z-index:9999;font-size:.9rem;box-shadow:0 -4px 20px rgba(0,0,0,.15)}.cookie-banner a{color:#60a5fa;text-decoration:underline}.cookie-banner button{background:#3b82f6;color:#fff;border:none;padding:8px 24px;border-radius:8px;cursor:pointer;font-weight:600;font-size:.9rem;white-space:nowrap}.cookie-banner button:hover{background:#2563eb}@media(max-width:600px){.cookie-banner{flex-direction:column;text-align:center;gap:12px}}
     .breadcrumb-nav{max-width:1200px;margin:0 auto;padding:100px 20px 0;font-size:.85rem;color:#64748b}.breadcrumb-nav a{color:#3b82f6;text-decoration:none}.breadcrumb-nav a:hover{text-decoration:underline}.breadcrumb-nav span{color:#0f172a;font-weight:500}
 .author-box{display:flex;gap:20px;align-items:center;background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:24px;margin:40px 0 0}.author-box img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0}.author-box .author-info h4{font-size:1rem;font-weight:700;margin-bottom:4px;color:#0f172a}.author-box .author-info p{font-size:.9rem;color:#64748b;margin:0;line-height:1.6}.author-box .author-info .author-label{font-size:.75rem;color:#3b82f6;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
@@ -72,12 +94,12 @@
     </header>
 
     <div class="blog-grid">
-        <a href="/blog/gta-6-beta-scam-ai-fraud/" class="blog-card featured-blog" style="grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
-            <div class="blog-card-img" style="background:#f1f5f9;padding:0;overflow:hidden; height: 100%; min-height: 350px;"><img src="/blog/gta-6-beta-scam-ai-fraud/img1.webp" alt="gta-6-beta-scam" style="width:100%;height:100%;object-fit:cover;"></div>
-            <div class="blog-card-body" style="padding: 50px; display: flex; flex-direction: column; justify-content: center;">
-                <span class="blog-tag" style="align-self: flex-start; padding: 8px 20px; font-size: 0.9rem;">Cybersecurity & AI</span>
-                <h2 style="font-size: 2.5rem; margin-bottom: 20px; letter-spacing: -1px;">GTA 6 Beta Scam: How Hackers Are Using AI to Steal Your Money</h2>
-                <p style="font-size: 1.1rem; margin-bottom: 30px;">Hackers are using deepfakes and AI voice cloning to promote fake GTA 6 beta access. Learn how this massive scam works and how to protect your money and PC.</p>
+        <a href="/blog/gta-6-beta-scam-ai-fraud/" class="blog-card featured-blog">
+            <div class="blog-card-img"><img src="/blog/gta-6-beta-scam-ai-fraud/img1.webp" alt="gta-6-beta-scam"></div>
+            <div class="blog-card-body">
+                <span class="blog-tag">Cybersecurity & AI</span>
+                <h2>GTA 6 Beta Scam: How Hackers Are Using AI to Steal Your Money</h2>
+                <p>Hackers are using deepfakes and AI voice cloning to promote fake GTA 6 beta access. Learn how this massive scam works and how to protect your money and PC.</p>
                 <div class="blog-card-meta"><span>June 25, 2026</span><span>9 min read</span></div>
             </div>
         </a>
