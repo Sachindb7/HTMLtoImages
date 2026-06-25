@@ -38,13 +38,13 @@
 
 <h3>Using SVG as an &lt;img&gt;</h3>
 
-<pre>&lt;img src="icon.svg" alt="Settings icon" width="24" height="24"&gt;</pre>
+<pre>&lt;img src="icon.svg" alt="Settings icon" width="24"&gt;</pre>
 
 <p>This treats the SVG like any other image. The browser fetches, caches, and renders it. Simple. But you lose the ability to style it with CSS or interact with its internal elements. It's a black box.</p>
 
 <h3>Inline SVG (Directly in HTML)</h3>
 
-<pre>&lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+<pre>&lt;svg width="24" viewBox="0 0 24 24" fill="none"
      xmlns="http://www.w3.org/2000/svg"&gt;
   &lt;path d="M12 2L2 7l10 5 10-5-10-5z" fill="currentColor"/&gt;
   &lt;path d="M2 17l10 5 10-5" stroke="currentColor"
@@ -61,7 +61,7 @@
 
 <p>The <code>viewBox</code> attribute defines the <strong>coordinate system</strong> inside the SVG. It doesn't set the size of the SVG on the page — that's what <code>width</code> and <code>height</code> do. viewBox defines the "camera window" looking at your drawing.</p>
 
-<pre>&lt;svg width="200" height="200" viewBox="0 0 100 100"&gt;
+<pre>&lt;svg width="200" viewBox="0 0 100 100"&gt;
   &lt;circle cx="50" cy="50" r="40" fill="#3b82f6"/&gt;
 &lt;/svg&gt;</pre>
 
@@ -99,7 +99,7 @@
 
 <pre>&lt;svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"&gt;
   &lt;!-- Rectangle --&gt;
-  &lt;rect x="10" y="10" width="80" height="60"
+  &lt;rect x="10" y="10" width="80"
         rx="8" fill="#3b82f6"/&gt;
 
   &lt;!-- Circle --&gt;
@@ -302,7 +302,7 @@
 <p>SVG is excellent for icons, logos, simple illustrations, charts, data visualizations, UI elements, and anything that needs to scale without losing quality. Once you start using it properly, you'll find it popping up everywhere in your workflow — and wondering how you ever got by without it.</p>
 
 <div class="author-box">
-<img loading="lazy" src="/assets/images/author.jpg" alt="Sachin Bhanushali" width="64" height="64" style="width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0">
+<img loading="lazy" src="/assets/images/author.jpg" alt="Sachin Bhanushali" width="64" style="width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0">
 <div class="author-info">
 <span class="author-label">Written by</span>
 <h4>Sachin Bhanushali</h4>

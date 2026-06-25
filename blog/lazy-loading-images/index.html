@@ -39,7 +39,7 @@
 <pre>&lt;img src="product.jpg"
      alt="Blue running shoes"
      width="400"
-     height="300"
+    
      loading="lazy"&gt;</pre>
 
 <p>The browser will defer loading this image until it's about to enter the viewport. The exact threshold varies by browser — Chrome starts loading when the image is roughly 1250px away on fast connections, and 2500px away on slow ones. You don't control this, and honestly, you don't need to.</p>
@@ -54,14 +54,14 @@
 &lt;img src="hero-banner.jpg"
      alt="Summer sale - 50% off"
      width="1200"
-     height="600"
+    
      fetchpriority="high"&gt;
 
 &lt;!-- BELOW THE FOLD — lazy load --&gt;
 &lt;img src="product-1.jpg"
      alt="Product name"
      width="400"
-     height="300"
+    
      loading="lazy"&gt;</pre>
 
 <p>Notice the <code>fetchpriority="high"</code> on the hero image. That tells the browser to prioritize fetching it. Combined with <em>not</em> lazy loading it, your LCP image loads as fast as the browser can manage.</p>
@@ -77,7 +77,7 @@
      data-src="actual-image.jpg"
      alt="Product photo"
      width="400"
-     height="300"&gt;
+    &gt;
 
 &lt;script&gt;
 const observer = new IntersectionObserver((entries) => {
@@ -139,7 +139,7 @@ document.querySelectorAll('img.lazy').forEach(img => {
 
 <pre>&lt;div class="image-wrapper" style="background: #2d5a3f;"&gt;
   &lt;img src="forest.jpg" loading="lazy"
-       alt="Forest landscape" width="800" height="600"&gt;
+       alt="Forest landscape" width="800"&gt;
 &lt;/div&gt;</pre>
 
 <h3>3. Blur-Up (LQIP)</h3>
@@ -155,7 +155,7 @@ document.querySelectorAll('img.lazy').forEach(img => {
   &lt;img class="lazy full-image"
        data-src="photo-full.jpg"
        alt="Mountain landscape"
-       width="800" height="600"&gt;
+       width="800"&gt;
 &lt;/div&gt;
 
 &lt;style&gt;
@@ -198,7 +198,7 @@ document.querySelectorAll('img.lazy').forEach(img => {
 <pre>&lt;!-- ✅ Good: explicit dimensions --&gt;
 &lt;img src="photo.jpg"
      width="800"
-     height="600"
+    
      loading="lazy"
      alt="Description"&gt;
 
@@ -270,7 +270,7 @@ document.querySelectorAll('[data-bg]').forEach(el => {
               (max-width: 1200px) 50vw,
               33vw"
        width="1600"
-       height="1200"
+      
        loading="lazy"
        decoding="async"
        alt="Descriptive alt text"&gt;
@@ -295,7 +295,7 @@ document.querySelectorAll('[data-bg]').forEach(el => {
 <p>Your users on 3G connections will thank you. Your Lighthouse score will thank you. And you'll spend less time debugging "why is the page so slow" tickets.</p>
 
 <div class="author-box">
-<img loading="lazy" src="/assets/images/author.jpg" alt="Sachin Bhanushali" width="64" height="64" style="width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0">
+<img loading="lazy" src="/assets/images/author.jpg" alt="Sachin Bhanushali" width="64" style="width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0">
 <div class="author-info">
 <span class="author-label">Written by</span>
 <h4>Sachin Bhanushali</h4>
