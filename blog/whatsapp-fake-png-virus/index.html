@@ -223,6 +223,30 @@
             "@type": "Answer",
             "text": "Always check the sender email address carefully. A real email will come from a verified rockstargames.com domain. Furthermore, you should never click on links inside unexpected emails. Instead, manually type the official website address into your browser to check for any announcements."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Can an antivirus detect a fake PNG?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most traditional antivirus software struggles to detect steganography because the file structure of the image remains completely valid. The malicious code only executes in memory when rendered, making it nearly invisible to basic scans."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it safe to view images on WhatsApp Web?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WhatsApp Web relies on your browser's rendering engine. While desktop browsers often have stronger sandboxing than mobile apps, a sophisticated zero-click exploit can still compromise your computer. It is always best to avoid opening unverified files."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can iPhone users get hacked by image files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, iOS is not immune to zero-click exploits. While Apple frequently patches rendering vulnerabilities, cybercriminals are constantly discovering new flaws in how iPhones process image formats like WebP and PDF."
+          }
         }
       ]
     }
@@ -281,7 +305,7 @@
             <p>Once the image is parsed by your device's media gallery or WhatsApp's internal renderer, the payload triggers. It acts as a backdoor, allowing hackers to silently install keyloggers, intercept OTPs (One-Time Passwords), or scrape your contacts to spread the infection further.</p>
 
             <h2 class="section-title">The "Safe Format" Illusion</h2>
-            <p>Many users mistakenly believe that if a file ends in <code>.jpg</code> or <code>.png</code>, it is purely visual data and cannot execute code. While standard image viewers are designed to ignore non-image data, modern operating systems are deeply interconnected. Hackers exploit buffer overflow vulnerabilities—meaning they stuff so much malicious code into the image file that the rendering software "overflows" and accidentally runs the code as system instructions.</p>
+            <p>Many users mistakenly believe that if a file ends in <code>.jpg</code> or <code>.png</code>, it is purely visual data and cannot execute code. While standard image viewers are designed to ignore non-image data, modern operating systems are deeply interconnected. Hackers exploit buffer overflow vulnerabilities. This means they stuff so much malicious code into the image file that the rendering software "overflows" and accidentally runs the code as system instructions.</p>
 
             <div class="interactive-box">
                 <h4><i class="fas fa-shield-alt"></i> The Ultimate Protection Checklist</h4>
@@ -296,8 +320,8 @@
             <img src="img3.webp" alt="A dramatic warning sign floating over a WhatsApp settings menu, highlighting the auto-download toggle" class="content-image" loading="lazy">
 
             <h2 class="section-title">The Bottom Line for 2026</h2>
-            <p>As AI makes generating hyper-realistic images trivial, the volume of visual media we consume is skyrocketing. Cybercriminals are capitalizing on this fatigue. The next time you receive an unprompted meme or a random screenshot from an unknown number, resist the urge to tap it.</p>
-            <p>In the digital age of 2026, a picture isn't just worth a thousand words—it could cost you your entire bank account.</p>
+            <p>As AI makes generating hyper-realistic images trivial, the volume of visual media we consume is skyrocketing. Cybercriminals are capitalizing on this fatigue. The next time you receive an <strong>unprompted meme</strong> or a random screenshot from an unknown number, <strong>resist the urge to tap it</strong>.</p>
+            <p>In the digital age of 2026, a picture isn't just worth a thousand words. In reality, it could cost you your <strong>entire bank account</strong>.</p>
         
             <!-- FAQ Section -->
             <div class="faq-section">
@@ -321,6 +345,27 @@
                     <summary>Does WhatsApp auto-download cause hacking?</summary>
                     <div class="faq-content">
                         <p>WhatsApp's auto-download feature itself isn't a hack, but it enables zero-click exploits. If auto-download is on, malicious images are instantly processed by your phone's storage system, allowing hidden malware to execute automatically before you even open the app. Disabling this setting is highly recommended by cybersecurity experts.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Can an antivirus detect a fake PNG?</summary>
+                    <div class="faq-content">
+                        <p>Most traditional antivirus software struggles to detect steganography because the file structure of the image remains completely valid. The malicious code only executes in memory when rendered, making it nearly invisible to basic scans.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Is it safe to view images on WhatsApp Web?</summary>
+                    <div class="faq-content">
+                        <p>WhatsApp Web relies on your browser's rendering engine. While desktop browsers often have stronger sandboxing than mobile apps, a sophisticated zero-click exploit can still compromise your computer. It is always best to avoid opening unverified files.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Can iPhone users get hacked by image files?</summary>
+                    <div class="faq-content">
+                        <p>Yes, iOS is not immune to zero-click exploits. While Apple frequently patches rendering vulnerabilities, cybercriminals are constantly discovering new flaws in how iPhones process image formats like WebP and PDF.</p>
                     </div>
                 </details>
             </div>
