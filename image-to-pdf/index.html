@@ -204,14 +204,14 @@
                         <option value="legal">Legal (8.5×14in)</option>
                     </select>
                 </div>
-                <div class="setting-group">
+                <div class="setting-group" id="orientationGroup">
                     <label>Orientation</label>
                     <select id="orientation">
                         <option value="portrait" selected>Portrait</option>
                         <option value="landscape">Landscape</option>
                     </select>
                 </div>
-                <div class="setting-group">
+                <div class="setting-group" id="imageFitGroup">
                     <label>Image Fit</label>
                     <select id="imageFit">
                         <option value="fit" selected>Fit to Page</option>
@@ -229,6 +229,18 @@
                     </select>
                 </div>
             </div>
+
+            <script>
+            // Toggle orientation & image fit visibility based on page size
+            document.getElementById('pageSize').addEventListener('change', function() {
+                const isOriginal = this.value === 'original';
+                document.getElementById('orientationGroup').style.display = isOriginal ? 'none' : '';
+                document.getElementById('imageFitGroup').style.display = isOriginal ? 'none' : '';
+            });
+            // Hide on load since 'original' is default
+            document.getElementById('orientationGroup').style.display = 'none';
+            document.getElementById('imageFitGroup').style.display = 'none';
+            </script>
 
             <div class="actions-bar" id="actionsBar" style="display:none;">
                 <button class="btn-primary" id="convertBtn" disabled><i class="fas fa-download"></i> Convert & Download PDF</button>
