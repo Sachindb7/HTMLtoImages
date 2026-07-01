@@ -198,7 +198,8 @@
                 <div class="setting-group">
                     <label>Page Size</label>
                     <select id="pageSize">
-                        <option value="a4" selected>A4 (210×297mm)</option>
+                        <option value="original" selected>Original Image Size</option>
+                        <option value="a4">A4 (210×297mm)</option>
                         <option value="letter">Letter (8.5×11in)</option>
                         <option value="legal">Legal (8.5×14in)</option>
                     </select>
@@ -471,50 +472,78 @@
                 const orientation = document.getElementById('orientation').value;
                 const imageFit = document.getElementById('imageFit').value;
                 const margin = parseInt(document.getElementById('margin').value);
+                const isOriginalPageSize = pageSize === 'original';
 
-                const pdf = new jsPDF({ orientation, unit: 'mm', format: pageSize });
+                // For original page size, we create the first page based on first image
+                // For fixed sizes, we use the selected format
+                let pdf;
+                if (isOriginalPageSize) {
+                    // Temporary init, will be replaced per-image
+                    pdf = new jsPDF({ orientation, unit: 'mm', format: 'a4' });
+                } else {
+                    pdf = new jsPDF({ orientation, unit: 'mm', format: pageSize });
+                }
 
                 for (let i = 0; i < images.length; i++) {
-                    if (i > 0) pdf.addPage();
                     statusText.textContent = `Processing image ${i + 1}/${images.length}...`;
 
                     const img = new Image();
                     img.src = images[i].dataUrl;
                     await new Promise((resolve) => { img.onload = resolve; });
 
-                    const pageW = pdf.internal.pageSize.getWidth();
-                    const pageH = pdf.internal.pageSize.getHeight();
-                    const availW = pageW - (margin * 2);
-                    const availH = pageH - (margin * 2);
-                    const imgRatio = img.width / img.height;
+                    // Convert image pixels to mm (96 DPI)
+                    const imgWmm = (img.width / 96) * 25.4;
+                    const imgHmm = (img.height / 96) * 25.4;
 
-                    let drawW, drawH, drawX, drawY;
-
-                    if (imageFit === 'fit') {
-                        if (imgRatio > availW / availH) {
-                            drawW = availW;
-                            drawH = availW / imgRatio;
+                    if (isOriginalPageSize) {
+                        // Each page matches the image dimensions + margin
+                        const pgW = imgWmm + (margin * 2);
+                        const pgH = imgHmm + (margin * 2);
+                        if (i === 0) {
+                            // Delete default page and add correctly sized one
+                            pdf = new jsPDF({ unit: 'mm', format: [pgW, pgH] });
                         } else {
-                            drawH = availH;
-                            drawW = availH * imgRatio;
+                            pdf.addPage([pgW, pgH]);
                         }
-                        drawX = margin + (availW - drawW) / 2;
-                        drawY = margin + (availH - drawH) / 2;
-                    } else if (imageFit === 'fill') {
-                        drawW = pageW;
-                        drawH = pageH;
-                        drawX = 0;
-                        drawY = 0;
+                        const format = images[i].file.type === 'image/png' ? 'PNG' : 'JPEG';
+                        pdf.addImage(images[i].dataUrl, format, margin, margin, imgWmm, imgHmm);
                     } else {
-                        // original size (in mm, assuming 96dpi)
-                        drawW = (img.width / 96) * 25.4;
-                        drawH = (img.height / 96) * 25.4;
-                        drawX = margin;
-                        drawY = margin;
-                    }
+                        if (i > 0) pdf.addPage();
 
-                    const format = images[i].file.type === 'image/png' ? 'PNG' : 'JPEG';
-                    pdf.addImage(images[i].dataUrl, format, drawX, drawY, drawW, drawH);
+                        const pageW = pdf.internal.pageSize.getWidth();
+                        const pageH = pdf.internal.pageSize.getHeight();
+                        const availW = pageW - (margin * 2);
+                        const availH = pageH - (margin * 2);
+                        const imgRatio = img.width / img.height;
+
+                        let drawW, drawH, drawX, drawY;
+
+                        if (imageFit === 'fit') {
+                            if (imgRatio > availW / availH) {
+                                drawW = availW;
+                                drawH = availW / imgRatio;
+                            } else {
+                                drawH = availH;
+                                drawW = availH * imgRatio;
+                            }
+                            drawX = margin + (availW - drawW) / 2;
+                            drawY = margin + (availH - drawH) / 2;
+                        } else if (imageFit === 'fill') {
+                            drawW = pageW;
+                            drawH = pageH;
+                            drawX = 0;
+                            drawY = 0;
+                        } else {
+                            // original size (in mm, assuming 96dpi)
+                            drawW = imgWmm;
+                            drawH = imgHmm;
+                            drawX = margin;
+                            drawY = margin;
+                        }
+
+                        const format = images[i].file.type === 'image/png' ? 'PNG' : 'JPEG';
+                        pdf.addImage(images[i].dataUrl, format, drawX, drawY, drawW, drawH);
+                    }
                 }
 
                 pdf.save('images-to-pdf.pdf');
