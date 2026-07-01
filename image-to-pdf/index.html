@@ -511,11 +511,12 @@
                         // Each page matches the image dimensions + margin
                         const pgW = imgWmm + (margin * 2);
                         const pgH = imgHmm + (margin * 2);
+                        const dynamicOrientation = pgW > pgH ? 'l' : 'p';
                         if (i === 0) {
                             // Delete default page and add correctly sized one
-                            pdf = new jsPDF({ unit: 'mm', format: [pgW, pgH] });
+                            pdf = new jsPDF({ orientation: dynamicOrientation, unit: 'mm', format: [pgW, pgH] });
                         } else {
-                            pdf.addPage([pgW, pgH]);
+                            pdf.addPage([pgW, pgH], dynamicOrientation);
                         }
                         const format = images[i].file.type === 'image/png' ? 'PNG' : 'JPEG';
                         pdf.addImage(images[i].dataUrl, format, margin, margin, imgWmm, imgHmm);
