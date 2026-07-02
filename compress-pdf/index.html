@@ -123,15 +123,15 @@
                 <div class="quality-control">
                     <label>Compression Level</label>
                     <div class="quality-options">
-                        <div class="quality-option" data-quality="0.4" onclick="selectQuality(this)">
+                        <div class="quality-option" data-quality="0.4" data-scale="0.8" onclick="selectQuality(this)">
                             <span class="q-label">High</span>
                             <span class="q-desc">Smallest file, lower quality</span>
                         </div>
-                        <div class="quality-option selected" data-quality="0.6" onclick="selectQuality(this)">
+                        <div class="quality-option selected" data-quality="0.6" data-scale="1.2" onclick="selectQuality(this)">
                             <span class="q-label">Balanced</span>
                             <span class="q-desc">Good balance of size & quality</span>
                         </div>
-                        <div class="quality-option" data-quality="0.85" onclick="selectQuality(this)">
+                        <div class="quality-option" data-quality="0.85" data-scale="1.8" onclick="selectQuality(this)">
                             <span class="q-label">Low</span>
                             <span class="q-desc">Best quality, larger file</span>
                         </div>
@@ -206,6 +206,7 @@
 
     <script>
     let selectedQuality = 0.6;
+    let selectedScale = 1.2;
     let uploadedFile = null;
     let compressedBlob = null;
 
@@ -213,6 +214,7 @@
         document.querySelectorAll('.quality-option').forEach(o => o.classList.remove('selected'));
         el.classList.add('selected');
         selectedQuality = parseFloat(el.dataset.quality);
+        selectedScale = parseFloat(el.dataset.scale || "1.2");
     };
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -278,7 +280,7 @@
                     statusText.textContent = `Compressing page ${i}/${pdfDoc.numPages}...`;
 
                     const page = await pdfDoc.getPage(i);
-                    const scale = 1.5; // Render at 1.5x for decent quality
+                    const scale = selectedScale; // Dynamic rendering scale
                     const viewport = page.getViewport({ scale });
                     const canvas = document.createElement('canvas');
                     canvas.width = viewport.width;
@@ -296,12 +298,21 @@
                 }
 
                 const pdfOutput = newPdf.output('blob');
-                compressedBlob = pdfOutput;
-
-                const savings = ((1 - pdfOutput.size / uploadedFile.size) * 100).toFixed(0);
-                resultBox.style.display = 'block';
-                document.getElementById('savings').textContent = savings > 0 ? `${savings}% smaller` : 'File is already optimized';
-                document.getElementById('sizeComparison').textContent = `${formatSize(uploadedFile.size)} → ${formatSize(pdfOutput.size)}`;
+                
+                if (pdfOutput.size >= uploadedFile.size) {
+                    compressedBlob = uploadedFile;
+                    resultBox.style.display = 'block';
+                    document.getElementById('savings').textContent = 'File is already highly optimized';
+                    document.getElementById('savings').style.color = '#ca8a04';
+                    document.getElementById('sizeComparison').textContent = `Kept original: ${formatSize(uploadedFile.size)} (compression would increase size)`;
+                } else {
+                    compressedBlob = pdfOutput;
+                    const savings = ((1 - pdfOutput.size / uploadedFile.size) * 100).toFixed(0);
+                    resultBox.style.display = 'block';
+                    document.getElementById('savings').textContent = `${savings}% smaller`;
+                    document.getElementById('savings').style.color = '#16a34a';
+                    document.getElementById('sizeComparison').textContent = `${formatSize(uploadedFile.size)} → ${formatSize(pdfOutput.size)}`;
+                }
 
                 compressBtn.style.display = 'none';
                 downloadBtn.style.display = 'flex';
