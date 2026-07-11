@@ -15,7 +15,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-FQBH2S5FQ4');
     </script>
     <!-- Google AdSense -->
@@ -27,8 +26,79 @@
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "WebP to PNG Converter",
+      "url": "https://www.htmltoimages.com/webp-to-png/",
+      "description": "Free online WebP to PNG image converter. Convert WEBP files to PNG format instantly in your browser. No uploads, 100% private.",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Sachin Bhanushali"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.htmltoimages.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://www.htmltoimages.com/#tools"},{"@type":"ListItem","position":3,"name":"WebP to PNG Converter"}]}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this WebP to PNG converter free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our WebP to PNG converter is 100% free with no hidden limits or watermarks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my WebP files uploaded to your servers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The entire WebP to PNG conversion process happens locally in your browser using HTML5 Canvas APIs. Your images are never uploaded to any external server."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does PNG support transparency?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, WebP and PNG support transparency (alpha channels), while JPG does not."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the maximum file size for WebP to PNG conversion?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There is no hard file size limit since all processing happens in your browser. However, very large images (above 20MB) may take longer depending on your device's memory."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will converting WebP to PNG reduce image quality?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PNG is a lossless format, so converting to PNG preserves full image quality with zero loss."
+      }
+    }
+  ]
+}
+    </script>
+
     <style>
         :root {
             --bg-body: #f8fafc;
@@ -55,7 +125,6 @@
 
         a { text-decoration: none; color: inherit; transition: 0.3s; }
         
-        /* Navbar */
         .navbar {
             position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
             width: 90%; max-width: 1200px; padding: 12px 24px;
@@ -71,24 +140,19 @@
         .nav-links a { font-weight: 500; color: var(--text-muted); cursor: pointer; }
         .nav-links a:hover { color: #3b82f6; }
 
-        /* Hero */
         .hero { text-align: center; padding: 140px 20px 40px; }
         .hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 20px; color: var(--text-main); }
         .gradient-text { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
 
-        /* App Container */
-        .app-container { max-width: 1300px; margin: 0 auto; padding: 0 20px 60px; display: grid; grid-template-columns: 350px 1fr; gap: 20px; min-height: 700px; height: calc(100vh - 200px); }
-        .panel { background: var(--bg-panel); border: 1px solid var(--border-color); border-radius: var(--radius-lg); display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 10px 40px -10px rgba(0,0,0,0.08); }
+        .app-container { max-width: 1300px; margin: 0 auto; padding: 0 20px 60px; display: flex; justify-content: center; align-items: center; min-height: 400px; height: auto; }
+        .panel { background: var(--bg-panel); border: 1px solid var(--border-color); border-radius: var(--radius-lg); display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 10px 40px -10px rgba(0,0,0,0.08); width: 100%; max-width: 600px; text-align: center; }
         .panel-header { padding: 16px 20px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; background: #f8fafc; }
         .panel-title { font-size: 0.9rem; font-weight: 600; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
         
-        textarea#codeEditor { flex: 1; background: var(--editor-bg); color: var(--editor-text); border: none; padding: 20px; font-family: 'JetBrains Mono', monospace; font-size: 13px; resize: none; line-height: 1.6; }
         .settings-area { padding: 20px; border-top: 1px solid var(--border-color); background: #f8fafc; display: flex; flex-direction: column; gap: 15px; }
         
         .custom-select { width: 100%; background: #ffffff; color: var(--text-main); border: 1px solid var(--border-color); padding: 10px 14px; border-radius: var(--radius-sm); font-family: 'Inter', sans-serif; cursor: pointer; }
-        
-        /* Remove arrow for locked select */
         .custom-select.locked { 
             appearance: none; -webkit-appearance: none; -moz-appearance: none;
             background-image: none; cursor: default; padding-right: 14px;
@@ -99,32 +163,21 @@
         .btn-primary { width: 100%; background: var(--primary-gradient); border: none; padding: 14px; border-radius: var(--radius-md); color: white; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s; }
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4); }
 
-        .preview-wrapper { background: #f1f5f9; position: relative; background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 24px 24px; flex: 1; display: flex; align-items: center; justify-content: center; overflow: auto; padding: 40px; }
-
-        /* Content Sections */
         .section-container { max-width: 900px; margin: 60px auto; padding: 0 20px; scroll-margin-top: 120px; }
         .section-header { text-align: center; margin-bottom: 40px; }
         .section-header h2 { font-size: 2rem; font-weight: 800; margin-bottom: 15px; color: var(--text-main); }
         
-        /* Mini Tools */
         .mini-tools { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 800px; margin: 0 auto; }
         .mini-card { background: white; border: 1px solid var(--border-color); padding: 15px; border-radius: 12px; display: flex; align-items: center; gap: 12px; transition: 0.2s; text-decoration: none; color: var(--text-main); }
         .mini-card:hover { border-color: #3b82f6; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
         .mini-icon { width: 36px; height: 36px; background: #eff6ff; color: #3b82f6; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
         .mini-card span { font-weight: 600; font-size: 0.9rem; }
-        
-        .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 80px; }
-        .step { text-align: center; }
-        .step-icon { width: 50px; height: 50px; background: #eff6ff; color: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.2rem; }
-        .step h3 { font-size: 1.1rem; margin-bottom: 8px; }
-        .step p { font-size: 0.9rem; color: var(--text-muted); }
 
         details { background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); margin-bottom: 16px; overflow: hidden; }
         summary { padding: 20px 24px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
         summary::after { content: '\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--text-muted); }
         details p { padding: 0 24px 24px; color: var(--text-muted); }
 
-        /* Footer */
         .footer { border-top: 1px solid var(--border-color); background: #f1f5f9; padding: 60px 20px; margin-top: 80px; }
         .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
         .footer-col h4 { font-size: 1.1rem; margin-bottom: 20px; color: var(--text-main); }
@@ -134,153 +187,75 @@
         .footer-col a:hover { color: #3b82f6; }
         .copyright { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid #cbd5e1; color: var(--text-muted); font-size: 0.9rem; }
 
-                @media (max-width: 900px) { 
-            .app-container { grid-template-columns: 1fr; height: auto; } 
-            .panel { min-height: 450px; }
-            .steps { grid-template-columns: 1fr; } 
-            .mini-tools { grid-template-columns: 1fr; }
-        }
-    
-        @media (max-width: 850px) {
-            .navbar {
-                padding: 12px 20px !important;
-                width: 95% !important;
-                flex-direction: column !important;
-                border-radius: 16px !important;
-                gap: 12px !important;
-            }
-            .nav-links {
-                gap: 20px !important;
-                width: 100% !important;
-                justify-content: center !important;
-                flex-wrap: wrap !important;
-            }
-            .logo {
-                font-size: 1.3rem !important;
-                gap: 8px !important;
-            }
-            .nav-links a {
-                font-size: 1rem !important;
-            }
-            .hero {
-                padding-top: 150px !important;
-            }
-        }
-        
-        /* SEO Content Styling */
         .seo-article { text-align: left; background: #ffffff; padding: 50px; border-radius: var(--radius-lg); border: 1px solid var(--border-color); box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
         .seo-article .section-header { text-align: left; margin-bottom: 30px; }
         .seo-article .section-header h2 { font-size: 2.2rem; }
         .seo-block { margin-bottom: 35px; }
         .seo-block h3 { font-size: 1.4rem; color: var(--text-main); margin-bottom: 12px; }
         .seo-block p { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 16px; line-height: 1.8; }
-        .seo-block ul { margin-left: 20px; margin-bottom: 16px; color: var(--text-muted); font-size: 1.05rem;}
+        .seo-block ul { margin-left: 20px; margin-bottom: 16px; color: var(--text-muted); font-size: 1.05rem; }
         .seo-block li { margin-bottom: 10px; line-height: 1.7; }
         .seo-block strong { color: var(--text-main); }
         .seo-article details { background: #f8fafc; border: 1px solid #e2e8f0; }
         .seo-article summary { font-size: 1.1rem; color: var(--text-main); }
         
+        @media (max-width: 900px) { 
+            .mini-tools { grid-template-columns: 1fr; }
+        }
+    
+        @media (max-width: 850px) {
+            .navbar { padding: 12px 20px !important; width: 95% !important; flex-direction: column !important; border-radius: 16px !important; gap: 12px !important; }
+            .nav-links { gap: 20px !important; width: 100% !important; justify-content: center !important; flex-wrap: wrap !important; }
+            .logo { font-size: 1.3rem !important; gap: 8px !important; }
+            .nav-links a { font-size: 1rem !important; }
+            .hero { padding-top: 150px !important; }
+        }
+        
         @media (max-width: 768px) {
             .seo-article { padding: 30px 20px; }
             .seo-article .section-header h2 { font-size: 1.8rem; }
         }
-            .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #e2e8f0; padding: 16px 24px; display: flex; align-items: center; justify-content: center; gap: 20px; z-index: 9999; font-size: 0.9rem; box-shadow: 0 -4px 20px rgba(0,0,0,0.15); }
+
+        .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: #e2e8f0; padding: 16px 24px; display: flex; align-items: center; justify-content: center; gap: 20px; z-index: 9999; font-size: 0.9rem; box-shadow: 0 -4px 20px rgba(0,0,0,0.15); }
         .cookie-banner a { color: #60a5fa; text-decoration: underline; }
         .cookie-banner button { background: #3b82f6; color: white; border: none; padding: 8px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem; white-space: nowrap; }
         .cookie-banner button:hover { background: #2563eb; }
         @media (max-width: 600px) { .cookie-banner { flex-direction: column; text-align: center; gap: 12px; } }
-        @media (max-width: 600px) {
-            .navbar {
-                padding: 12px 15px !important;
-                width: 95% !important;
-                flex-direction: column !important;
-                border-radius: 16px !important;
-                gap: 10px !important;
-            }
-            .nav-links {
-                gap: 20px !important;
-                width: 100% !important;
-                justify-content: center !important;
-            }
-            .logo {
-                font-size: 1.2rem !important;
-                gap: 8px !important;
-            }
-            .nav-links a {
-                font-size: 0.95rem !important;
-            }
-            .preview-wrapper {
-                padding: 15px !important;
-            }
-            textarea#codeEditor {
-                min-width: 100% !important;
-            }
-            .hero {
-                padding-top: 140px !important;
-            }
-        }
-    .breadcrumb-nav{max-width:1200px;margin:0 auto;padding:100px 20px 0;font-size:.85rem;color:#64748b}.breadcrumb-nav a{color:#3b82f6;text-decoration:none}.breadcrumb-nav a:hover{text-decoration:underline}.breadcrumb-nav span{color:#0f172a;font-weight:500}
-.author-box{display:flex;gap:20px;align-items:center;background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:24px;margin:40px 0 0}.author-box img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0}.author-box .author-info h4{font-size:1rem;font-weight:700;margin-bottom:4px;color:#0f172a}.author-box .author-info p{font-size:.9rem;color:#64748b;margin:0;line-height:1.6}.author-box .author-info .author-label{font-size:.75rem;color:#3b82f6;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
     </style>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Convert WebP to PNG",
-      "url": "https://www.htmltoimages.com/webp-to-png/",
-      "description": "Free tool to convert HTML to transparent PNG images. High resolution, client-side rendering at htmltoimages.com.",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "Any",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Sachin Bhanushali"
-      }
-    }
-    </script>
-    <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.htmltoimages.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://www.htmltoimages.com/#tools"},{"@type":"ListItem","position":3,"name":"WebP to PNG Converter"}]}
-    </script>
-<script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is this WebP to PNG converter free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, our image converter is 100% free with no hidden limits or watermarks."}}, {"@type": "Question", "name": "Are my files uploaded to your servers?", "acceptedAnswer": {"@type": "Answer", "text": "No. The entire conversion process happens locally in your browser using HTML5 Canvas APIs. Your images are never uploaded to any external server."}}, {"@type": "Question", "name": "Does PNG support transparency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, WebP and PNG support transparency (alpha channels), while JPG does not."}}]}
-</script>
 </head>
 <body>
 <nav class="navbar">
-        <a href="/" class="logo"><i class="fas fa-cube"></i> HTMLtoImages</a>
-                <div class="nav-links">
-            <a href="/">Home</a>
-            <a href="#more-tools">Tools</a>
-            <a href="/blog/">Blog</a>
-            <a href="/contact">Contact</a>
-            <a href="#faq">FAQ</a>
-        </div>
-    </nav>
+    <a href="/" class="logo"><i class="fas fa-cube"></i> HTMLtoImages</a>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="#more-tools">Tools</a>
+        <a href="/blog/">Blog</a>
+        <a href="/contact">Contact</a>
+        <a href="#faq">FAQ</a>
+    </div>
+</nav>
+
     <header class="hero">
         <h1>Convert WebP to <span class="gradient-text">PNG</span></h1>
-        <p>Drop your WebP file below to securely convert it to PNG without any server uploads.</p>
+        <p>Free online WebP to PNG converter. Drop your WebP file below to securely convert it to PNG — no server uploads, 100% private.</p>
     </header>
 
-    <main class="app-container" style="display:flex; justify-content:center; align-items:center; min-height: 400px; height:auto;">
-        <div class="panel" style="width: 100%; max-width: 600px; text-align: center; overflow: visible;">
+    <main class="app-container">
+        <div class="panel">
             <div class="panel-header">
-                <span class="panel-title"><i class="fas fa-image"></i> Image Converter</span>
+                <span class="panel-title"><i class="fas fa-image"></i> WebP to PNG Converter</span>
             </div>
             
             <div id="dropZone" style="padding: 60px 20px; border: 2px dashed #cbd5e1; border-radius: var(--radius-md); margin: 20px; cursor: pointer; transition: 0.3s; background: #f8fafc;">
                 <i class="fas fa-cloud-upload-alt" style="font-size: 3rem; color: #3b82f6; margin-bottom: 15px;"></i>
                 <h3 style="margin-bottom: 5px; color: var(--text-main);">Click or Drag & Drop</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Upload WebP image here</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Upload your WebP image here</p>
                 <p id="uploadText" style="margin-top: 15px; font-weight: 600; color: #10b981;"></p>
-                <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                <input type="file" id="fileInput" accept="image/webp,image/webp" style="display: none;">
             </div>
 
             <div style="padding: 0 20px;">
-                <img id="previewImage" style="max-width: 100%; max-height: 300px; border-radius: var(--radius-md); display: none; margin: 0 auto 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <img id="previewImage" style="max-width: 100%; max-height: 300px; border-radius: var(--radius-md); display: none; margin: 0 auto 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" alt="WebP to PNG preview">
             </div>
 
             <div class="settings-area">
@@ -307,64 +282,82 @@
         </div>
         
         <div class="seo-block">
-            <h3>Why convert WebP to PNG?</h3>
-            <p>Our completely free tool empowers you to instantly transform any WebP image into a high-quality PNG file. This is crucial for web optimization, faster load times, and ensuring compatibility across different platforms and browsers.</p>
+            <h3>Why Convert WebP to PNG?</h3>
+            <p>Converting WebP to PNG ensures maximum compatibility across all platforms and applications. While WebP is great for the web, many desktop applications, print workflows, and older systems still require PNG format. Our converter preserves full image quality during the conversion.</p>
         </div>
 
         <div class="seo-block">
-            <h3>Secure Client-Side Processing</h3>
-            <p>Unlike other converters that force you to upload your sensitive images to their servers, our tool uses <strong>100% secure client-side processing</strong>. This means your images are processed directly within your browser's memory. No uploads. No data leaks. Complete privacy.</p>
+            <h3>100% Secure — Your Images Stay Private</h3>
+            <p>Unlike other webp-to-png converters that upload your files to remote servers, our tool processes everything <strong>directly in your browser</strong> using the HTML5 Canvas API. Your images never leave your device. No cloud uploads. No data collection. No registration required. Just instant, private conversion.</p>
+        </div>
+
+        <div class="seo-block">
+            <h3>How to Convert WebP to PNG</h3>
+            <ul>
+                <li><strong>Step 1:</strong> Click the upload area above or drag and drop your WebP file.</li>
+                <li><strong>Step 2:</strong> Preview your image and verify it looks correct.</li>
+                <li><strong>Step 3:</strong> Click "Convert to PNG" to instantly download your converted file.</li>
+            </ul>
         </div>
         
         <div class="seo-block">
             <h3 id="faq">Frequently Asked Questions</h3>
             <details>
                 <summary>Is this WebP to PNG converter free?</summary>
-                <p>Yes, our image converter is 100% free with no hidden limits, no registration required, and no watermarks on your downloaded images.</p>
+                <p>Yes, our WebP to PNG converter is 100% free with no hidden limits, no registration required, and no watermarks on your downloaded images.</p>
             </details>
             <details>
-                <summary>Are my files uploaded to your servers?</summary>
-                <p>No. The entire conversion process happens locally in your browser using HTML5 Canvas APIs. Your images are never uploaded to any external server.</p>
+                <summary>Are my WebP files uploaded to your servers?</summary>
+                <p>No. The entire WebP to PNG conversion process happens locally in your browser using HTML5 Canvas APIs. Your images are never uploaded to any external server.</p>
             </details>
             <details>
                 <summary>Does PNG support transparency?</summary>
-                <p>Yes, WebP and PNG support transparency (alpha channels), while JPG does not.</p>
+                <p>Yes, WebP and PNG support full transparency (alpha channels), so your transparent backgrounds will be preserved.</p>
+            </details>
+            <details>
+                <summary>What is the maximum file size I can convert?</summary>
+                <p>There is no hard file size limit since all processing happens in your browser. However, very large images (above 20MB) may take longer depending on your device's memory and processing power.</p>
+            </details>
+            <details>
+                <summary>Will converting WebP to PNG reduce image quality?</summary>
+                <p>No. PNG is a lossless format, so converting to PNG preserves full image quality with absolutely zero loss.</p>
             </details>
         </div>
     </section>
     
-<section id="more-tools" class="section-container">
+    <section id="more-tools" class="section-container">
         <div class="section-header" style="margin-bottom: 30px;">
             <h2>Explore Other Tools</h2>
         </div>
         <div class="mini-tools">
-             <a href="/html-to-jpg/" class="mini-card">
+            <a href="/html-to-png/" class="mini-card">
+                <div class="mini-icon"><i class="fas fa-image"></i></div>
+                <span>HTML to PNG</span>
+            </a>
+            <a href="/html-to-jpg/" class="mini-card">
                 <div class="mini-icon"><i class="fas fa-photo-film"></i></div>
                 <span>HTML to JPG</span>
             </a>
-             <a href="/html-to-webp/" class="mini-card">
+            <a href="/html-to-webp/" class="mini-card">
                 <div class="mini-icon"><i class="fas fa-bolt"></i></div>
                 <span>HTML to WebP</span>
             </a>
-             <a href="/code-to-image/" class="mini-card">
+            <a href="/code-to-image/" class="mini-card">
                 <div class="mini-icon"><i class="fas fa-code"></i></div>
                 <span>Code to Image</span>
             </a>
-             <a href="/html-table-to-image/" class="mini-card">
-                <div class="mini-icon"><i class="fas fa-table"></i></div>
-                <span>Table to Image</span>
+            <a href="/png-to-webp/" class="mini-card">
+                <div class="mini-icon"><i class="fas fa-file-image"></i></div>
+                <span>PNG to WebP</span>
             </a>
-             <a href="/html-email-to-image/" class="mini-card">
-                <div class="mini-icon"><i class="fas fa-envelope"></i></div>
-                <span>Email to Image</span>
-            </a>
-             <a href="/tailwind-to-image/" class="mini-card">
-                <div class="mini-icon"><i class="fas fa-wind"></i></div>
-                <span>Tailwind to Image</span>
+            <a href="/jpg-to-webp/" class="mini-card">
+                <div class="mini-icon"><i class="fas fa-file-image"></i></div>
+                <span>JPG to WebP</span>
             </a>
         </div>
     </section>
-<footer class="footer">
+
+    <footer class="footer">
         <div class="footer-content">
             <div class="footer-col">
                 <div class="logo" style="margin-bottom: 15px;"><i class="fas fa-cube"></i> HTMLtoImages</div>
@@ -379,9 +372,9 @@
                     <li><a href="/html-to-jpg/">HTML to JPG</a></li>
                     <li><a href="/html-to-webp/">HTML to WebP</a></li>
                     <li><a href="/code-to-image/">Code to Image</a></li>
-                    <li><a href="/html-table-to-image/">Table to Image</a></li>
-                    <li><a href="/html-email-to-image/">Email to Image</a></li>
-                    <li><a href="/tailwind-to-image/">Tailwind to Image</a></li>
+                    <li><a href="/png-to-webp/">PNG to WebP</a></li>
+                    <li><a href="/jpg-to-webp/">JPG to WebP</a></li>
+                    <li><a href="/webp-to-png/">WebP to PNG</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -396,14 +389,11 @@
                 </ul>
             </div>
         </div>
-                <div class="copyright">
+        <div class="copyright">
             &copy; 2026 htmltoimages.com. All rights reserved.<br>
             <span style="font-size: 0.9rem; margin-top: 10px; display: inline-block; color: var(--text-muted);">Built with ❤️ &amp; ☕ by Sachin Bhanushali</span>
         </div>
     </footer>
-
-    
-
 
     <div class="cookie-banner" id="cookieBanner" style="display:none;">
         <span>We use cookies to improve your experience and for analytics. By continuing to use this site, you agree to our <a href="/privacy">Privacy Policy</a>.</span>
@@ -413,6 +403,6 @@
         if (!localStorage.getItem('cookiesAccepted')) { document.getElementById('cookieBanner').style.display = 'flex'; }
         function acceptCookies() { localStorage.setItem('cookiesAccepted', 'true'); document.getElementById('cookieBanner').style.display = 'none'; }
     </script>
-<script src="/assets/js/image-converter.js"></script>
+    <script src="/assets/js/image-converter.js"></script>
 </body>
 </html>
