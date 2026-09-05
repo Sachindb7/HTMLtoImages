@@ -12,19 +12,28 @@
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.htmltoimages.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.htmltoimages.com/blog/"},{"@type":"ListItem","position":3,"name":"JavaScript DOM Manipulation"}]}
     </script>
+
     <style id="global-spacing-fix">
-        /* Fix for breadcrumb overlapping and void space */
+        /* Perfect Desktop Fix */
         .breadcrumb-nav { 
-            padding-top: 120px !important; 
+            padding-top: 100px !important; 
             margin-top: 0 !important; 
-            padding-bottom: 10px !important;
+            padding-bottom: 5px !important;
+            margin-bottom: 0 !important;
         }
-        .hero, .page-hero { 
+        .hero, .page-hero, .article-container, .policy-container, .main-content { 
             padding-top: 10px !important; 
+            margin-top: 0 !important;
         }
+        
+        /* Perfect Mobile Fix */
         @media (max-width: 900px) {
             .breadcrumb-nav { 
-                padding-top: 200px !important; 
+                padding-top: 160px !important; 
+                padding-bottom: 5px !important;
+            }
+            .hero, .page-hero, .article-container, .policy-container, .main-content { 
+                padding-top: 10px !important; 
             }
         }
     </style>

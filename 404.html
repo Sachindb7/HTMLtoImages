@@ -54,6 +54,31 @@
             .error-container h1 { font-size: 1.5rem; }
         }
     </style>
+
+    <style id="global-spacing-fix">
+        /* Perfect Desktop Fix */
+        .breadcrumb-nav { 
+            padding-top: 100px !important; 
+            margin-top: 0 !important; 
+            padding-bottom: 5px !important;
+            margin-bottom: 0 !important;
+        }
+        .hero, .page-hero, .article-container, .policy-container, .main-content { 
+            padding-top: 10px !important; 
+            margin-top: 0 !important;
+        }
+        
+        /* Perfect Mobile Fix */
+        @media (max-width: 900px) {
+            .breadcrumb-nav { 
+                padding-top: 160px !important; 
+                padding-bottom: 5px !important;
+            }
+            .hero, .page-hero, .article-container, .policy-container, .main-content { 
+                padding-top: 10px !important; 
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
