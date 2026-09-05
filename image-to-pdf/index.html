@@ -159,6 +159,23 @@
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this Image to PDF converter really free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no hidden charges, watermarks, or file limits. You can convert as many images as you need, as many times as you want."}},{"@type":"Question","name":"Are my images uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. Our tool runs 100% in your browser using JavaScript. Your images never leave your computer, making this the most private image-to-PDF tool available online."}},{"@type":"Question","name":"Can I combine multiple images into one PDF?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. You can add as many images as you need, reorder them by using the move buttons, and the tool will create a multi-page PDF with one image per page."}},{"@type":"Question","name":"What is the maximum file size I can convert?","acceptedAnswer":{"@type":"Answer","text":"Since processing happens in your browser, the limit depends on your device's available memory. Most modern devices can handle hundreds of images without issues."}},{"@type":"Question","name":"Will the image quality be reduced?","acceptedAnswer":{"@type":"Answer","text":"No. Images are embedded at their original quality into the PDF. We use JPEG encoding at 95% quality for optimal balance between file size and visual fidelity."}}]}
     </script>
+
+    <style id="global-spacing-fix">
+        /* Fix for breadcrumb overlapping and void space */
+        .breadcrumb-nav { 
+            padding-top: 120px !important; 
+            margin-top: 0 !important; 
+            padding-bottom: 10px !important;
+        }
+        .hero, .page-hero { 
+            padding-top: 10px !important; 
+        }
+        @media (max-width: 900px) {
+            .breadcrumb-nav { 
+                padding-top: 200px !important; 
+            }
+        }
+    </style>
 </head>
 <body>
 

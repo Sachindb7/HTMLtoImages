@@ -80,6 +80,23 @@
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this PDF merger really free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no limits on file count or size. No watermarks are added to your merged document."}},{"@type":"Question","name":"Are my PDF files uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. Everything is processed in your browser. Your documents never leave your computer."}},{"@type":"Question","name":"Can I reorder PDF files before merging?","acceptedAnswer":{"@type":"Answer","text":"Yes! Use the arrow buttons next to each file to move it up or down in the order."}},{"@type":"Question","name":"Is there a limit on how many PDFs I can merge?","acceptedAnswer":{"@type":"Answer","text":"There is no hard limit. Performance depends on your device memory. Most modern devices can handle dozens of PDFs smoothly."}},{"@type":"Question","name":"Will the quality of my PDFs be affected?","acceptedAnswer":{"@type":"Answer","text":"No. We copy pages directly from source documents without re-encoding, so quality remains identical to the originals."}}]}
     </script>
+
+    <style id="global-spacing-fix">
+        /* Fix for breadcrumb overlapping and void space */
+        .breadcrumb-nav { 
+            padding-top: 120px !important; 
+            margin-top: 0 !important; 
+            padding-bottom: 10px !important;
+        }
+        .hero, .page-hero { 
+            padding-top: 10px !important; 
+        }
+        @media (max-width: 900px) {
+            .breadcrumb-nav { 
+                padding-top: 200px !important; 
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar"><a href="/" class="logo"><i class="fas fa-cube"></i> HTMLtoImages</a><div class="nav-links"><a href="/#tools">Tools</a><a href="/blog/">Blog</a><a href="/contact">Contact</a></div></nav>

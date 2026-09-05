@@ -41,7 +41,24 @@
     </script>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.htmltoimages.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.htmltoimages.com/blog/"},{"@type":"ListItem","position":3,"name":"AI Agents in Web Development"}]}
-    </script></head>
+    </script>
+    <style id="global-spacing-fix">
+        /* Fix for breadcrumb overlapping and void space */
+        .breadcrumb-nav { 
+            padding-top: 120px !important; 
+            margin-top: 0 !important; 
+            padding-bottom: 10px !important;
+        }
+        .hero, .page-hero { 
+            padding-top: 10px !important; 
+        }
+        @media (max-width: 900px) {
+            .breadcrumb-nav { 
+                padding-top: 200px !important; 
+            }
+        }
+    </style>
+</head>
 <body>
 <nav class="navbar"><a href="/" class="logo"><i class="fas fa-cube"></i> HTMLtoImages</a><div class="nav-links">
             <a href="/">Home</a>

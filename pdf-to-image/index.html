@@ -80,6 +80,23 @@
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this PDF to Image converter free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no watermarks, no file limits, and no signup required."}},{"@type":"Question","name":"Are my PDF files uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. Everything runs in your browser using Mozilla's pdf.js library. Your documents never leave your computer."}},{"@type":"Question","name":"What resolution should I choose?","acceptedAnswer":{"@type":"Answer","text":"For screen use (email, social media), 2x is ideal. For printing, choose 3x for the highest quality output."}},{"@type":"Question","name":"Can I convert password-protected PDFs?","acceptedAnswer":{"@type":"Answer","text":"Currently, password-protected PDFs are not supported. Please remove the password before converting."}},{"@type":"Question","name":"How many pages can I convert?","acceptedAnswer":{"@type":"Answer","text":"There is no hard limit, but we recommend up to 50 pages for the best performance since processing happens in your browser."}}]}
     </script>
+
+    <style id="global-spacing-fix">
+        /* Fix for breadcrumb overlapping and void space */
+        .breadcrumb-nav { 
+            padding-top: 120px !important; 
+            margin-top: 0 !important; 
+            padding-bottom: 10px !important;
+        }
+        .hero, .page-hero { 
+            padding-top: 10px !important; 
+        }
+        @media (max-width: 900px) {
+            .breadcrumb-nav { 
+                padding-top: 200px !important; 
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">

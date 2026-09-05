@@ -240,6 +240,23 @@
         .author-info p { margin: 0; font-size: 1rem; color: var(--text-muted); line-height: 1.5; }
         .last-updated { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 25px; display: inline-block; background: #f1f5f9; padding: 6px 12px; border-radius: 20px; font-weight: 500; }
     </style>
+
+    <style id="global-spacing-fix">
+        /* Fix for breadcrumb overlapping and void space */
+        .breadcrumb-nav { 
+            padding-top: 120px !important; 
+            margin-top: 0 !important; 
+            padding-bottom: 10px !important;
+        }
+        .hero, .page-hero { 
+            padding-top: 10px !important; 
+        }
+        @media (max-width: 900px) {
+            .breadcrumb-nav { 
+                padding-top: 200px !important; 
+            }
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar">

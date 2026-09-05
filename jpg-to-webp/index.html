@@ -240,6 +240,23 @@
         .author-info h4 { margin: 0; color: var(--text-main); font-size: 1rem; }
         .author-info p { margin: 0; font-size: 0.85rem; color: var(--text-muted); }
     </style>
+
+    <style id="global-spacing-fix">
+        /* Fix for breadcrumb overlapping and void space */
+        .breadcrumb-nav { 
+            padding-top: 120px !important; 
+            margin-top: 0 !important; 
+            padding-bottom: 10px !important;
+        }
+        .hero, .page-hero { 
+            padding-top: 10px !important; 
+        }
+        @media (max-width: 900px) {
+            .breadcrumb-nav { 
+                padding-top: 200px !important; 
+            }
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar">

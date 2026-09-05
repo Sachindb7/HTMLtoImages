@@ -89,6 +89,23 @@
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much can I reduce my PDF size?","acceptedAnswer":{"@type":"Answer","text":"Results vary based on content. PDFs with images typically see 40-70% reduction. Text-heavy PDFs with few images may see 10-30% reduction."}},{"@type":"Question","name":"Will compression make my PDF unreadable?","acceptedAnswer":{"@type":"Answer","text":"No. Even at High compression, text remains legible. We recommend Balanced mode for the best tradeoff between file size and visual quality."}},{"@type":"Question","name":"Is this safe for confidential documents?","acceptedAnswer":{"@type":"Answer","text":"Yes. Your PDF is processed entirely in your browser. No data is sent to any server."}},{"@type":"Question","name":"Does it work with scanned PDFs?","acceptedAnswer":{"@type":"Answer","text":"Yes! Scanned PDFs benefit the most from compression, often achieving 50-70% size reduction."}},{"@type":"Question","name":"Can I compress password-protected PDFs?","acceptedAnswer":{"@type":"Answer","text":"Currently, you need to remove the password first. We plan to add password support in a future update."}}]}
     </script>
+
+    <style id="global-spacing-fix">
+        /* Fix for breadcrumb overlapping and void space */
+        .breadcrumb-nav { 
+            padding-top: 120px !important; 
+            margin-top: 0 !important; 
+            padding-bottom: 10px !important;
+        }
+        .hero, .page-hero { 
+            padding-top: 10px !important; 
+        }
+        @media (max-width: 900px) {
+            .breadcrumb-nav { 
+                padding-top: 200px !important; 
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar"><a href="/" class="logo"><i class="fas fa-cube"></i> HTMLtoImages</a><div class="nav-links"><a href="/#tools">Tools</a><a href="/blog/">Blog</a><a href="/contact">Contact</a></div></nav>
